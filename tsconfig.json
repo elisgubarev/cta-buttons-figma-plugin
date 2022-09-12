@@ -9,9 +9,10 @@
     "removeComments": true,
     "noImplicitAny": false,
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@figma"
-    ]
+    ],
   }
 }
