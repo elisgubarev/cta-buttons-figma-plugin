@@ -1,0 +1,22 @@
+@use "../data/colors.scss";
+
+.sharp {
+  background-color: colors.$black;
+  color: colors.$white;
+  padding: 20px 32px;
+
+  &__text {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    line-height: 110%;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  &:hover {
+    background-color: colors.$indie-red;
+  }
+
+  transition: background-color 0.2s ease;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import ButtonItem from "./pluginUI/ButtonItem";
 import Classic from "./buttons/Classic/Classic";
+import Sharp from "./buttons/Sharp/Sharp";
 import "../styles/index.scss";
 
 document.addEventListener("keydown", (e) => {
@@ -14,6 +15,9 @@ const App = () => {
     <div className="plugin">
       <ButtonItem>
         <Classic />
+      </ButtonItem>
+      <ButtonItem>
+        <Sharp />
       </ButtonItem>
     </div>
   );

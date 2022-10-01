@@ -1,13 +1,13 @@
 import React from "react";
+import { buttonTextPropertiesClassic } from "./properties";
 import "../../../styles/buttons/Classic.scss";
 
-interface Props {}
-
-const Classic = (props: Props): JSX.Element => {
-  const {} = props;
+const Classic = (): JSX.Element => {
   return (
     <button className="button classic">
-      <span className="classic__text">Get started</span>
+      <span className="classic__text">
+        {buttonTextPropertiesClassic.defaultText}
+      </span>
     </button>
   );
 };
