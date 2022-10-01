@@ -3,6 +3,12 @@ import ButtonItem from "./pluginUI/ButtonItem";
 import Classic from "./buttons/Classic";
 import "../styles/index.scss";
 
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Control") {
+    parent.postMessage({ pluginMessage: "dev-log" }, "*");
+  }
+});
+
 const App = () => {
   return (
     <div className="plugin">

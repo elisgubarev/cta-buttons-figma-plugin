@@ -4,6 +4,10 @@ figma.showUI(__html__, {
 });
 
 figma.ui.onmessage = (message) => {
-  console.log("message:", message);
-  figma.closePlugin("Button created");
+  if (message === "dev-log") {
+    console.log("selection:", figma.currentPage.selection);
+  }
+  if (message === "click") {
+    figma.closePlugin("Button created");
+  }
 };
