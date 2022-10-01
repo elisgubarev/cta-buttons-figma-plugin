@@ -1,5 +1,5 @@
 import React from "react";
-import { OnClick } from "../../types/types";
+import { OnClick } from "../../data/types";
 import "../../styles/pluginUI/ButtonItem.scss";
 
 interface Props {

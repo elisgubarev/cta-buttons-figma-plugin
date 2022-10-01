@@ -1,4 +1,4 @@
-import { SetAutoLayout } from "../../app/types/types";
+import { SetAutoLayout } from "../../app/data/types";
 
 export const setAutoLayout: SetAutoLayout = (node, padding, itemSpacing) => {
   node.layoutMode = "HORIZONTAL";

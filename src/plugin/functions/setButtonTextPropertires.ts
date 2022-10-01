@@ -1,4 +1,4 @@
-import { SetButtonTextPropertires } from "../../app/types/types";
+import { SetButtonTextPropertires } from "../../app/data/types";
 
 export const setButtonTextPropertires: SetButtonTextPropertires = (
   buttonText,

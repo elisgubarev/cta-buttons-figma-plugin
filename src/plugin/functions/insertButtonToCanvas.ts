@@ -1,4 +1,4 @@
-import { InsertButtonToCanvas } from "../../app/types/types";
+import { InsertButtonToCanvas } from "../../app/data/types";
 
 export const insertButtonToCanvas: InsertButtonToCanvas = (button) => {
   let onCloseMessage = "Button added to canvas";

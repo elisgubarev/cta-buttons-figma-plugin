@@ -1,4 +1,4 @@
-import { ButtonProperties, ButtonTextProperties } from "../../../types/types";
+import { ButtonProperties, ButtonTextProperties } from "../../../data/types";
 
 export const buttonPropertiesClassic: ButtonProperties = {
   name: "Classic Button",
