@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/buttons/Classic.scss";
+import "../../../styles/buttons/Classic.scss";
 
 interface Props {}
 

@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonItem from "./pluginUI/ButtonItem";
-import Classic from "./buttons/Classic";
+import Classic from "./buttons/Classic/Classic";
 import "../styles/index.scss";
 
 document.addEventListener("keydown", (e) => {
