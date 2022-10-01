@@ -1,6 +1,6 @@
-export const insertButtonToCanvas = (
-  button: ComponentNode | ComponentSetNode
-): string => {
+import { InsertButtonToCanvas } from "../../app/types/types";
+
+export const insertButtonToCanvas: InsertButtonToCanvas = (button) => {
   let onCloseMessage = "Button added to canvas";
 
   button.x = figma.viewport.center.x - button.width / 2;

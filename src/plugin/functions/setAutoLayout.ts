@@ -1,8 +1,6 @@
-export const setAutoLayout = (
-  node: FrameNode | ComponentNode | ComponentSetNode | InstanceNode,
-  padding?: [number, number, number, number],
-  itemSpacing?: number
-) => {
+import { SetAutoLayout } from "../../app/types/types";
+
+export const setAutoLayout: SetAutoLayout = (node, padding, itemSpacing) => {
   node.layoutMode = "HORIZONTAL";
   node.primaryAxisAlignItems = "CENTER";
   node.counterAxisAlignItems = "CENTER";

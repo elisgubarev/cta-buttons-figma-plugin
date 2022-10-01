@@ -25,3 +25,31 @@ export interface ButtonTextProperties {
     hover?: readonly Paint[] | typeof figma.mixed;
   };
 }
+
+export type Button = ComponentNode | ComponentSetNode;
+
+export interface InsertButtonToCanvas {
+  (button: Button): string;
+}
+
+export type AutoLayoutNode =
+  | FrameNode
+  | ComponentNode
+  | ComponentSetNode
+  | InstanceNode;
+
+export interface SetAutoLayout {
+  (
+    node: AutoLayoutNode,
+    padding?: [number, number, number, number],
+    itemSpacing?: number
+  ): AutoLayoutNode;
+}
+
+export interface SetButtonProperties {
+  (button: FrameNode, buttonProperties: ButtonProperties): FrameNode;
+}
+
+export interface SetButtonTextPropertires {
+  (buttonText: TextNode, buttonTextProperties: ButtonTextProperties): TextNode;
+}

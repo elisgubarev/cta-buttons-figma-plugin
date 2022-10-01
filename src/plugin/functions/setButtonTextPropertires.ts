@@ -1,8 +1,8 @@
-import { ButtonTextProperties } from "../../app/types/types";
+import { SetButtonTextPropertires } from "../../app/types/types";
 
-export const setButtonTextPropertires = (
-  buttonText: TextNode,
-  buttonTextProperties: ButtonTextProperties
+export const setButtonTextPropertires: SetButtonTextPropertires = (
+  buttonText,
+  buttonTextProperties
 ) => {
   buttonText.name = buttonTextProperties.defaultText;
   buttonText.fontName = buttonTextProperties.fontName;
