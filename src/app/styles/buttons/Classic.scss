@@ -1,0 +1,25 @@
+.classic {
+  background-color: #3742fa;
+  color: #fff;
+  padding: 20px 32px;
+  line-height: 100%;
+  max-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(136, 144, 194, 0.2),
+    0px 5px 15px rgba(37, 44, 97, 0.15);
+  cursor: pointer;
+
+  &__text {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    background-color: #0f1cf3;
+  }
+
+  transition: all 0.2s ease;
+}
