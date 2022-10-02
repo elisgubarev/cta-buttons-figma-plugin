@@ -90,3 +90,14 @@ export interface Shadows {
     hover?: readonly Effect[];
   };
 }
+
+export interface PluginConfig {
+  hover: boolean;
+  arrow: boolean;
+  outline: boolean;
+  dark: boolean;
+}
+
+export interface SetPluginConfig {
+  (updatedConfig: PluginConfig): void;
+}

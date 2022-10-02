@@ -1,18 +1,19 @@
 import React, { useContext, useState } from "react";
+import { PluginConfig, SetPluginConfig } from "../data/types";
 
 const PluginConfigContext = React.createContext(undefined);
 const PluginSetConfigContext = React.createContext(undefined);
 
 export const usePluginConfig = () => {
-  return useContext(PluginConfigContext);
+  return useContext(PluginConfigContext) as PluginConfig;
 };
 
 export const useSetPluginConfig = () => {
-  return useContext(PluginSetConfigContext);
+  return useContext(PluginSetConfigContext) as SetPluginConfig;
 };
 
 export const PluginConfigProvider = ({ children }) => {
-  const [pluginConfig, setPluginConfig] = useState({
+  const [pluginConfig, setPluginConfig] = useState<PluginConfig>({
     hover: true,
     arrow: false,
     outline: false,
