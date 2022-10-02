@@ -76,3 +76,17 @@ export type MapPropertiesToButtonIds = {
 export interface SetButtonHoverProperties {
   (buttonHover: FrameNode, buttonProperties: ButtonProperties): FrameNode;
 }
+
+export interface Fills {
+  [color: string]: {
+    default: readonly Paint[] | typeof figma.mixed;
+    hover?: readonly Paint[] | typeof figma.mixed;
+  };
+}
+
+export interface Shadows {
+  [shadow: string]: {
+    default: readonly Effect[];
+    hover?: readonly Effect[];
+  };
+}
