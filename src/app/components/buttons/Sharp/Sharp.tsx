@@ -1,11 +1,11 @@
 import React from "react";
 import { buttonTextPropertiesSharp } from "./properties";
-import "../../../styles/buttons/Sharp.scss";
+import sharp from "../../../styles/buttons/Sharp.module.scss";
 
 const Sharp = (): JSX.Element => {
   return (
-    <button className="button sharp">
-      <span className="sharp__text">
+    <button className={sharp.button}>
+      <span className={sharp.text}>
         {buttonTextPropertiesSharp.defaultText}
       </span>
     </button>

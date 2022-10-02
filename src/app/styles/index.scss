@@ -1,19 +1,7 @@
 @use "./data/colors.scss";
 
-.button {
-  border: none;
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-}
 body {
   background-color: colors.$plugin-background;
   -webkit-font-smoothing: antialiased;
-}
-.plugin {
-  display: flex;
-  justify-content: center;
-  padding: 24px 0;
-  gap: 24px;
-  flex-wrap: wrap;
+  margin: 0;
 }

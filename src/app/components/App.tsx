@@ -4,6 +4,7 @@ import Classic from "./buttons/Classic/Classic";
 import Sharp from "./buttons/Sharp/Sharp";
 import { Button } from "../data/enums";
 import "../styles/index.scss";
+import plugin from "../styles/pluginUI/plugin.module.scss";
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Control") {
@@ -13,7 +14,7 @@ document.addEventListener("keydown", (e) => {
 
 const App = () => {
   return (
-    <div className="plugin">
+    <div className={plugin.content}>
       <ButtonItem buttonId={Button.Classic}>
         <Classic />
       </ButtonItem>

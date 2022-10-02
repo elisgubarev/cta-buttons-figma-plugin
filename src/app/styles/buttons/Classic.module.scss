@@ -1,26 +1,26 @@
+@use "../data/global.scss";
 @use "../../styles/data/shadows.scss";
 @use "../../styles/data/colors.scss";
 
-.classic {
-  background-color: colors.$unicorn-blue;
-  color: colors.$white;
+.button {
+  @include global.button;
+  background-color: colors.$unicorn-blue;  
+  box-shadow: shadows.$small;
   padding: 16px 32px;
   border-radius: 4px;
-  box-shadow: shadows.$small;
-
-  &__text {
-    font-size: 14px;
-    font-weight: 700;
-    font-family: "Lato", sans-serif;
-    line-height: 100%;
-  }
-
   &:hover {
     transform: translateY(-2px);
     background-color: colors.$unicorn-blue-hover;
     box-shadow: shadows.$small-hover;
   }
-
   transition: background-color 0.2s ease, box-shadow 0.2s ease,
     transform 0.2s ease;
+}
+
+.text {
+  color: colors.$white;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  line-height: 100%;
 }

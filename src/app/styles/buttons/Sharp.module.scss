@@ -1,0 +1,23 @@
+@use "../data/global.scss";
+@use "../../styles/data/shadows.scss";
+@use "../../styles/data/colors.scss";
+
+.button {
+  @include global.button;
+  background-color: colors.$black;
+  padding: 20px 32px;
+  &:hover {
+    background-color: colors.$black-hover;
+  }
+  transition: background-color 0.2s ease;
+}
+
+.text {
+  color: colors.$white;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  line-height: 110%;
+  font-family: "Montserrat", sans-serif;
+}

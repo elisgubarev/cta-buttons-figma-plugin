@@ -1,0 +1,6 @@
+@mixin button {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
