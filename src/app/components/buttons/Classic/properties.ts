@@ -30,6 +30,8 @@ export const buttonPropertiesClassic: ButtonProperties = {
       },
     ],
   },
+  paddings: [16, 32, 16, 32],
+  itemSpacing: 10,
   effects: {
     default: [
       {
@@ -107,6 +109,10 @@ export const buttonPropertiesClassic: ButtonProperties = {
     ],
   },
   cornerRadius: 4,
+  paddingsOnHover: {
+    default: [2, 0, 2, 0],
+    hover: [0, 0, 4, 0],
+  },
 };
 
 export const buttonTextPropertiesClassic: ButtonTextProperties = {

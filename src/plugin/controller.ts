@@ -5,21 +5,23 @@ figma.showUI(__html__, {
   height: 504,
 });
 
-figma
-  .loadFontAsync({ family: "Lato", style: "Bold" })
+Promise.all([
+  figma.loadFontAsync({ family: "Lato", style: "Bold" }),
+  figma.loadFontAsync({ family: "Montserrat", style: "Bold" }),
+])
   .then(() => {
-    console.log("Font loaded");
+    console.log("Fonts loaded");
   })
   .catch(() => {
-    console.log("Error, couldnt load font");
+    console.log("Error, couldnt load fonts");
   });
 
 figma.ui.onmessage = (message) => {
   if (message === "dev-log") {
     console.log("selection:", figma.currentPage.selection);
   }
-  if (message === "click") {
-    const onCloseMessage = createButton();
+  if (message.event === "click") {
+    const onCloseMessage = createButton(message.buttonId);
     figma.closePlugin(onCloseMessage);
   }
 };

@@ -30,13 +30,15 @@ export const buttonPropertiesSharp: ButtonProperties = {
       },
     ],
   },
+  paddings: [20, 32, 20, 32],
+  itemSpacing: 9,
 };
 
 export const buttonTextPropertiesSharp: ButtonTextProperties = {
   fontName: { family: "Montserrat", style: "Bold" },
   defaultText: "Try it for free",
   fontSize: 10,
-  lineHeight: { value: 100, unit: "PERCENT" },
+  lineHeight: { value: 110, unit: "PERCENT" },
   fills: {
     default: [
       {
@@ -52,4 +54,9 @@ export const buttonTextPropertiesSharp: ButtonTextProperties = {
       },
     ],
   },
+  letterSpacing: {
+    unit: "PERCENT",
+    value: 16,
+  },
+  textCase: "UPPER",
 };

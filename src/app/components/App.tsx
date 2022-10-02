@@ -2,6 +2,7 @@ import React from "react";
 import ButtonItem from "./pluginUI/ButtonItem";
 import Classic from "./buttons/Classic/Classic";
 import Sharp from "./buttons/Sharp/Sharp";
+import { Button } from "../data/enums";
 import "../styles/index.scss";
 
 document.addEventListener("keydown", (e) => {
@@ -13,10 +14,10 @@ document.addEventListener("keydown", (e) => {
 const App = () => {
   return (
     <div className="plugin">
-      <ButtonItem>
+      <ButtonItem buttonId={Button.Classic}>
         <Classic />
       </ButtonItem>
-      <ButtonItem>
+      <ButtonItem buttonId={Button.Sharp}>
         <Sharp />
       </ButtonItem>
     </div>

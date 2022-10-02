@@ -1,6 +1,10 @@
+import { Button } from "./enums";
+
 export interface OnClick {
   (event?: React.MouseEvent<HTMLElement>): void;
 }
+
+type Paddings = [number, number, number, number];
 
 export interface ButtonProperties {
   name: string;
@@ -8,11 +12,17 @@ export interface ButtonProperties {
     default: readonly Paint[] | typeof figma.mixed;
     hover?: readonly Paint[] | typeof figma.mixed;
   };
+  paddings: Paddings;
+  itemSpacing?: number;
   effects?: {
     default: readonly Effect[];
     hover?: readonly Effect[];
   };
   cornerRadius?: number | typeof figma.mixed;
+  paddingsOnHover?: {
+    default: Paddings;
+    hover: Paddings;
+  };
 }
 
 export interface ButtonTextProperties {
@@ -24,12 +34,14 @@ export interface ButtonTextProperties {
     default: readonly Paint[] | typeof figma.mixed;
     hover?: readonly Paint[] | typeof figma.mixed;
   };
+  letterSpacing?: typeof figma.mixed | LetterSpacing;
+  textCase?: TextCase | typeof figma.mixed;
 }
 
-export type Button = ComponentNode | ComponentSetNode;
+export type ButtonNode = ComponentNode | ComponentSetNode;
 
 export interface InsertButtonToCanvas {
-  (button: Button): string;
+  (button: ButtonNode): string;
 }
 
 export type AutoLayoutNode =
@@ -41,7 +53,7 @@ export type AutoLayoutNode =
 export interface SetAutoLayout {
   (
     node: AutoLayoutNode,
-    padding?: [number, number, number, number],
+    padding?: Paddings,
     itemSpacing?: number
   ): AutoLayoutNode;
 }
@@ -52,4 +64,15 @@ export interface SetButtonProperties {
 
 export interface SetButtonTextPropertires {
   (buttonText: TextNode, buttonTextProperties: ButtonTextProperties): TextNode;
+}
+
+export type MapPropertiesToButtonIds = {
+  [key in Button]: {
+    button: ButtonProperties;
+    text: ButtonTextProperties;
+  };
+};
+
+export interface SetButtonHoverProperties {
+  (buttonHover: FrameNode, buttonProperties: ButtonProperties): FrameNode;
 }
