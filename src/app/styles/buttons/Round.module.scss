@@ -1,0 +1,26 @@
+@use "../data/global.scss";
+@use "../../styles/data/shadows.scss";
+@use "../../styles/data/colors.scss";
+
+.button {
+  @include global.button;
+  background-color: colors.$calm-blue;
+  box-shadow: shadows.$small;
+  padding: 23px 32px;
+  border-radius: 999px;
+  &:hover {
+    transform: translateY(-3px);
+    background-color: colors.$calm-blue-hover;
+    box-shadow: shadows.$small-hover;
+  }
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.text {
+  color: colors.$white;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}

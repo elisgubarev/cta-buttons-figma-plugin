@@ -8,6 +8,7 @@ figma.showUI(__html__, {
 Promise.all([
   figma.loadFontAsync({ family: "Lato", style: "Bold" }),
   figma.loadFontAsync({ family: "Montserrat", style: "Bold" }),
+  figma.loadFontAsync({ family: "Montserrat", style: "SemiBold" }),
 ])
   .then(() => {
     console.log("Fonts loaded");
