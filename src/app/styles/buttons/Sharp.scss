@@ -15,8 +15,8 @@
   }
 
   &:hover {
-    background-color: colors.$indie-red;
+    background-color: colors.$black-hover;
   }
 
-  transition: background-color 0.25s ease;
+  transition: background-color 0.2s ease;
 }

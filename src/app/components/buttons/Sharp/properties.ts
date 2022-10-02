@@ -20,12 +20,12 @@ export const buttonPropertiesSharp: ButtonProperties = {
       {
         type: "SOLID",
         visible: true,
-        opacity: 1,
+        opacity: 0.699999988079071,
         blendMode: "NORMAL",
         color: {
-          r: 0.9333333373069763,
-          g: 0.32156863808631897,
-          b: 0.32549020648002625,
+          r: 0,
+          g: 0,
+          b: 0,
         },
       },
     ],
