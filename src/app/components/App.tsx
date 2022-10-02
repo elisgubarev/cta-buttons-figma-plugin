@@ -6,6 +6,7 @@ import { Button } from "../data/enums";
 import "../styles/index.scss";
 import plugin from "../styles/pluginUI/plugin.module.scss";
 import Round from "./buttons/Round/Round";
+import CustomizationButton from "./pluginUI/CustomizationButton";
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Control") {
@@ -25,6 +26,7 @@ const App = () => {
       <ButtonItem buttonId={Button.Round}>
         <Round />
       </ButtonItem>
+      <CustomizationButton />
     </div>
   );
 };
