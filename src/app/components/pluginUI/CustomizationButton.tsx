@@ -14,8 +14,6 @@ const CustomizationButton = (): JSX.Element => {
     });
   };
 
-  console.log("pluginConfig:", pluginConfig);
-
   return (
     <button className={style.button} onClick={toggleHover}>
       <img src={customizeIcon} />

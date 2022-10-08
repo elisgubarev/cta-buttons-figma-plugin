@@ -1,12 +1,13 @@
 import { Button } from "../app/data/enums";
 import { mapPropertiesToButtonIds } from "../app/data/maps";
+import { PluginConfig } from "../app/data/types";
 import { insertButtonToCanvas } from "./functions/insertButtonToCanvas";
 import { setAutoLayout } from "./functions/setAutoLayout";
 import { setButtonHoverProperties } from "./functions/setButtonHoverProperties";
 import { setButtonProperties } from "./functions/setButtonProperties";
 import { setButtonTextPropertires } from "./functions/setButtonTextPropertires";
 
-export const createButton = (buttonId: Button) => {
+export const createButton = (buttonId: Button, pluginConfig: PluginConfig) => {
   const buttonProperties = mapPropertiesToButtonIds[buttonId].button;
   const buttonTextProperties = mapPropertiesToButtonIds[buttonId].text;
 

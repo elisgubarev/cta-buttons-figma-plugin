@@ -8,10 +8,14 @@ import plugin from "../styles/pluginUI/plugin.module.scss";
 import Round from "./buttons/Round/Round";
 import CustomizationButton from "./pluginUI/CustomizationButton";
 import { PluginConfigProvider } from "./PluginConfigContext";
+import { PluginMessage } from "../data/types";
 
 document.addEventListener("keydown", (e) => {
+  const pluginMessage: PluginMessage = {
+    event: "log",
+  };
   if (e.key === "Control") {
-    parent.postMessage({ pluginMessage: "dev-log" }, "*");
+    parent.postMessage({ pluginMessage }, "*");
   }
 });
 

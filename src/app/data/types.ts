@@ -101,3 +101,11 @@ export interface PluginConfig {
 export interface SetPluginConfig {
   (updatedConfig: PluginConfig): void;
 }
+
+export type Event = "click" | "log";
+
+export interface PluginMessage {
+  event: Event;
+  buttonId?: Button;
+  pluginConfig?: PluginConfig;
+}

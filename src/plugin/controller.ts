@@ -1,3 +1,4 @@
+import { PluginMessage } from "../app/data/types";
 import { createButton } from "./createButton";
 
 figma.showUI(__html__, {
@@ -17,12 +18,12 @@ Promise.all([
     console.log("Error, couldnt load fonts");
   });
 
-figma.ui.onmessage = (message) => {
-  if (message === "dev-log") {
+figma.ui.onmessage = (message: PluginMessage) => {
+  if (message.event === "log") {
     console.log("selection:", figma.currentPage.selection);
   }
   if (message.event === "click") {
-    const onCloseMessage = createButton(message.buttonId);
+    const onCloseMessage = createButton(message.buttonId, message.pluginConfig);
     figma.closePlugin(onCloseMessage);
   }
 };

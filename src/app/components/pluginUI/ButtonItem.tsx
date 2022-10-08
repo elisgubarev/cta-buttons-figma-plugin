@@ -1,7 +1,8 @@
 import React from "react";
 import { Button } from "../../data/enums";
-import { OnClick } from "../../data/types";
+import { OnClick, PluginMessage } from "../../data/types";
 import buttonItem from "../../styles/pluginUI/ButtonItem.module.scss";
+import { usePluginConfig } from "../PluginConfigContext";
 
 interface Props {
   children: JSX.Element;
@@ -10,9 +11,15 @@ interface Props {
 
 const ButtonItem = (props: Props): JSX.Element => {
   const { children, buttonId } = props;
+  const pluginConfig = usePluginConfig();
 
   const handleOnClick: OnClick = () => {
-    parent.postMessage({ pluginMessage: { event: "click", buttonId } }, "*");
+    const pluginMessage: PluginMessage = {
+      event: "click",
+      buttonId,
+      pluginConfig,
+    };
+    parent.postMessage({ pluginMessage }, "*");
   };
 
   return (
