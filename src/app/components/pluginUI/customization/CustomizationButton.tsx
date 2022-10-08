@@ -1,7 +1,7 @@
 import React from "react";
 import customizeIcon from "../../assets/customize.svg";
 import style from "../../styles/pluginUI/CustomizationButton.module.scss";
-import { usePluginConfig, useSetPluginConfig } from "../PluginConfigContext";
+import { usePluginConfig, useSetPluginConfig } from "../../PluginConfigContext";
 
 const CustomizationButton = (): JSX.Element => {
   const pluginConfig = usePluginConfig();

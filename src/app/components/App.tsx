@@ -6,7 +6,7 @@ import { Button } from "../data/enums";
 import "../styles/index.scss";
 import plugin from "../styles/pluginUI/plugin.module.scss";
 import Round from "./buttons/Round/Round";
-import CustomizationButton from "./pluginUI/CustomizationButton";
+import CustomizationButton from "./pluginUI/customization/CustomizationButton";
 import { PluginConfigProvider } from "./PluginConfigContext";
 import { PluginMessage } from "../data/types";
 
