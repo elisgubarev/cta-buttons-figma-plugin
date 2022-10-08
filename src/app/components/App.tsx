@@ -6,9 +6,9 @@ import { Button } from "../data/enums";
 import "../styles/index.scss";
 import plugin from "../styles/pluginUI/plugin.module.scss";
 import Round from "./buttons/Round/Round";
-import CustomizationButton from "./pluginUI/customization/CustomizationButton";
 import { PluginConfigProvider } from "./PluginConfigContext";
 import { PluginMessage } from "../data/types";
+import CustomizationMenu from "./pluginUI/customization/CustomizationMenu";
 
 document.addEventListener("keydown", (e) => {
   const pluginMessage: PluginMessage = {
@@ -32,7 +32,7 @@ const App = () => {
         <ButtonItem buttonId={Button.Round}>
           <Round />
         </ButtonItem>
-        <CustomizationButton />
+        <CustomizationMenu />
       </div>
     </PluginConfigProvider>
   );
