@@ -18,22 +18,28 @@
   width: 32px;
   height: 32px;
   border-radius: 100%;
-  border: 1px solid colors.$ui-stroke;
   box-shadow: shadows.$ui-small-black;
+
+  &Dark {
+    border: 1px solid colors.$ui-stroke;
+  }
 }
 
 .dropdown {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: stretch;
   padding: 8px 0;
   background-color: colors.$ui-black;
   box-shadow: shadows.$ui-hud;
   border-radius: 2px;
-  border: 1px solid colors.$ui-stroke;
 
-  &Opened {
-    display: flex;
+  &Hidden {
+    display: none;
+  }
+
+  &Dark {
+    border: 1px solid colors.$ui-stroke;
   }
 }
 
@@ -51,11 +57,10 @@
 }
 
 .icon {
-  display: none;
   position: absolute;
   left: 12px;
 
-  &Checked {
-    display: block;
+  &Hidden {
+    display: none;
   }
 }

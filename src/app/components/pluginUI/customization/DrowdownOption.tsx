@@ -28,7 +28,7 @@ const MenuOption = (props: Props): JSX.Element => {
     <button className={style.dropdownOption} onClick={handleOnClick}>
       <img
         className={classNames(style.icon, {
-          [style.iconChecked]: isChecked,
+          [style.iconHidden]: !isChecked,
         })}
         src={checkedIcon}
       />

@@ -9,7 +9,7 @@ interface Props {
 const Dropdown = (props: Props): JSX.Element => {
   const { isMenuOpened, children } = props;
   const menuClassName = classNames(style.dropdown, {
-    [style.dropdownOpened]: isMenuOpened,
+    [style.dropdownHidden]: !isMenuOpened,
   });
 
   return <div className={menuClassName}>{children}</div>;
