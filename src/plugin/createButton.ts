@@ -1,6 +1,6 @@
 import { Button } from "../app/data/enums";
 import { mapPropertiesToButtonIds } from "../app/data/maps";
-import { PluginConfig } from "../app/data/types";
+import { ButtonNode, PluginConfig } from "../app/data/types";
 import { insertButtonToCanvas } from "./functions/insertButtonToCanvas";
 import { setAutoLayout } from "./functions/setAutoLayout";
 import { setButtonHoverProperties } from "./functions/setButtonHoverProperties";
@@ -8,6 +8,7 @@ import { setButtonProperties } from "./functions/setButtonProperties";
 import { setButtonTextPropertires } from "./functions/setButtonTextPropertires";
 
 export const createButton = (buttonId: Button, pluginConfig: PluginConfig) => {
+  const { hover, arrow, outline, dark } = pluginConfig;
   const buttonProperties = mapPropertiesToButtonIds[buttonId].button;
   const buttonTextProperties = mapPropertiesToButtonIds[buttonId].text;
 
@@ -25,35 +26,54 @@ export const createButton = (buttonId: Button, pluginConfig: PluginConfig) => {
   );
 
   setAutoLayout(buttonComponent, buttonProperties.paddingsOnHover?.default);
-  const buttonComponentHover = buttonComponent.clone();
-  setAutoLayout(buttonComponentHover, buttonProperties.paddingsOnHover?.hover);
+  buttonComponent.name = buttonProperties.name;
 
-  const buttonHover = buttonComponentHover.children[0] as FrameNode;
-  const buttonTextHover = buttonHover.children[0] as TextNode;
+  let returnedButtonObject: ButtonNode = buttonComponent;
 
-  setButtonHoverProperties(buttonHover, buttonProperties);
-
-  buttonComponent.name = "Hover=false";
-  buttonComponentHover.name = "Hover=true";
-  const buttonComponentSet = figma.combineAsVariants(
-    [buttonComponent, buttonComponentHover],
-    figma.currentPage
-  );
-
-  buttonComponentSet.name = buttonProperties.name;
-  setAutoLayout(buttonComponentSet, [16, 16, 16, 16], 16);
-
-  const textProperty = buttonComponentSet.addComponentProperty(
+  const singleButtonTextProperty = returnedButtonObject.addComponentProperty(
     "Text",
     "TEXT",
     buttonTextProperties.defaultText
   );
   buttonText.componentPropertyReferences = {
-    characters: textProperty,
-  } as SceneNodeMixin["componentPropertyReferences"];
-  buttonTextHover.componentPropertyReferences = {
-    characters: textProperty,
+    characters: singleButtonTextProperty,
   } as SceneNodeMixin["componentPropertyReferences"];
 
-  return insertButtonToCanvas(buttonComponentSet);
+  if (hover) {
+    returnedButtonObject.deleteComponentProperty(singleButtonTextProperty);
+    const buttonComponentHover = buttonComponent.clone();
+    setAutoLayout(
+      buttonComponentHover,
+      buttonProperties.paddingsOnHover?.hover
+    );
+
+    const buttonHover = buttonComponentHover.children[0] as FrameNode;
+    const buttonTextHover = buttonHover.children[0] as TextNode;
+
+    setButtonHoverProperties(buttonHover, buttonProperties);
+
+    buttonComponent.name = "Hover=false";
+    buttonComponentHover.name = "Hover=true";
+    const buttonComponentSet = figma.combineAsVariants(
+      [buttonComponent, buttonComponentHover],
+      figma.currentPage
+    );
+
+    buttonComponentSet.name = buttonProperties.name;
+    setAutoLayout(buttonComponentSet, [16, 16, 16, 16], 16);
+    returnedButtonObject = buttonComponentSet;
+    const buttonSetTextProperty = returnedButtonObject.addComponentProperty(
+      "Text",
+      "TEXT",
+      buttonTextProperties.defaultText
+    );
+    buttonText.componentPropertyReferences = {
+      characters: buttonSetTextProperty,
+    } as SceneNodeMixin["componentPropertyReferences"];
+    buttonTextHover.componentPropertyReferences = {
+      characters: buttonSetTextProperty,
+    } as SceneNodeMixin["componentPropertyReferences"];
+  }
+
+  return insertButtonToCanvas(returnedButtonObject);
 };
