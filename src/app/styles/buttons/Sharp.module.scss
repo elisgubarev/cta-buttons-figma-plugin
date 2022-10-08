@@ -1,14 +1,17 @@
 @use "../data/global.scss";
 @use "../../styles/data/colors.scss";
 
-.button {
+.base {
   @include global.button;
   background-color: colors.$black;
   padding: 20px 32px;
+  transition: background-color 0.2s ease;
+}
+
+.hover {
   &:hover {
     background-color: colors.$black-hover;
   }
-  transition: background-color 0.2s ease;
 }
 
 .text {

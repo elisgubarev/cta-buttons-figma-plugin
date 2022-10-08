@@ -2,19 +2,22 @@
 @use "../../styles/data/shadows.scss";
 @use "../../styles/data/colors.scss";
 
-.button {
+.base {
   @include global.button;
   background-color: colors.$calm-blue;
   box-shadow: shadows.$small;
   padding: 23px 32px;
   border-radius: 999px;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hover {
   &:hover {
     transform: translateY(-3px);
     background-color: colors.$calm-blue-hover;
     box-shadow: shadows.$small-hover;
   }
-  transition: background-color 0.2s ease, transform 0.2s ease,
-    box-shadow 0.2s ease;
 }
 
 .text {
