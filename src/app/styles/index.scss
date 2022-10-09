@@ -1,7 +1,7 @@
-@use "./data/colors.scss";
-
 body {
-  background-color: colors.$plugin-background;
-  -webkit-font-smoothing: antialiased;
   margin: 0;
+}
+
+#react-page {
+  height: 100%;
 }

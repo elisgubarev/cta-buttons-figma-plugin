@@ -1,9 +1,9 @@
 import React from "react";
 import { buttonTextPropertiesClassic } from "./properties";
-import style from "../../../styles/buttons/Classic.module.scss";
-import classNames from "classnames";
 import { usePluginConfig } from "../../PluginConfigContext";
+import classNames from "classnames";
 import Arrow from "../../../assets/arrow_classic.svg";
+import style from "../../../styles/buttons/Classic.module.scss";
 
 const Classic = (): JSX.Element => {
   const pluginConfig = usePluginConfig();
@@ -13,7 +13,6 @@ const Classic = (): JSX.Element => {
     [style.hover]: hover,
     [style.outline]: outline,
   });
-  const arrowClassNames = classNames(style.arrow, {});
 
   return (
     <button className={buttonclassNames}>

@@ -1,8 +1,8 @@
 import React from "react";
-import "../styles/index.scss";
 import { PluginConfigProvider } from "./PluginConfigContext";
 import { PluginMessage } from "../data/types";
 import Content from "../layouts/Content";
+import "../styles/index.scss";
 
 document.addEventListener("keydown", (e) => {
   const pluginMessage: PluginMessage = {

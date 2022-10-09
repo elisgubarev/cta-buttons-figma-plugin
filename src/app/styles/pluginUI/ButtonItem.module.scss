@@ -1,5 +1,6 @@
 @use "../../styles/data/shadows.scss";
 @use "../../styles/data/colors.scss";
+@use "../../styles/data/constants.scss" as const;
 
 .container {
   display: flex;
@@ -12,4 +13,12 @@
   border-radius: 10px;
   box-shadow: shadows.$button-item;
   cursor: pointer;
+
+  &Dark {
+    background-color: colors.$ui-item-black;
+    box-shadow: shadows.$button-item-dark;
+  }
+
+  transition: background-color const.$theme-transition,
+    box-shadow const.$theme-transition;
 }

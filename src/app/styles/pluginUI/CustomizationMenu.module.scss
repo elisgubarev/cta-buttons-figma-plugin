@@ -1,6 +1,7 @@
 @use "../data/global.scss";
 @use "../data/colors.scss";
 @use "../data/shadows.scss";
+@use "../data/constants.scss" as const;
 
 .menu {
   position: fixed;
@@ -19,10 +20,12 @@
   height: 32px;
   border-radius: 100%;
   box-shadow: shadows.$ui-small-black;
-
+  
   &Dark {
     border: 1px solid colors.$ui-stroke;
   }
+  
+  transition: border const.$theme-transition;
 }
 
 .dropdown {
@@ -41,6 +44,8 @@
   &Dark {
     border: 1px solid colors.$ui-stroke;
   }
+
+  transition: border const.$theme-transition;
 }
 
 .dropdownOption {

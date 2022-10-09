@@ -1,0 +1,22 @@
+@use "../data/colors.scss";
+@use "../data/constants.scss" as const;
+
+.container {
+  height: 100%;
+  background-color: colors.$plugin-background;
+  -webkit-font-smoothing: antialiased;
+
+  &Dark {
+    background-color: colors.$plugin-background-dark;
+  }
+
+  transition: background-color const.$theme-transition;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  gap: 24px;
+  flex-wrap: wrap;
+}

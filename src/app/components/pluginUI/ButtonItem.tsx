@@ -1,8 +1,9 @@
 import React from "react";
 import { Button } from "../../data/enums";
 import { OnClick, PluginMessage } from "../../data/types";
-import buttonItem from "../../styles/pluginUI/ButtonItem.module.scss";
 import { usePluginConfig } from "../PluginConfigContext";
+import classNames from "classnames";
+import style from "../../styles/pluginUI/ButtonItem.module.scss";
 
 interface Props {
   children: JSX.Element;
@@ -12,6 +13,7 @@ interface Props {
 const ButtonItem = (props: Props): JSX.Element => {
   const { children, buttonId } = props;
   const pluginConfig = usePluginConfig();
+  const { dark } = pluginConfig;
 
   const handleOnClick: OnClick = () => {
     const pluginMessage: PluginMessage = {
@@ -23,7 +25,12 @@ const ButtonItem = (props: Props): JSX.Element => {
   };
 
   return (
-    <div className={buttonItem.container} onClick={handleOnClick}>
+    <div
+      className={classNames(style.container, {
+        [style.containerDark]: dark,
+      })}
+      onClick={handleOnClick}
+    >
       {children}
     </div>
   );

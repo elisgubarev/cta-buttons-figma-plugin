@@ -1,16 +1,21 @@
+import classNames from "classnames";
 import React, { useState } from "react";
 import Classic from "../components/buttons/Classic/Classic";
 import Round from "../components/buttons/Round/Round";
 import Sharp from "../components/buttons/Sharp/Sharp";
-import { useSetPluginConfig } from "../components/PluginConfigContext";
+import {
+  usePluginConfig,
+  useSetPluginConfig,
+} from "../components/PluginConfigContext";
 import ButtonItem from "../components/pluginUI/ButtonItem";
 import CustomizationMenu from "../components/pluginUI/customization/CustomizationMenu";
 import { Button } from "../data/enums";
 import { PluginUIEvent } from "../data/types";
-import style from "../styles/pluginUI/plugin.module.scss";
+import style from "../styles/pluginUI/Content.module.scss";
 
 const Content = (): JSX.Element => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const { dark } = usePluginConfig();
   const setPluginConfig = useSetPluginConfig();
 
   onmessage = (event: PluginUIEvent) => {
@@ -38,7 +43,15 @@ const Content = (): JSX.Element => {
     );
   };
 
-  return <div className={style.content}>{renderContent()}</div>;
+  return (
+    <div
+      className={classNames(style.container, {
+        [style.containerDark]: dark,
+      })}
+    >
+      <div className={style.content}>{renderContent()}</div>
+    </div>
+  );
 };
 
 export default Content;
