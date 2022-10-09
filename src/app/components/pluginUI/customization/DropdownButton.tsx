@@ -1,5 +1,5 @@
 import React from "react";
-import customizeIcon from "../../../assets/customize.svg";
+import Icon from "../../../assets/customize.svg";
 import style from "../../../styles/pluginUI/CustomizationMenu.module.scss";
 
 interface Props {
@@ -16,7 +16,7 @@ const DropdownButton = (props: Props): JSX.Element => {
 
   return (
     <button className={style.button} onClick={toggleIsMenuOpened}>
-      <img src={customizeIcon} />
+      <Icon />
     </button>
   );
 };

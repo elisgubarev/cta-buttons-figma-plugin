@@ -9,6 +9,7 @@
   box-shadow: shadows.$small;
   padding: 16px 32px;
   border-radius: 4px;
+  column-gap: 10px;
   transition: background-color const.$transition, box-shadow const.$transition,
     transform const.$transition;
 }
@@ -46,4 +47,9 @@
   line-height: 100%;
 
   transition: color const.$transition;
+}
+
+.arrow {
+  position: relative;
+  top: 0.5px;
 }

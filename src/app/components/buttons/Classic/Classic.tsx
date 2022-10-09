@@ -3,6 +3,7 @@ import { buttonTextPropertiesClassic } from "./properties";
 import style from "../../../styles/buttons/Classic.module.scss";
 import classNames from "classnames";
 import { usePluginConfig } from "../../PluginConfigContext";
+import Arrow from "../../../assets/arrow_classic.svg";
 
 const Classic = (): JSX.Element => {
   const pluginConfig = usePluginConfig();
@@ -15,6 +16,7 @@ const Classic = (): JSX.Element => {
       <span className={style.text}>
         {buttonTextPropertiesClassic.defaultText}
       </span>
+      <Arrow className={style.arrow} />
     </button>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import checkedIcon from "../../../assets/checked.svg";
+import Icon from "../../../assets/checked.svg";
 import style from "../../../styles/pluginUI/CustomizationMenu.module.scss";
 import { usePluginConfig, useSetPluginConfig } from "../../PluginConfigContext";
 import { PluginConfig } from "../../../data/types";
@@ -26,11 +26,10 @@ const MenuOption = (props: Props): JSX.Element => {
 
   return (
     <button className={style.dropdownOption} onClick={handleOnClick}>
-      <img
+      <Icon
         className={classNames(style.icon, {
           [style.iconHidden]: !isChecked,
         })}
-        src={checkedIcon}
       />
       <span>{children}</span>
     </button>
