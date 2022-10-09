@@ -1,6 +1,7 @@
 @use "../data/global.scss";
-@use "../../styles/data/shadows.scss";
-@use "../../styles/data/colors.scss";
+@use "../data/shadows.scss";
+@use "../data/colors.scss";
+@use "../data/constants.scss" as const;
 
 .base {
   @include global.button;
@@ -8,8 +9,8 @@
   box-shadow: shadows.$small;
   padding: 16px 32px;
   border-radius: 4px;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease,
-    transform 0.2s ease;
+  transition: background-color const.$transition, box-shadow const.$transition,
+    transform const.$transition;
 }
 
 .hover {
@@ -17,6 +18,23 @@
     transform: translateY(-2px);
     background-color: colors.$unicorn-blue-hover;
     box-shadow: shadows.$small-hover;
+  }
+  &.outline:hover {
+    background-color: colors.$white;
+    box-shadow: shadows.$small-hover, 0 0 0 2px colors.$unicorn-blue-hover inset;
+
+    .text {
+      color: colors.$unicorn-blue-hover;
+    }
+  }
+}
+
+.outline {
+  background-color: colors.$white;
+  box-shadow: shadows.$small, 0 0 0 2px colors.$unicorn-blue inset;
+
+  .text {
+    color: colors.$unicorn-blue;
   }
 }
 
@@ -26,4 +44,6 @@
   font-weight: 700;
   font-family: "Lato", sans-serif;
   line-height: 100%;
+
+  transition: color const.$transition;
 }

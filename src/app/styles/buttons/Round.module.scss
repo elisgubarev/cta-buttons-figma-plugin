@@ -1,6 +1,7 @@
 @use "../data/global.scss";
-@use "../../styles/data/shadows.scss";
-@use "../../styles/data/colors.scss";
+@use "../data/shadows.scss";
+@use "../data/colors.scss";
+@use "../data/constants.scss" as const;
 
 .base {
   @include global.button;
@@ -8,8 +9,8 @@
   box-shadow: shadows.$small;
   padding: 23px 32px;
   border-radius: 999px;
-  transition: background-color 0.2s ease, transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: background-color const.$transition ease,
+    transform const.$transition ease, box-shadow const.$transition ease;
 }
 
 .hover {
