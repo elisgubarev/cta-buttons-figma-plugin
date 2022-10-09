@@ -1,6 +1,10 @@
 $white: #fff;
+$white-hover: rgba(255, 255, 255, 0.8);
+$white-hover2: rgba(255, 255, 255, 0.7);
+
 $black: #000;
-$black-hover: rgba(0, 0, 0, 0.7);
+$black-hover: rgba(0, 0, 0, 0.8);
+$black-hover2: rgba(0, 0, 0, 0.7);
 
 $plugin-background: #f6f6f6;
 $plugin-background-dark: #1e1e1e;
@@ -12,6 +16,6 @@ $calm-blue: #0984e3;
 $calm-blue-hover: #0074cd;
 
 $ui-black: #222222;
-$ui-item-black: #2C2C2C;
+$ui-button-item-dark: #2c2c2c;
 $ui-stroke: #454444;
 $figma-blue: #18a0fb;

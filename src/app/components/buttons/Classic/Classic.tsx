@@ -6,12 +6,12 @@ import Arrow from "../../../assets/arrow_classic.svg";
 import style from "../../../styles/buttons/Classic.module.scss";
 
 const Classic = (): JSX.Element => {
-  const pluginConfig = usePluginConfig();
-  const { hover, arrow, outline, dark } = pluginConfig;
+  const { hover, arrow, outline, dark } = usePluginConfig();
 
   const buttonclassNames = classNames(style.base, {
-    [style.hover]: hover,
+    [style.hasHover]: hover,
     [style.outline]: outline,
+    [style.darkTheme]: dark,
   });
 
   return (
