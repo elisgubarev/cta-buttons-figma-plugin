@@ -2,7 +2,7 @@ import React from "react";
 import { buttonTextPropertiesClassic } from "./properties";
 import { usePluginConfig } from "../../PluginConfigContext";
 import classNames from "classnames";
-import Arrow from "../../../assets/arrow_classic.svg";
+import Arrow from "../../../assets/arrows/arrow_classic.svg";
 import style from "../../../styles/buttons/Classic.module.scss";
 
 const Classic = (): JSX.Element => {

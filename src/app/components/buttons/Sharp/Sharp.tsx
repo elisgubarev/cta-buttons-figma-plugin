@@ -2,7 +2,7 @@ import React from "react";
 import { buttonTextPropertiesSharp } from "./properties";
 import { usePluginConfig } from "../../PluginConfigContext";
 import classNames from "classnames";
-import Arrow from "../../../assets/arrow_sharp.svg";
+import Arrow from "../../../assets/arrows/arrow_sharp.svg";
 import style from "../../../styles/buttons/Sharp.module.scss";
 
 const Sharp = (): JSX.Element => {

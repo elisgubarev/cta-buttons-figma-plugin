@@ -2,7 +2,7 @@ import React from "react";
 import { usePluginConfig } from "../../PluginConfigContext";
 import { buttonTextPropertiesRound } from "./properties";
 import classNames from "classnames";
-import Arrow from "../../../assets/arrow_classic.svg";
+import Arrow from "../../../assets/arrows/arrow_round.svg";
 import style from "../../../styles/buttons/Round.module.scss";
 
 const Round = (): JSX.Element => {
@@ -16,7 +16,7 @@ const Round = (): JSX.Element => {
       <span className={style.text}>
         {buttonTextPropertiesRound.defaultText}
       </span>
-      {arrow && <Arrow />}
+      {arrow && <Arrow className={style.arrow} />}
     </button>
   );
 };
