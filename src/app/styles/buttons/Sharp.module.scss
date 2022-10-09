@@ -7,15 +7,69 @@
   background-color: colors.$black;
   padding: 20px 32px;
   column-gap: 9px;
-  transition: background-color const.$transition ease;
+  transition: background-color const.$transition ease,
+    box-shadow const.$transition;
 }
 
 .hasHover {
   &:hover {
     background-color: colors.$black-hover2;
-
     .arrow {
       transform: translateX(2px);
+    }
+  }
+}
+
+.outline {
+  background-color: colors.$white;
+  box-shadow: 0 0 0 2px colors.$black inset;
+  .text {
+    color: colors.$black;
+  }
+  .arrow path {
+    fill: colors.$black;
+  }
+  &.hasHover:hover {
+    background-color: colors.$white;
+    box-shadow: 0 0 0 2px colors.$black-hover4 inset;
+    .text {
+      color: colors.$black-hover4;
+    }
+    .arrow path {
+      fill: colors.$black-hover4;
+    }
+  }
+}
+
+.darkTheme {
+  background-color: colors.$white;
+  .text {
+    color: colors.$ui-button-item-dark;
+  }
+  .arrow path {
+    fill: colors.$ui-button-item-dark;
+  }
+  &.hasHover:hover {
+    background-color: colors.$white-hover2;
+  }
+  &.outline {
+    background-color: colors.$ui-button-item-dark;
+    box-shadow: 0 0 0 2px colors.$white inset;
+    .text {
+      color: colors.$white;
+    }
+    .arrow path {
+      fill: colors.$white;
+    }
+    &.hasHover:hover {
+      background-color: colors.$ui-button-item-dark;
+      box-shadow: 0 0 0 2px colors.$white-hover4 inset;
+      .text {
+        color: colors.$white-hover4;
+      }
+      .arrow path {
+        fill: colors.$white-hover4;
+      }
     }
   }
 }
@@ -28,11 +82,11 @@
   letter-spacing: 0.16em;
   line-height: 110%;
   font-family: "Montserrat", sans-serif;
+  transition: color const.$transition;
 }
 
 .arrow {
   transition: transform const.$transition;
-
   path {
     transition: fill const.$transition;
   }

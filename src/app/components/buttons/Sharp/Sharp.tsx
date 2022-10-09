@@ -9,6 +9,8 @@ const Sharp = (): JSX.Element => {
   const { hover, outline, arrow, dark } = usePluginConfig();
   const className = classNames(style.base, {
     [style.hasHover]: hover,
+    [style.outline]: outline,
+    [style.darkTheme]: dark,
   });
 
   return (
