@@ -102,10 +102,21 @@ export interface SetPluginConfig {
   (updatedConfig: PluginConfig): void;
 }
 
-export type Event = "click" | "log";
+export type Event = "click" | "log" | "saveConfig";
 
 export interface PluginMessage {
   event: Event;
   buttonId?: Button;
   pluginConfig?: PluginConfig;
 }
+
+export type PluginUIEventType = "dataLoaded";
+
+export interface PluginUIEventData {
+  pluginMessage: {
+    type: PluginUIEventType;
+    pluginConfig?: PluginConfig;
+  };
+}
+
+export type PluginUIEvent = MessageEvent<PluginUIEventData>;

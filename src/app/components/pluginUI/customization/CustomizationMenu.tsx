@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "../../../styles/pluginUI/CustomizationMenu.module.scss";
 import DropdownButton from "./DropdownButton";
 import Dropdown from "./Dropdown";
 import DrowdownOption from "./DrowdownOption";
+import { useIsFirstRender } from "../../../data/hooks";
+import { PluginMessage } from "../../../data/types";
+import { usePluginConfig } from "../../PluginConfigContext";
 
 const CustomizationMenu = (): JSX.Element => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const isFirstRender = useIsFirstRender();
+  const pluginConfig = usePluginConfig();
+
+  useEffect(() => {
+    if (!isFirstRender) {
+      const pluginMessage: PluginMessage = {
+        event: "saveConfig",
+        pluginConfig,
+      };
+      parent.postMessage({ pluginMessage }, "*");
+    }
+  }, [pluginConfig]);
 
   return (
     <div className={style.menu}>
