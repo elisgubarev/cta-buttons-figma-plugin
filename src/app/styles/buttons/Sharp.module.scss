@@ -6,12 +6,17 @@
   @include global.button;
   background-color: colors.$black;
   padding: 20px 32px;
+  column-gap: 9px;
   transition: background-color const.$transition ease;
 }
 
-.hover {
+.hasHover {
   &:hover {
     background-color: colors.$black-hover2;
+
+    .arrow {
+      transform: translateX(2px);
+    }
   }
 }
 
@@ -23,4 +28,12 @@
   letter-spacing: 0.16em;
   line-height: 110%;
   font-family: "Montserrat", sans-serif;
+}
+
+.arrow {
+  transition: transform const.$transition;
+
+  path {
+    transition: fill const.$transition;
+  }
 }

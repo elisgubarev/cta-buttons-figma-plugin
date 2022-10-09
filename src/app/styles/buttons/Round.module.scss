@@ -9,11 +9,12 @@
   box-shadow: shadows.$small;
   padding: 23px 32px;
   border-radius: 999px;
+  column-gap: 12px;
   transition: background-color const.$transition ease,
     transform const.$transition ease, box-shadow const.$transition ease;
 }
 
-.hover {
+.hasHover {
   &:hover {
     transform: translateY(-3px);
     background-color: colors.$calm-blue-hover;

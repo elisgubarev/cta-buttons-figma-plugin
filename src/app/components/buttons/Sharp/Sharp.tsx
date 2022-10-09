@@ -1,13 +1,14 @@
 import React from "react";
 import { buttonTextPropertiesSharp } from "./properties";
-import style from "../../../styles/buttons/Sharp.module.scss";
-import classNames from "classnames";
 import { usePluginConfig } from "../../PluginConfigContext";
+import classNames from "classnames";
+import Arrow from "../../../assets/arrow_sharp.svg";
+import style from "../../../styles/buttons/Sharp.module.scss";
 
 const Sharp = (): JSX.Element => {
-  const pluginConfig = usePluginConfig();
+  const { hover, outline, arrow, dark } = usePluginConfig();
   const className = classNames(style.base, {
-    [style.hover]: pluginConfig.hover,
+    [style.hasHover]: hover,
   });
 
   return (
@@ -15,6 +16,7 @@ const Sharp = (): JSX.Element => {
       <span className={style.text}>
         {buttonTextPropertiesSharp.defaultText}
       </span>
+      {arrow && <Arrow className={style.arrow} />}
     </button>
   );
 };
