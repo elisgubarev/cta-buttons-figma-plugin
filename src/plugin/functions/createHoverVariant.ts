@@ -1,4 +1,8 @@
-import { ButtonProperties, ButtonTextProperties } from "../../app/data/types";
+import {
+  ArrowPropeties,
+  ButtonProperties,
+  ButtonTextProperties,
+} from "../../app/data/types";
 import { setAutoLayout } from "./setAutoLayout";
 import { setButtonHoverProperties } from "./setButtonHoverProperties";
 
@@ -6,12 +10,11 @@ export const createHoverVariant = (
   buttonComponent: ComponentNode,
   buttonProperties: ButtonProperties,
   buttonTextProperties: ButtonTextProperties,
-  currentComponentPropertyReferences: {
-    text: string;
-  }
+  currentTextComponentPropertyReference: string,
+  arrowProperties: ArrowPropeties
 ): ComponentSetNode => {
   buttonComponent.deleteComponentProperty(
-    currentComponentPropertyReferences.text
+    currentTextComponentPropertyReference
   );
   setAutoLayout(buttonComponent, buttonProperties.paddingsOnHover?.default);
   const buttonComponentHover = buttonComponent.clone();
@@ -45,6 +48,14 @@ export const createHoverVariant = (
   buttonTextHover.componentPropertyReferences = {
     characters: buttonSetTextProperty,
   } as SceneNodeMixin["componentPropertyReferences"];
+
+  const arrowNodeHover = buttonHover.children[1] as FrameNode;
+
+  if (arrowNodeHover && arrowProperties?.vectorOffset) {
+    const { vectorOffset } = arrowProperties;
+    arrowNodeHover.children[0].x = vectorOffset.hover.x;
+    arrowNodeHover.children[0].y = vectorOffset.hover.y;
+  }
 
   return buttonComponentSet;
 };

@@ -6,6 +6,16 @@ export interface OnClick {
 
 type Paddings = [number, number, number, number];
 
+export interface FrameSize {
+  width: number;
+  height: number;
+}
+
+export interface Coordinates {
+  x: number;
+  y: number;
+}
+
 export interface ButtonProperties {
   name: string;
   fills: {
@@ -36,6 +46,15 @@ export interface ButtonTextProperties {
   };
   letterSpacing?: typeof figma.mixed | LetterSpacing;
   textCase?: TextCase | typeof figma.mixed;
+}
+
+export interface ArrowPropeties {
+  vectorPaths: VectorPaths;
+  frameSize: FrameSize;
+  vectorOffset?: {
+    initial: Coordinates;
+    hover: Coordinates;
+  };
 }
 
 export type ButtonNode = ComponentNode | ComponentSetNode;
@@ -70,6 +89,7 @@ export type MapPropertiesToButtonIds = {
   [key in Button]: {
     button: ButtonProperties;
     text: ButtonTextProperties;
+    arrow?: ArrowPropeties;
   };
 };
 
