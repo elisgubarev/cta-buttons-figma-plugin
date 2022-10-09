@@ -72,7 +72,8 @@
     }
     &.hasHover:hover {
       background-color: colors.$ui-button-item-dark;
-      box-shadow: shadows.$small-hover-dark, 0 0 0 2px colors.$white-hover3 inset;
+      box-shadow: shadows.$small-hover-dark,
+        0 0 0 2px colors.$white-hover3 inset;
       .text {
         color: colors.$white-hover3;
       }

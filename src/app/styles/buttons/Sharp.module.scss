@@ -7,8 +7,8 @@
   background-color: colors.$black;
   padding: 20px 32px;
   column-gap: 9px;
-  transition: background-color const.$transition ease,
-    box-shadow const.$transition;
+  transition: background-color const.$transition-long ease,
+    box-shadow const.$transition-long;
 }
 
 .hasHover {
@@ -30,13 +30,12 @@
     fill: colors.$black;
   }
   &.hasHover:hover {
-    background-color: colors.$white;
-    box-shadow: 0 0 0 2px colors.$black-hover4 inset;
+    background-color: colors.$black;
     .text {
-      color: colors.$black-hover4;
+      color: colors.$white;
     }
     .arrow path {
-      fill: colors.$black-hover4;
+      fill: colors.$white;
     }
   }
 }
@@ -62,13 +61,12 @@
       fill: colors.$white;
     }
     &.hasHover:hover {
-      background-color: colors.$ui-button-item-dark;
-      box-shadow: 0 0 0 2px colors.$white-hover4 inset;
+      background-color: colors.$white;
       .text {
-        color: colors.$white-hover4;
+        color: colors.$ui-button-item-dark;
       }
       .arrow path {
-        fill: colors.$white-hover4;
+        fill: colors.$ui-button-item-dark;
       }
     }
   }
@@ -82,12 +80,12 @@
   letter-spacing: 0.16em;
   line-height: 110%;
   font-family: "Montserrat", sans-serif;
-  transition: color const.$transition;
+  transition: color const.$transition-long;
 }
 
 .arrow {
-  transition: transform const.$transition;
+  transition: transform const.$transition-long;
   path {
-    transition: fill const.$transition;
+    transition: fill const.$transition-long;
   }
 }
