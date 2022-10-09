@@ -19,7 +19,6 @@
     transform: translateY(-2px);
     background-color: colors.$unicorn-blue-hover;
     box-shadow: shadows.$small-hover;
-
     .arrow {
       transform: translateX(2px);
     }
@@ -29,23 +28,18 @@
 .outline {
   background-color: colors.$white;
   box-shadow: shadows.$small, 0 0 0 2px colors.$unicorn-blue inset;
-
   .text {
     color: colors.$unicorn-blue;
   }
-
   .arrow path {
     fill: colors.$unicorn-blue;
   }
-
   &.hasHover:hover {
     background-color: colors.$white;
     box-shadow: shadows.$small-hover, 0 0 0 2px colors.$unicorn-blue-hover inset;
-
     .text {
       color: colors.$unicorn-blue-hover;
     }
-
     .arrow path {
       fill: colors.$unicorn-blue-hover;
     }
@@ -55,22 +49,18 @@
 .darkTheme {
   background-color: colors.$white;
   box-shadow: shadows.$small-dark;
-
   .text {
     color: colors.$ui-button-item-dark;
   }
-
   .arrow {
     path {
       fill: colors.$ui-button-item-dark;
     }
   }
-
   &.hasHover:hover {
-    background-color: colors.$white-hover;
+    background-color: colors.$white-hover2;
     box-shadow: shadows.$small-hover-dark;
   }
-
   &.outline {
     background-color: colors.$ui-button-item-dark;
     box-shadow: shadows.$small-dark, 0 0 0 2px colors.$white inset;
@@ -82,12 +72,12 @@
     }
     &.hasHover:hover {
       background-color: colors.$ui-button-item-dark;
-      box-shadow: shadows.$small-dark, 0 0 0 2px colors.$white-hover2 inset;
+      box-shadow: shadows.$small-hover-dark, 0 0 0 2px colors.$white-hover3 inset;
       .text {
-        color: colors.$white-hover2;
+        color: colors.$white-hover3;
       }
       .arrow path {
-        fill: colors.$white-hover2;
+        fill: colors.$white-hover3;
       }
     }
   }
@@ -99,7 +89,6 @@
   font-weight: 700;
   font-family: "Lato", sans-serif;
   line-height: 100%;
-
   transition: color const.$transition;
 }
 
@@ -107,7 +96,6 @@
   position: relative;
   top: 0.5px;
   transition: transform const.$transition;
-
   path {
     transition: fill const.$transition;
   }

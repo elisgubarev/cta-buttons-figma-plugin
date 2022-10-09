@@ -25,7 +25,7 @@
     border: 1px solid colors.$ui-stroke;
   }
   
-  transition: border const.$theme-transition;
+  transition: border const.$ui-transition;
 }
 
 .dropdown {
@@ -45,7 +45,7 @@
     border: 1px solid colors.$ui-stroke;
   }
 
-  transition: border const.$theme-transition;
+  transition: border const.$ui-transition;
 }
 
 .dropdownOption {

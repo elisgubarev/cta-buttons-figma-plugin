@@ -19,6 +19,6 @@
     box-shadow: shadows.$button-item-dark;
   }
 
-  transition: background-color const.$theme-transition,
-    box-shadow const.$theme-transition;
+  transition: background-color const.$ui-transition,
+    box-shadow const.$ui-transition;
 }
