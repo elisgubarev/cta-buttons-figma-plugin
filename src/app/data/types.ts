@@ -19,8 +19,26 @@ export interface Coordinates {
 export interface ButtonProperties {
   name: string;
   fills: {
-    default: readonly Paint[] | typeof figma.mixed;
-    hover?: readonly Paint[] | typeof figma.mixed;
+    light: {
+      primary: {
+        default: readonly Paint[] | typeof figma.mixed;
+        hover?: readonly Paint[] | typeof figma.mixed;
+      };
+      outline?: {
+        default: readonly Paint[] | typeof figma.mixed;
+        hover?: readonly Paint[] | typeof figma.mixed;
+      };
+    };
+    dark?: {
+      primary: {
+        default: readonly Paint[] | typeof figma.mixed;
+        hover?: readonly Paint[] | typeof figma.mixed;
+      };
+      outline?: {
+        default: readonly Paint[] | typeof figma.mixed;
+        hover?: readonly Paint[] | typeof figma.mixed;
+      };
+    };
   };
   paddings: Paddings;
   itemSpacing?: number;
@@ -41,14 +59,54 @@ export interface ButtonTextProperties {
   fontSize: number;
   lineHeight: typeof figma.mixed | LineHeight;
   fills: {
-    default: readonly Paint[] | typeof figma.mixed;
-    hover?: readonly Paint[] | typeof figma.mixed;
+    light: {
+      primary: {
+        default: readonly Paint[] | typeof figma.mixed;
+        hover?: readonly Paint[] | typeof figma.mixed;
+      };
+      outline?: {
+        default: readonly Paint[] | typeof figma.mixed;
+        hover?: readonly Paint[] | typeof figma.mixed;
+      };
+    };
+    dark?: {
+      primary: {
+        default: readonly Paint[] | typeof figma.mixed;
+        hover?: readonly Paint[] | typeof figma.mixed;
+      };
+      outline?: {
+        default: readonly Paint[] | typeof figma.mixed;
+        hover?: readonly Paint[] | typeof figma.mixed;
+      };
+    };
   };
   letterSpacing?: typeof figma.mixed | LetterSpacing;
   textCase?: TextCase | typeof figma.mixed;
 }
 
 export interface ArrowPropeties {
+  fills: {
+    light: {
+      primary: {
+        default: readonly Paint[] | typeof figma.mixed;
+        hover?: readonly Paint[] | typeof figma.mixed;
+      };
+      outline?: {
+        default: readonly Paint[] | typeof figma.mixed;
+        hover?: readonly Paint[] | typeof figma.mixed;
+      };
+    };
+    dark?: {
+      primary: {
+        default: readonly Paint[] | typeof figma.mixed;
+        hover?: readonly Paint[] | typeof figma.mixed;
+      };
+      outline?: {
+        default: readonly Paint[] | typeof figma.mixed;
+        hover?: readonly Paint[] | typeof figma.mixed;
+      };
+    };
+  };
   vectorPaths: VectorPaths;
   frameSize: FrameSize;
   vectorOffset?: {

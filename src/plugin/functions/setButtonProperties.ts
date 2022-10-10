@@ -5,7 +5,7 @@ export const setButtonProperties: SetButtonProperties = (
   buttonProperties
 ) => {
   button.name = "Button";
-  button.fills = buttonProperties.fills.default;
+  button.fills = buttonProperties.fills.light.primary.default;
 
   if (buttonProperties.cornerRadius) {
     button.cornerRadius = buttonProperties.cornerRadius;

@@ -26,5 +26,9 @@ export const createArrow = (arrowPropeties: ArrowPropeties): FrameNode => {
   arrowVector.constrainProportions = true;
   arrowNode.clipsContent = false;
 
+  if (arrowPropeties.fills) {
+    arrowVector.fills = arrowPropeties.fills.light.primary.default;
+  }
+
   return arrowNode;
 };

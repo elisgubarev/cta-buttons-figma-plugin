@@ -8,8 +8,16 @@ import {
 export const buttonPropertiesSharp: ButtonProperties = {
   name: "Sharp Button",
   fills: {
-    default: fills.black.default,
-    hover: fills.black.hover,
+    light: {
+      primary: {
+        default: fills.black.default,
+        hover: fills.black.hover,
+      },
+      outline: {
+        default: fills.white.default,
+        hover: fills.black.hover,
+      },
+    },
   },
   paddings: [20, 32, 20, 32],
   itemSpacing: 9,
@@ -21,7 +29,15 @@ export const buttonTextPropertiesSharp: ButtonTextProperties = {
   fontSize: 10,
   lineHeight: { value: 110, unit: "PERCENT" },
   fills: {
-    default: fills.white.default,
+    light: {
+      primary: {
+        default: fills.white.default,
+      },
+      outline: {
+        default: fills.black.default,
+        hover: fills.white.default,
+      },
+    },
   },
   letterSpacing: {
     unit: "PERCENT",
@@ -37,6 +53,17 @@ export const arrowPropertiesSharp: ArrowPropeties = {
       data: "M 0.9928378663781761 6.999999999999999 L 5 3.499999707564398 L 0.9928378663781761 0 L 0 0.8671803451191286 L 3.014324267243648 3.499999707564398 L 0 6.132818485138464 L 0.9928378663781761 6.999999999999999 Z",
     },
   ],
+  fills: {
+    light: {
+      primary: {
+        default: fills.white.default,
+      },
+      outline: {
+        default: fills.black.default,
+        hover: fills.white.default,
+      },
+    },
+  },
   frameSize: {
     width: 5,
     height: 7,

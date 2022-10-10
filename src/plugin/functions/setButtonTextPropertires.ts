@@ -9,7 +9,7 @@ export const setButtonTextPropertires: SetButtonTextPropertires = (
   buttonText.characters = buttonTextProperties.defaultText;
   buttonText.fontSize = buttonTextProperties.fontSize;
   buttonText.lineHeight = buttonTextProperties.lineHeight;
-  buttonText.fills = buttonTextProperties.fills.default;
+  buttonText.fills = buttonTextProperties.fills.light.primary.default;
 
   if (buttonTextProperties.letterSpacing) {
     buttonText.letterSpacing = buttonTextProperties.letterSpacing;

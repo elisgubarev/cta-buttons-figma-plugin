@@ -4,8 +4,12 @@ export const setButtonHoverProperties: SetButtonHoverProperties = (
   buttonHover,
   buttonProperties
 ) => {
-  buttonHover.fills = buttonProperties.fills.hover || buttonHover.fills;
-  buttonHover.effects = buttonProperties.effects?.hover || buttonHover.effects;
+  if (buttonProperties.fills.light.primary.hover) {
+    buttonHover.fills = buttonProperties.fills.light.primary.hover;
+  }
+  if (buttonProperties.effects?.hover) {
+    buttonHover.effects = buttonProperties.effects?.hover;
+  }
 
   return buttonHover;
 };
