@@ -15,12 +15,20 @@ export const buttonPropertiesSharp: ButtonProperties = {
       },
       outline: {
         default: fills.white.default,
-        hover: fills.black.hover,
+        hover: fills.black.default,
       },
     },
   },
   paddings: [20, 32, 20, 32],
   itemSpacing: 9,
+  strokes: {
+    fills: {
+      light: {
+        default: fills.black.default,
+      },
+    },
+    weight: 2,
+  },
 };
 
 export const buttonTextPropertiesSharp: ButtonTextProperties = {

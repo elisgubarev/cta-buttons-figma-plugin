@@ -1,18 +1,17 @@
-import {
-  ArrowPropeties,
-  ButtonProperties,
-  ButtonTextProperties,
-} from "../../app/data/types";
+import { CreateHoverVariant } from "./../../app/data/types";
 import { setAutoLayout } from "./setAutoLayout";
 import { setButtonHoverProperties } from "./setButtonHoverProperties";
 
-export const createHoverVariant = (
-  buttonComponent: ComponentNode,
-  buttonProperties: ButtonProperties,
-  buttonTextProperties: ButtonTextProperties,
-  currentTextComponentPropertyReference: string,
-  arrowProperties: ArrowPropeties
-): ComponentSetNode => {
+export const createHoverVariant: CreateHoverVariant = (
+  buttonComponent,
+  buttonProperties,
+  buttonTextProperties,
+  currentTextComponentPropertyReference,
+  arrowProperties,
+  pluginConfig
+) => {
+  const { outline } = pluginConfig;
+
   buttonComponent.deleteComponentProperty(
     currentTextComponentPropertyReference
   );
@@ -25,7 +24,7 @@ export const createHoverVariant = (
   const buttonHover = buttonComponentHover.children[0] as FrameNode;
   const buttonTextHover = buttonHover.children[0] as TextNode;
 
-  setButtonHoverProperties(buttonHover, buttonProperties);
+  setButtonHoverProperties(buttonHover, buttonProperties, pluginConfig);
 
   buttonComponent.name = "Hover=false";
   buttonComponentHover.name = "Hover=true";
@@ -53,8 +52,28 @@ export const createHoverVariant = (
 
   if (arrowNodeHover && arrowProperties?.vectorOffset) {
     const { vectorOffset } = arrowProperties;
-    arrowNodeHover.children[0].x = vectorOffset.hover.x;
-    arrowNodeHover.children[0].y = vectorOffset.hover.y;
+    const arrowVectorHover = arrowNodeHover.children[0] as VectorNode;
+    arrowVectorHover.x = vectorOffset.hover.x;
+    arrowVectorHover.y = vectorOffset.hover.y;
+  }
+
+  if (outline && buttonTextProperties.fills.light.outline) {
+    buttonTextHover.fills =
+      buttonTextProperties.fills.light.outline.hover ||
+      buttonTextProperties.fills.light.outline.default;
+  }
+
+  if (outline && arrowNodeHover && arrowProperties.fills.light.outline) {
+    const arrowVectorHover = arrowNodeHover.children[0] as VectorNode;
+    arrowVectorHover.fills =
+      arrowProperties.fills.light.outline.hover ||
+      arrowProperties.fills.light.outline.default;
+  }
+
+  if (outline && buttonProperties.strokes) {
+    buttonHover.strokes =
+      buttonProperties.strokes.fills.light.hover ||
+      buttonProperties.strokes.fills.light.default;
   }
 
   return buttonComponentSet;

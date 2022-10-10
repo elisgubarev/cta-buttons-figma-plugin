@@ -30,6 +30,15 @@ export const buttonPropertiesClassic: ButtonProperties = {
     default: [2, 0, 2, 0],
     hover: [0, 0, 4, 0],
   },
+  strokes: {
+    fills: {
+      light: {
+        default: fills.unicornBlue.default,
+        hover: fills.unicornBlue.hover,
+      },
+    },
+    weight: 2,
+  },
 };
 
 export const buttonTextPropertiesClassic: ButtonTextProperties = {

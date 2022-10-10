@@ -1,8 +1,10 @@
 import { fills } from "../../app/data/global_properties/fills";
-import { ArrowPropeties } from "../../app/data/types";
+import { ArrowPropeties, CreateArrow } from "../../app/data/types";
 
-export const createArrow = (arrowPropeties: ArrowPropeties): FrameNode => {
+export const createArrow: CreateArrow = (arrowPropeties, pluginConfig) => {
   const { vectorPaths, frameSize, vectorOffset } = arrowPropeties;
+  const { outline } = pluginConfig;
+
   const arrowNode = figma.createFrame();
   const arrowVector = figma.createVector();
   arrowNode.appendChild(arrowVector);
@@ -26,8 +28,10 @@ export const createArrow = (arrowPropeties: ArrowPropeties): FrameNode => {
   arrowVector.constrainProportions = true;
   arrowNode.clipsContent = false;
 
-  if (arrowPropeties.fills) {
-    arrowVector.fills = arrowPropeties.fills.light.primary.default;
+  arrowVector.fills = arrowPropeties.fills.light.primary.default;
+
+  if (outline && arrowPropeties.fills.light.outline?.default) {
+    arrowVector.fills = arrowPropeties.fills.light.outline.default;
   }
 
   return arrowNode;

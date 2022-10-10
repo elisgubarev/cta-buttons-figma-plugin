@@ -21,22 +21,22 @@ export interface ButtonProperties {
   fills: {
     light: {
       primary: {
-        default: readonly Paint[] | typeof figma.mixed;
-        hover?: readonly Paint[] | typeof figma.mixed;
+        default: readonly Paint[];
+        hover?: readonly Paint[];
       };
       outline?: {
-        default: readonly Paint[] | typeof figma.mixed;
-        hover?: readonly Paint[] | typeof figma.mixed;
+        default: readonly Paint[];
+        hover?: readonly Paint[];
       };
     };
     dark?: {
       primary: {
-        default: readonly Paint[] | typeof figma.mixed;
-        hover?: readonly Paint[] | typeof figma.mixed;
+        default: readonly Paint[];
+        hover?: readonly Paint[];
       };
       outline?: {
-        default: readonly Paint[] | typeof figma.mixed;
-        hover?: readonly Paint[] | typeof figma.mixed;
+        default: readonly Paint[];
+        hover?: readonly Paint[];
       };
     };
   };
@@ -46,64 +46,77 @@ export interface ButtonProperties {
     default: readonly Effect[];
     hover?: readonly Effect[];
   };
-  cornerRadius?: number | typeof figma.mixed;
+  cornerRadius?: number;
   paddingsOnHover?: {
     default: Paddings;
     hover: Paddings;
   };
+  strokes?: {
+    fills: {
+      light: {
+        default: readonly Paint[];
+        hover?: readonly Paint[];
+      };
+      dark?: {
+        default: readonly Paint[];
+        hover?: readonly Paint[];
+      };
+    };
+    weight: number;
+  };
 }
 
 export interface ButtonTextProperties {
-  fontName: typeof figma.mixed | FontName;
+  fontName: FontName;
   defaultText: string;
   fontSize: number;
-  lineHeight: typeof figma.mixed | LineHeight;
+  lineHeight: LineHeight;
   fills: {
     light: {
       primary: {
-        default: readonly Paint[] | typeof figma.mixed;
-        hover?: readonly Paint[] | typeof figma.mixed;
+        default: readonly Paint[];
+        hover?: readonly Paint[];
       };
       outline?: {
-        default: readonly Paint[] | typeof figma.mixed;
-        hover?: readonly Paint[] | typeof figma.mixed;
+        default: readonly Paint[];
+        hover?: readonly Paint[];
       };
     };
     dark?: {
       primary: {
-        default: readonly Paint[] | typeof figma.mixed;
-        hover?: readonly Paint[] | typeof figma.mixed;
+        default: readonly Paint[];
+        hover?: readonly Paint[];
       };
       outline?: {
-        default: readonly Paint[] | typeof figma.mixed;
-        hover?: readonly Paint[] | typeof figma.mixed;
+        default: readonly Paint[];
+        hover?: readonly Paint[];
       };
     };
   };
-  letterSpacing?: typeof figma.mixed | LetterSpacing;
-  textCase?: TextCase | typeof figma.mixed;
+  letterSpacing?: LetterSpacing;
+  textCase?: TextCase;
 }
 
 export interface ArrowPropeties {
   fills: {
     light: {
       primary: {
-        default: readonly Paint[] | typeof figma.mixed;
-        hover?: readonly Paint[] | typeof figma.mixed;
+        default: readonly Paint[];
+        hover?: readonly Paint[];
       };
       outline?: {
-        default: readonly Paint[] | typeof figma.mixed;
-        hover?: readonly Paint[] | typeof figma.mixed;
+        default: readonly Paint[];
+        hover?: readonly Paint[];
       };
     };
     dark?: {
       primary: {
-        default: readonly Paint[] | typeof figma.mixed;
-        hover?: readonly Paint[] | typeof figma.mixed;
+        default: readonly Paint[];
+        hover?: readonly Paint[];
       };
       outline?: {
-        default: readonly Paint[] | typeof figma.mixed;
-        hover?: readonly Paint[] | typeof figma.mixed;
+        default: readonly Paint[];
+        hover?: readonly Paint[];
       };
     };
   };
@@ -136,11 +149,19 @@ export interface SetAutoLayout {
 }
 
 export interface SetButtonProperties {
-  (button: FrameNode, buttonProperties: ButtonProperties): FrameNode;
+  (
+    button: FrameNode,
+    buttonProperties: ButtonProperties,
+    pluginConfig: PluginConfig
+  ): FrameNode;
 }
 
 export interface SetButtonTextPropertires {
-  (buttonText: TextNode, buttonTextProperties: ButtonTextProperties): TextNode;
+  (
+    buttonText: TextNode,
+    buttonTextProperties: ButtonTextProperties,
+    pluginConfig: PluginConfig
+  ): TextNode;
 }
 
 export type MapPropertiesToButtonIds = {
@@ -152,13 +173,17 @@ export type MapPropertiesToButtonIds = {
 };
 
 export interface SetButtonHoverProperties {
-  (buttonHover: FrameNode, buttonProperties: ButtonProperties): FrameNode;
+  (
+    buttonHover: FrameNode,
+    buttonProperties: ButtonProperties,
+    pluginConfig: PluginConfig
+  ): FrameNode;
 }
 
 export interface Fills {
   [color: string]: {
-    default: readonly Paint[] | typeof figma.mixed;
-    hover?: readonly Paint[] | typeof figma.mixed;
+    default: readonly Paint[];
+    hover?: readonly Paint[];
   };
 }
 
@@ -198,3 +223,18 @@ export interface PluginUIEventData {
 }
 
 export type PluginUIEvent = MessageEvent<PluginUIEventData>;
+
+export interface CreateHoverVariant {
+  (
+    buttonComponent: ComponentNode,
+    buttonProperties: ButtonProperties,
+    buttonTextProperties: ButtonTextProperties,
+    currentTextComponentPropertyReference: string,
+    arrowProperties: ArrowPropeties,
+    pluginConfig: PluginConfig
+  ): ComponentSetNode;
+}
+
+export interface CreateArrow {
+  (arrowPropeties: ArrowPropeties, pluginConfig: PluginConfig): FrameNode;
+}

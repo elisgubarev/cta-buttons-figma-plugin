@@ -30,6 +30,15 @@ export const buttonPropertiesRound: ButtonProperties = {
     default: [3, 0, 3, 0],
     hover: [0, 0, 6, 0],
   },
+  strokes: {
+    weight: 2,
+    fills: {
+      light: {
+        default: fills.calmBlue.default,
+        hover: fills.calmBlue.hover,
+      },
+    },
+  },
 };
 
 export const buttonTextPropertiesRound: ButtonTextProperties = {

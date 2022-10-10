@@ -20,8 +20,8 @@ export const createButton = (buttonId: Button, pluginConfig: PluginConfig) => {
   const buttonComponent = figma.createComponent();
   button.appendChild(buttonText);
   buttonComponent.appendChild(button);
-  setButtonProperties(button, buttonProperties);
-  setButtonTextPropertires(buttonText, buttonTextProperties);
+  setButtonProperties(button, buttonProperties, pluginConfig);
+  setButtonTextPropertires(buttonText, buttonTextProperties, pluginConfig);
   setAutoLayout(
     button,
     buttonProperties.paddings,
@@ -43,7 +43,7 @@ export const createButton = (buttonId: Button, pluginConfig: PluginConfig) => {
   } as SceneNodeMixin["componentPropertyReferences"];
 
   if (arrow && arrowProperties) {
-    arrowNode = createArrow(arrowProperties);
+    arrowNode = createArrow(arrowProperties, pluginConfig);
     button.appendChild(arrowNode);
   }
 
@@ -53,7 +53,8 @@ export const createButton = (buttonId: Button, pluginConfig: PluginConfig) => {
       buttonProperties,
       buttonTextProperties,
       buttonTextComponentProperty,
-      arrowProperties
+      arrowProperties,
+      pluginConfig
     );
   }
 
