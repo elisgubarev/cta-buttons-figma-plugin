@@ -18,6 +18,15 @@ export const buttonPropertiesRound: ButtonProperties = {
         default: fills.white.default,
       },
     },
+    dark: {
+      primary: {
+        default: fills.white.default,
+        hover: fills.white.hover,
+      },
+      outline: {
+        default: fills.uiButtonItemDark.default,
+      },
+    },
   },
   paddings: [23, 32, 23, 32],
   itemSpacing: 12,
@@ -25,6 +34,10 @@ export const buttonPropertiesRound: ButtonProperties = {
     light: {
       default: shadows.small.default,
       hover: shadows.small.hover,
+    },
+    dark: {
+      default: shadows.smallBlack.default,
+      hover: shadows.smallBlack.hover,
     },
   },
   cornerRadius: 999,
@@ -38,6 +51,10 @@ export const buttonPropertiesRound: ButtonProperties = {
       light: {
         default: fills.calmBlue.default,
         hover: fills.calmBlue.hover,
+      },
+      dark: {
+        default: fills.white.default,
+        hover: fills.white.hover,
       },
     },
   },
@@ -58,6 +75,15 @@ export const buttonTextPropertiesRound: ButtonTextProperties = {
         hover: fills.calmBlue.hover,
       },
     },
+    dark: {
+      primary: {
+        default: fills.uiButtonItemDark.default,
+      },
+      outline: {
+        default: fills.white.default,
+        hover: fills.white.hover,
+      },
+    },
   },
 };
 
@@ -76,6 +102,15 @@ export const arrowPropertiesRound: ArrowPropeties = {
       outline: {
         default: fills.calmBlue.default,
         hover: fills.calmBlue.hover,
+      },
+    },
+    dark: {
+      primary: {
+        default: fills.uiButtonItemDark.default,
+      },
+      outline: {
+        default: fills.white.default,
+        hover: fills.white.hover,
       },
     },
   },

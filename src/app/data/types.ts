@@ -1,4 +1,4 @@
-import { Button } from "./enums";
+import { Button, Theme } from "./enums";
 
 export interface OnClick {
   (event?: React.MouseEvent<HTMLElement>): void;
@@ -19,7 +19,7 @@ export interface Coordinates {
 export interface ButtonProperties {
   name: string;
   fills: {
-    light: {
+    [Theme.Light]: {
       primary: {
         default: readonly Paint[];
         hover?: readonly Paint[];
@@ -29,7 +29,7 @@ export interface ButtonProperties {
         hover?: readonly Paint[];
       };
     };
-    dark?: {
+    [Theme.Dark]?: {
       primary: {
         default: readonly Paint[];
         hover?: readonly Paint[];
@@ -43,11 +43,11 @@ export interface ButtonProperties {
   paddings: Paddings;
   itemSpacing?: number;
   effects?: {
-    light: {
+    [Theme.Light]: {
       default: readonly Effect[];
       hover?: readonly Effect[];
     };
-    dark?: {
+    [Theme.Dark]?: {
       default: readonly Effect[];
       hover?: readonly Effect[];
     };
@@ -59,11 +59,11 @@ export interface ButtonProperties {
   };
   strokes?: {
     fills: {
-      light: {
+      [Theme.Light]: {
         default: readonly Paint[];
         hover?: readonly Paint[];
       };
-      dark?: {
+      [Theme.Dark]?: {
         default: readonly Paint[];
         hover?: readonly Paint[];
       };
@@ -78,7 +78,7 @@ export interface ButtonTextProperties {
   fontSize: number;
   lineHeight: LineHeight;
   fills: {
-    light: {
+    [Theme.Light]: {
       primary: {
         default: readonly Paint[];
         hover?: readonly Paint[];
@@ -88,7 +88,7 @@ export interface ButtonTextProperties {
         hover?: readonly Paint[];
       };
     };
-    dark?: {
+    [Theme.Dark]?: {
       primary: {
         default: readonly Paint[];
         hover?: readonly Paint[];
@@ -105,7 +105,7 @@ export interface ButtonTextProperties {
 
 export interface ArrowPropeties {
   fills: {
-    light: {
+    [Theme.Light]: {
       primary: {
         default: readonly Paint[];
         hover?: readonly Paint[];
@@ -115,7 +115,7 @@ export interface ArrowPropeties {
         hover?: readonly Paint[];
       };
     };
-    dark?: {
+    [Theme.Dark]?: {
       primary: {
         default: readonly Paint[];
         hover?: readonly Paint[];

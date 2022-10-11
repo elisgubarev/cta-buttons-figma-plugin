@@ -1,3 +1,4 @@
+import { Theme } from "../../app/data/enums";
 import { SetButtonProperties } from "../../app/data/types";
 
 export const setButtonProperties: SetButtonProperties = (
@@ -5,13 +6,15 @@ export const setButtonProperties: SetButtonProperties = (
   buttonProperties,
   pluginConfig
 ) => {
-  const { outline } = pluginConfig;
+  const { outline, dark } = pluginConfig;
+  const theme = dark ? Theme.Dark : Theme.Light;
+
   button.name = "Button";
 
-  button.fills = buttonProperties.fills.light.primary.default;
+  button.fills = buttonProperties.fills[theme].primary.default;
 
-  if (outline && buttonProperties.fills.light.outline?.default) {
-    button.fills = buttonProperties.fills.light.outline.default;
+  if (outline && buttonProperties.fills[theme].outline?.default) {
+    button.fills = buttonProperties.fills[theme].outline.default;
   }
 
   if (buttonProperties.cornerRadius) {
@@ -19,11 +22,11 @@ export const setButtonProperties: SetButtonProperties = (
   }
 
   if (buttonProperties.effects) {
-    button.effects = buttonProperties.effects.light.default;
+    button.effects = buttonProperties.effects[theme].default;
   }
 
   if (outline && buttonProperties.strokes) {
-    button.strokes = buttonProperties.strokes.fills.light.default;
+    button.strokes = buttonProperties.strokes.fills[theme].default;
     button.strokeWeight = buttonProperties.strokes.weight;
   }
 

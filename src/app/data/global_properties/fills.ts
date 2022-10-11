@@ -15,6 +15,19 @@ export const fills: Fills = {
         },
       },
     ],
+    hover: [
+      {
+        type: "SOLID",
+        visible: true,
+        opacity: 0.699999988079071,
+        blendMode: "NORMAL",
+        color: {
+          r: 1,
+          g: 1,
+          b: 1,
+        },
+      },
+    ],
   },
 
   unicornBlue: {
@@ -99,6 +112,22 @@ export const fills: Fills = {
           r: 0,
           g: 0.3926030397415161,
           b: 0.6958333253860474,
+        },
+      },
+    ],
+  },
+
+  uiButtonItemDark: {
+    default: [
+      {
+        type: "SOLID",
+        visible: true,
+        opacity: 1,
+        blendMode: "NORMAL",
+        color: {
+          r: 0.1725490242242813,
+          g: 0.1725490242242813,
+          b: 0.1725490242242813,
         },
       },
     ],

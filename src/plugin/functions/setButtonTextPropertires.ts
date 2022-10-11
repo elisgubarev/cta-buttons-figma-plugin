@@ -1,3 +1,4 @@
+import { Theme } from "../../app/data/enums";
 import { SetButtonTextPropertires } from "../../app/data/types";
 
 export const setButtonTextPropertires: SetButtonTextPropertires = (
@@ -5,7 +6,8 @@ export const setButtonTextPropertires: SetButtonTextPropertires = (
   buttonTextProperties,
   pluginConfig
 ) => {
-  const { outline } = pluginConfig;
+  const { outline, dark } = pluginConfig;
+  const theme = dark ? Theme.Dark : Theme.Light;
 
   buttonText.name = buttonTextProperties.defaultText;
   buttonText.fontName = buttonTextProperties.fontName;
@@ -13,10 +15,10 @@ export const setButtonTextPropertires: SetButtonTextPropertires = (
   buttonText.fontSize = buttonTextProperties.fontSize;
   buttonText.lineHeight = buttonTextProperties.lineHeight;
 
-  buttonText.fills = buttonTextProperties.fills.light.primary.default;
+  buttonText.fills = buttonTextProperties.fills[theme].primary.default;
 
-  if (outline && buttonTextProperties.fills.light.outline?.default) {
-    buttonText.fills = buttonTextProperties.fills.light.outline.default;
+  if (outline && buttonTextProperties.fills[theme].outline?.default) {
+    buttonText.fills = buttonTextProperties.fills[theme].outline.default;
   }
 
   if (buttonTextProperties.letterSpacing) {

@@ -18,6 +18,15 @@ export const buttonPropertiesClassic: ButtonProperties = {
         default: fills.white.default,
       },
     },
+    dark: {
+      primary: {
+        default: fills.white.default,
+        hover: fills.white.hover,
+      },
+      outline: {
+        default: fills.uiButtonItemDark.default,
+      },
+    },
   },
   paddings: [16, 32, 16, 32],
   itemSpacing: 10,
@@ -25,6 +34,10 @@ export const buttonPropertiesClassic: ButtonProperties = {
     light: {
       default: shadows.small.default,
       hover: shadows.small.hover,
+    },
+    dark: {
+      default: shadows.smallBlack.default,
+      hover: shadows.smallBlack.hover,
     },
   },
   cornerRadius: 4,
@@ -37,6 +50,10 @@ export const buttonPropertiesClassic: ButtonProperties = {
       light: {
         default: fills.unicornBlue.default,
         hover: fills.unicornBlue.hover,
+      },
+      dark: {
+        default: fills.white.default,
+        hover: fills.white.hover,
       },
     },
     weight: 2,
@@ -58,6 +75,15 @@ export const buttonTextPropertiesClassic: ButtonTextProperties = {
         hover: fills.unicornBlue.hover,
       },
     },
+    dark: {
+      primary: {
+        default: fills.uiButtonItemDark.default,
+      },
+      outline: {
+        default: fills.white.default,
+        hover: fills.white.hover,
+      },
+    },
   },
 };
 
@@ -76,6 +102,15 @@ export const arrowPropertiesClassic: ArrowPropeties = {
       outline: {
         default: fills.unicornBlue.default,
         hover: fills.unicornBlue.hover,
+      },
+    },
+    dark: {
+      primary: {
+        default: fills.uiButtonItemDark.default,
+      },
+      outline: {
+        default: fills.white.default,
+        hover: fills.white.hover,
       },
     },
   },

@@ -3,3 +3,8 @@ export enum Button {
   Sharp = "Sharp",
   Round = "Round",
 }
+
+export enum Theme {
+  Light = "light",
+  Dark = "dark",
+}

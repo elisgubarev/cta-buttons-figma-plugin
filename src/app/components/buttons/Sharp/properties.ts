@@ -18,6 +18,16 @@ export const buttonPropertiesSharp: ButtonProperties = {
         hover: fills.black.default,
       },
     },
+    dark: {
+      primary: {
+        default: fills.white.default,
+        hover: fills.white.hover,
+      },
+      outline: {
+        default: fills.uiButtonItemDark.default,
+        hover: fills.white.default,
+      },
+    },
   },
   paddings: [20, 32, 20, 32],
   itemSpacing: 9,
@@ -25,6 +35,9 @@ export const buttonPropertiesSharp: ButtonProperties = {
     fills: {
       light: {
         default: fills.black.default,
+      },
+      dark: {
+        default: fills.white.default,
       },
     },
     weight: 2,
@@ -44,6 +57,15 @@ export const buttonTextPropertiesSharp: ButtonTextProperties = {
       outline: {
         default: fills.black.default,
         hover: fills.white.default,
+      },
+    },
+    dark: {
+      primary: {
+        default: fills.uiButtonItemDark.default,
+      },
+      outline: {
+        default: fills.white.default,
+        hover: fills.uiButtonItemDark.default,
       },
     },
   },
@@ -69,6 +91,15 @@ export const arrowPropertiesSharp: ArrowPropeties = {
       outline: {
         default: fills.black.default,
         hover: fills.white.default,
+      },
+    },
+    dark: {
+      primary: {
+        default: fills.uiButtonItemDark.default,
+      },
+      outline: {
+        default: fills.white.default,
+        hover: fills.uiButtonItemDark.default,
       },
     },
   },

@@ -1,3 +1,4 @@
+import { Theme } from "../../app/data/enums";
 import { SetButtonHoverProperties } from "../../app/data/types";
 
 export const setButtonHoverProperties: SetButtonHoverProperties = (
@@ -5,20 +6,21 @@ export const setButtonHoverProperties: SetButtonHoverProperties = (
   buttonProperties,
   pluginConfig
 ) => {
-  const { outline } = pluginConfig;
+  const { outline, dark } = pluginConfig;
+  const theme = dark ? Theme.Dark : Theme.Light;
 
-  if (buttonProperties.fills.light.primary.hover) {
-    buttonHover.fills = buttonProperties.fills.light.primary.hover;
+  if (buttonProperties.fills[theme].primary.hover) {
+    buttonHover.fills = buttonProperties.fills[theme].primary.hover;
   }
 
-  if (outline && buttonProperties.fills.light.outline) {
+  if (outline && buttonProperties.fills[theme].outline) {
     buttonHover.fills =
-      buttonProperties.fills.light.outline.hover ||
-      buttonProperties.fills.light.outline.default;
+      buttonProperties.fills[theme].outline.hover ||
+      buttonProperties.fills[theme].outline.default;
   }
 
-  if (buttonProperties.effects?.light.hover) {
-    buttonHover.effects = buttonProperties.effects?.light.hover;
+  if (buttonProperties.effects?.[theme].hover) {
+    buttonHover.effects = buttonProperties.effects?.[theme].hover;
   }
 
   return buttonHover;

@@ -1,3 +1,4 @@
+import { Theme } from "../../app/data/enums";
 import { CreateHoverVariant } from "./../../app/data/types";
 import { setAutoLayout } from "./setAutoLayout";
 import { setButtonHoverProperties } from "./setButtonHoverProperties";
@@ -10,7 +11,8 @@ export const createHoverVariant: CreateHoverVariant = (
   arrowProperties,
   pluginConfig
 ) => {
-  const { outline } = pluginConfig;
+  const { outline, dark } = pluginConfig;
+  const theme = dark ? Theme.Dark : Theme.Light;
 
   buttonComponent.deleteComponentProperty(
     currentTextComponentPropertyReference
@@ -57,23 +59,23 @@ export const createHoverVariant: CreateHoverVariant = (
     arrowVectorHover.y = vectorOffset.hover.y;
   }
 
-  if (outline && buttonTextProperties.fills.light.outline) {
+  if (outline && buttonTextProperties.fills[theme].outline) {
     buttonTextHover.fills =
-      buttonTextProperties.fills.light.outline.hover ||
-      buttonTextProperties.fills.light.outline.default;
+      buttonTextProperties.fills[theme].outline.hover ||
+      buttonTextProperties.fills[theme].outline.default;
   }
 
-  if (outline && arrowNodeHover && arrowProperties.fills.light.outline) {
+  if (outline && arrowNodeHover && arrowProperties.fills[theme].outline) {
     const arrowVectorHover = arrowNodeHover.children[0] as VectorNode;
     arrowVectorHover.fills =
-      arrowProperties.fills.light.outline.hover ||
-      arrowProperties.fills.light.outline.default;
+      arrowProperties.fills[theme].outline.hover ||
+      arrowProperties.fills[theme].outline.default;
   }
 
   if (outline && buttonProperties.strokes) {
     buttonHover.strokes =
-      buttonProperties.strokes.fills.light.hover ||
-      buttonProperties.strokes.fills.light.default;
+      buttonProperties.strokes.fills[theme].hover ||
+      buttonProperties.strokes.fills[theme].default;
   }
 
   return buttonComponentSet;
