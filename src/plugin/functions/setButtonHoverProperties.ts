@@ -17,8 +17,8 @@ export const setButtonHoverProperties: SetButtonHoverProperties = (
       buttonProperties.fills.light.outline.default;
   }
 
-  if (buttonProperties.effects?.hover) {
-    buttonHover.effects = buttonProperties.effects?.hover;
+  if (buttonProperties.effects?.light.hover) {
+    buttonHover.effects = buttonProperties.effects?.light.hover;
   }
 
   return buttonHover;

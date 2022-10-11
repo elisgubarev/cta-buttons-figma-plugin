@@ -43,8 +43,14 @@ export interface ButtonProperties {
   paddings: Paddings;
   itemSpacing?: number;
   effects?: {
-    default: readonly Effect[];
-    hover?: readonly Effect[];
+    light: {
+      default: readonly Effect[];
+      hover?: readonly Effect[];
+    };
+    dark?: {
+      default: readonly Effect[];
+      hover?: readonly Effect[];
+    };
   };
   cornerRadius?: number;
   paddingsOnHover?: {

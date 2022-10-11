@@ -22,8 +22,10 @@ export const buttonPropertiesRound: ButtonProperties = {
   paddings: [23, 32, 23, 32],
   itemSpacing: 12,
   effects: {
-    default: shadows.small.default,
-    hover: shadows.small.hover,
+    light: {
+      default: shadows.small.default,
+      hover: shadows.small.hover,
+    },
   },
   cornerRadius: 999,
   paddingsOnHover: {

@@ -19,7 +19,7 @@ export const setButtonProperties: SetButtonProperties = (
   }
 
   if (buttonProperties.effects) {
-    button.effects = buttonProperties.effects.default;
+    button.effects = buttonProperties.effects.light.default;
   }
 
   if (outline && buttonProperties.strokes) {
