@@ -15,6 +15,11 @@ import {
 } from "../components/buttons/Sharp/properties";
 import { Button } from "./enums";
 import { MapPropertiesToButtonIds } from "./types";
+import {
+  buttonPropertiesSmall,
+  buttonTextPropertiesSmall,
+  arrowPropertiesSmall,
+} from "../components/buttons/Small/properties";
 
 export const mapPropertiesToButtonIds: MapPropertiesToButtonIds = {
   [Button.Classic]: {
@@ -31,5 +36,10 @@ export const mapPropertiesToButtonIds: MapPropertiesToButtonIds = {
     button: buttonPropertiesRound,
     text: buttonTextPropertiesRound,
     arrow: arrowPropertiesRound,
+  },
+  [Button.Small]: {
+    button: buttonPropertiesSmall,
+    text: buttonTextPropertiesSmall,
+    arrow: arrowPropertiesSmall,
   },
 };

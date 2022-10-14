@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Classic from "../components/buttons/Classic/Classic";
 import Round from "../components/buttons/Round/Round";
 import Sharp from "../components/buttons/Sharp/Sharp";
+import Small from "../components/buttons/Small/Small";
 import {
   usePluginConfig,
   useSetPluginConfig,
@@ -34,6 +35,9 @@ const Content = (): JSX.Element => {
         </ButtonItem>
         <ButtonItem buttonId={Button.Sharp}>
           <Sharp />
+        </ButtonItem>
+        <ButtonItem buttonId={Button.Small}>
+          <Small />
         </ButtonItem>
         <ButtonItem buttonId={Button.Round}>
           <Round />
