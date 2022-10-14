@@ -190,6 +190,9 @@ export interface Fills {
   [color: string]: {
     default: readonly Paint[];
     hover?: readonly Paint[];
+    hover2?: readonly Paint[];
+    hover3?: readonly Paint[];
+    hover4?: readonly Paint[];
   };
 }
 

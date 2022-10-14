@@ -21,7 +21,7 @@ export const buttonPropertiesSharp: ButtonProperties = {
     dark: {
       primary: {
         default: fills.white.default,
-        hover: fills.white.hover,
+        hover: fills.white.hover2,
       },
       outline: {
         default: fills.uiButtonItemDark.default,
