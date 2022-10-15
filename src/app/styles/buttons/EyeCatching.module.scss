@@ -1,0 +1,103 @@
+@use "../data/global.scss";
+@use "../data/shadows.scss";
+@use "../data/colors.scss";
+@use "../data/constants.scss" as const;
+
+.base {
+  @include global.button;
+  background-color: colors.$unicorn-blue;
+  box-shadow: shadows.$small;
+  padding: 16px 32px;
+  border-radius: 4px;
+  column-gap: 10px;
+  transition: background-color const.$transition, box-shadow const.$transition,
+    transform const.$transition;
+}
+
+.hasHover {
+  &:hover {
+    transform: translateY(-2px);
+    background-color: colors.$unicorn-blue-hover;
+    box-shadow: shadows.$small-hover;
+    .arrow {
+      transform: translateX(2px);
+    }
+  }
+}
+
+.outline {
+  background-color: colors.$white;
+  box-shadow: shadows.$small, 0 0 0 2px colors.$unicorn-blue inset;
+  .text {
+    color: colors.$unicorn-blue;
+  }
+  .arrow path {
+    fill: colors.$unicorn-blue;
+  }
+  &.hasHover:hover {
+    background-color: colors.$white;
+    box-shadow: shadows.$small-hover, 0 0 0 2px colors.$unicorn-blue-hover inset;
+    .text {
+      color: colors.$unicorn-blue-hover;
+    }
+    .arrow path {
+      fill: colors.$unicorn-blue-hover;
+    }
+  }
+}
+
+.darkTheme {
+  background-color: colors.$white;
+  box-shadow: shadows.$small-dark;
+  .text {
+    color: colors.$ui-dark;
+  }
+  .arrow {
+    path {
+      fill: colors.$ui-dark;
+    }
+  }
+  &.hasHover:hover {
+    background-color: colors.$white-hover2;
+    box-shadow: shadows.$small-hover-dark;
+  }
+  &.outline {
+    background-color: colors.$ui-dark;
+    box-shadow: shadows.$small-dark, 0 0 0 2px colors.$white inset;
+    .text {
+      color: colors.$white;
+    }
+    .arrow path {
+      fill: colors.$white;
+    }
+    &.hasHover:hover {
+      background-color: colors.$ui-dark;
+      box-shadow: shadows.$small-hover-dark,
+        0 0 0 2px colors.$white-hover3 inset;
+      .text {
+        color: colors.$white-hover3;
+      }
+      .arrow path {
+        fill: colors.$white-hover3;
+      }
+    }
+  }
+}
+
+.text {
+  color: colors.$white;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  line-height: 100%;
+  transition: color const.$transition;
+}
+
+.arrow {
+  position: relative;
+  top: 0.5px;
+  transition: transform const.$transition;
+  path {
+    transition: fill const.$transition;
+  }
+}

@@ -5,6 +5,7 @@
   height: 100%;
   background-color: colors.$plugin-background;
   -webkit-font-smoothing: antialiased;
+  overflow: auto;
 
   &Dark {
     background-color: colors.$plugin-background-dark;

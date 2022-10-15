@@ -30,6 +30,11 @@ import {
   buttonPropertiesCheerful,
   buttonTextPropertiesCheerful,
 } from "../components/buttons/Cheerful/properties";
+import {
+  buttonPropertiesEyeCatching,
+  buttonTextPropertiesEyeCatching,
+  arrowPropertiesEyeCatching,
+} from "../components/buttons/EyeCatching/properties";
 
 export const mapPropertiesToButtonIds: MapPropertiesToButtonIds = {
   [Button.Classic]: {
@@ -61,5 +66,10 @@ export const mapPropertiesToButtonIds: MapPropertiesToButtonIds = {
     button: buttonPropertiesCheerful,
     text: buttonTextPropertiesCheerful,
     arrow: arrowPropertiesCheerful,
+  },
+  [Button.EyeCatching]: {
+    button: buttonPropertiesEyeCatching,
+    text: buttonTextPropertiesEyeCatching,
+    arrow: arrowPropertiesEyeCatching,
   },
 };

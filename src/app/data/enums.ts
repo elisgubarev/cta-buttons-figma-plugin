@@ -5,6 +5,7 @@ export enum Button {
   Small = "Small",
   Engaging = "Engaging",
   Cheerful = "Cheerful",
+  EyeCatching = "EyeCatching",
 }
 
 export enum Theme {

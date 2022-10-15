@@ -13,6 +13,7 @@ import {
 } from "../components/PluginConfigContext";
 import { Button } from "../data/enums";
 import { PluginUIEvent } from "../data/types";
+import EyeCatching from "../components/buttons/EyeCatching/EyeCatching";
 import classNames from "classnames";
 import style from "../styles/pluginUI/Content.module.scss";
 
@@ -49,6 +50,9 @@ const Content = (): JSX.Element => {
         </ButtonItem>
         <ButtonItem buttonId={Button.Cheerful}>
           <Cheerful />
+        </ButtonItem>
+        <ButtonItem buttonId={Button.EyeCatching}>
+          <EyeCatching />
         </ButtonItem>
         <CustomizationMenu />
       </>

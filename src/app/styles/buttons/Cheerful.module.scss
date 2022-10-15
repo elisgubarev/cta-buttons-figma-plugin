@@ -9,7 +9,7 @@
   padding: 14px 40px;
   border-radius: 4px;
   column-gap: 5px;
-  box-shadow: 0 0 0 1px colors.$black inset, 0 0 0 0 colors.$black;
+  box-shadow: 0 0 0 1px colors.$black inset, shadows.$solid-black;
   transition: transform const.$transition, box-shadow const.$transition,
     background-color const.$transition;
 }
@@ -17,15 +17,15 @@
 .hasHover {
   &:hover {
     transform: translate(-4px, -4px);
-    box-shadow: 0 0 0 1px colors.$black inset, 4px 4px 0 0 colors.$black;
+    box-shadow: 0 0 0 1px colors.$black inset, shadows.$solid-black-hover;
   }
 }
 
 .outline {
   background-color: colors.$white;
-  box-shadow: 0 0 0 1px colors.$black inset, 0 0 0 0 colors.$black;
+  box-shadow: 0 0 0 1px colors.$black inset, shadows.$solid-black;
   &.hasHover:hover {
-    box-shadow: 0 0 0 1px colors.$black inset, 4px 4px 0 0 colors.$black;
+    box-shadow: 0 0 0 1px colors.$black inset, shadows.$solid-black-hover;
   }
 }
 
@@ -41,7 +41,7 @@
   }
   &.outline {
     background-color: colors.$ui-dark;
-    box-shadow: 0 0 0 1px colors.$white inset, 0 0 0 0 colors.$white;
+    box-shadow: 0 0 0 1px colors.$white inset, shadows.$solid-white;
     .text {
       color: colors.$white;
     }
@@ -50,7 +50,7 @@
     }
     &.hasHover:hover {
       background-color: colors.$ui-dark;
-      box-shadow: 0 0 0 1px colors.$white inset, 4px 4px 0 0 colors.$white;
+      box-shadow: 0 0 0 1px colors.$white inset, shadows.$solid-white-hover;
     }
   }
 }
