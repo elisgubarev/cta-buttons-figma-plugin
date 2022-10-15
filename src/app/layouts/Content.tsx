@@ -1,18 +1,19 @@
-import classNames from "classnames";
 import React, { useState } from "react";
+import Cheerful from "../components/buttons/Cheerful/Cheerful";
 import Classic from "../components/buttons/Classic/Classic";
 import Engaging from "../components/buttons/Engaging/Engaging";
 import Round from "../components/buttons/Round/Round";
 import Sharp from "../components/buttons/Sharp/Sharp";
 import Small from "../components/buttons/Small/Small";
+import ButtonItem from "../components/pluginUI/ButtonItem";
+import CustomizationMenu from "../components/pluginUI/customization/CustomizationMenu";
 import {
   usePluginConfig,
   useSetPluginConfig,
 } from "../components/PluginConfigContext";
-import ButtonItem from "../components/pluginUI/ButtonItem";
-import CustomizationMenu from "../components/pluginUI/customization/CustomizationMenu";
 import { Button } from "../data/enums";
 import { PluginUIEvent } from "../data/types";
+import classNames from "classnames";
 import style from "../styles/pluginUI/Content.module.scss";
 
 const Content = (): JSX.Element => {
@@ -45,6 +46,9 @@ const Content = (): JSX.Element => {
         </ButtonItem>
         <ButtonItem buttonId={Button.Engaging}>
           <Engaging />
+        </ButtonItem>
+        <ButtonItem buttonId={Button.Cheerful}>
+          <Cheerful />
         </ButtonItem>
         <CustomizationMenu />
       </>

@@ -1,7 +1,7 @@
 import { Color } from "./../../types";
 
 // #2C2C2C
-export const uiDark: Color = {
+export const uiDark: Color<"default"> = {
   default: [
     {
       type: "SOLID",

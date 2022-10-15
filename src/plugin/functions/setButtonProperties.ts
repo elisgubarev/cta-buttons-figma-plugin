@@ -1,3 +1,4 @@
+import { overrideEffectsForOutlinedButton } from "./overrideEffectsForOutlinedButton";
 import { Theme } from "../../app/data/enums";
 import { SetButtonProperties } from "../../app/data/types";
 
@@ -25,7 +26,12 @@ export const setButtonProperties: SetButtonProperties = (
     button.effects = buttonProperties.effects[theme].default;
   }
 
-  if (outline && buttonProperties.strokes) {
+  overrideEffectsForOutlinedButton(pluginConfig, buttonProperties, button);
+
+  if (
+    buttonProperties.strokes &&
+    (outline || buttonProperties.strokes.isForced)
+  ) {
     button.strokes = buttonProperties.strokes.fills[theme].default;
     button.strokeWeight = buttonProperties.strokes.weight;
   }

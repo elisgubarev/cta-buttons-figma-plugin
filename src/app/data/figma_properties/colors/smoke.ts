@@ -1,7 +1,7 @@
 import { Color } from "./../../types";
 
 // #2B2E4A
-export const smoke: Color = {
+export const smoke: Color<"default" | "hover2" | "hover3" | "hover7"> = {
   default: [
     {
       type: "SOLID",

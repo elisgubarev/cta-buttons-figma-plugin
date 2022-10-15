@@ -29,7 +29,7 @@ export interface ButtonProperties {
         hover?: readonly Paint[];
       };
     };
-    [Theme.Dark]?: {
+    [Theme.Dark]: {
       primary: {
         default: readonly Paint[];
         hover?: readonly Paint[];
@@ -47,9 +47,19 @@ export interface ButtonProperties {
       default: readonly Effect[];
       hover?: readonly Effect[];
     };
-    [Theme.Dark]?: {
+    [Theme.Dark]: {
       default: readonly Effect[];
       hover?: readonly Effect[];
+    };
+    ifOutline?: {
+      [Theme.Light]?: {
+        default: readonly Effect[];
+        hover?: readonly Effect[];
+      };
+      [Theme.Dark]?: {
+        default: readonly Effect[];
+        hover?: readonly Effect[];
+      };
     };
   };
   cornerRadius?: number;
@@ -63,12 +73,13 @@ export interface ButtonProperties {
         default: readonly Paint[];
         hover?: readonly Paint[];
       };
-      [Theme.Dark]?: {
+      [Theme.Dark]: {
         default: readonly Paint[];
         hover?: readonly Paint[];
       };
     };
     weight: number;
+    isForced?: boolean;
   };
 }
 
@@ -88,7 +99,7 @@ export interface ButtonTextProperties {
         hover?: readonly Paint[];
       };
     };
-    [Theme.Dark]?: {
+    [Theme.Dark]: {
       primary: {
         default: readonly Paint[];
         hover?: readonly Paint[];
@@ -115,7 +126,7 @@ export interface ArrowPropeties {
         hover?: readonly Paint[];
       };
     };
-    [Theme.Dark]?: {
+    [Theme.Dark]: {
       primary: {
         default: readonly Paint[];
         hover?: readonly Paint[];
@@ -186,15 +197,19 @@ export interface SetButtonHoverProperties {
   ): FrameNode;
 }
 
-export type Color = {
-  default: readonly Paint[];
-  [variation: string]: readonly Paint[];
-};
+export type Color<T extends string> = Pick<
+  {
+    [variation: string]: readonly Paint[];
+  },
+  T
+>;
 
-export type Shadow = {
-  default: readonly Effect[];
-  [variation: string]: readonly Effect[];
-};
+export type Shadow<T extends string> = Pick<
+  {
+    [variation: string]: readonly Effect[];
+  },
+  T
+>;
 
 export interface PluginConfig {
   hover: boolean;
@@ -239,4 +254,13 @@ export interface CreateHoverVariant {
 
 export interface CreateArrow {
   (arrowPropeties: ArrowPropeties, pluginConfig: PluginConfig): FrameNode;
+}
+
+export interface OverrideEffectsForOutlinedButton {
+  (
+    pluginConfig: PluginConfig,
+    buttonProperties: ButtonProperties,
+    buttonNode: FrameNode,
+    isHover?: boolean
+  ): FrameNode;
 }

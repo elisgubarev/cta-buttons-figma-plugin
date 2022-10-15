@@ -1,7 +1,7 @@
 import { Color } from "./../../types";
 
 // #000
-export const black: Color = {
+export const black: Color<"default" | "hover2"> = {
   default: [
     {
       type: "SOLID",

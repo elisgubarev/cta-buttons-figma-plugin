@@ -25,6 +25,11 @@ import {
   buttonTextPropertiesSmall,
   arrowPropertiesSmall,
 } from "../components/buttons/Small/properties";
+import {
+  arrowPropertiesCheerful,
+  buttonPropertiesCheerful,
+  buttonTextPropertiesCheerful,
+} from "../components/buttons/Cheerful/properties";
 
 export const mapPropertiesToButtonIds: MapPropertiesToButtonIds = {
   [Button.Classic]: {
@@ -51,5 +56,10 @@ export const mapPropertiesToButtonIds: MapPropertiesToButtonIds = {
     button: buttonPropertiesEngaging,
     text: buttonTextPropertiesEngaging,
     arrow: arrowPropertiesEngaging,
+  },
+  [Button.Cheerful]: {
+    button: buttonPropertiesCheerful,
+    text: buttonTextPropertiesCheerful,
+    arrow: arrowPropertiesCheerful,
   },
 };

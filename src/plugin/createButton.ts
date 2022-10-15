@@ -9,7 +9,7 @@ import { setButtonProperties } from "./functions/setButtonProperties";
 import { setButtonTextPropertires } from "./functions/setButtonTextPropertires";
 
 export const createButton = (buttonId: Button, pluginConfig: PluginConfig) => {
-  const { hover, arrow, outline, dark } = pluginConfig;
+  const { hover, arrow } = pluginConfig;
   let arrowNode: FrameNode;
   const buttonProperties = mapPropertiesToButtonIds[buttonId].button;
   const buttonTextProperties = mapPropertiesToButtonIds[buttonId].text;

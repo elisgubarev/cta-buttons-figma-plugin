@@ -5,34 +5,27 @@
 
 .base {
   @include global.button;
-  background-color: colors.$hot-pink;
-  padding: 14px 16px;
+  background-color: colors.$amber;
+  padding: 14px 40px;
   border-radius: 4px;
-  column-gap: 40px;
-  transition: background-color const.$transition, box-shadow const.$transition;
+  column-gap: 5px;
+  box-shadow: 0 0 0 1px colors.$black inset, 0 0 0 0 colors.$black;
+  transition: transform const.$transition, box-shadow const.$transition,
+    background-color const.$transition;
 }
 
 .hasHover {
   &:hover {
-    background-color: colors.$hot-pink-hover2;
-    .arrow {
-      transform: translateX(2px);
-    }
+    transform: translate(-4px, -4px);
+    box-shadow: 0 0 0 1px colors.$black inset, 4px 4px 0 0 colors.$black;
   }
 }
 
 .outline {
   background-color: colors.$white;
-  box-shadow: 0 0 0 1px colors.$smoke-hover7 inset;
-  .text {
-    color: colors.$smoke;
-  }
-  .arrow path {
-    fill: colors.$smoke;
-  }
+  box-shadow: 0 0 0 1px colors.$black inset, 0 0 0 0 colors.$black;
   &.hasHover:hover {
-    background-color: colors.$white;
-    box-shadow: 0 0 0 1px colors.$hot-pink inset;
+    box-shadow: 0 0 0 1px colors.$black inset, 4px 4px 0 0 colors.$black;
   }
 }
 
@@ -46,12 +39,9 @@
       fill: colors.$ui-dark;
     }
   }
-  &.hasHover:hover {
-    background-color: colors.$white-hover2;
-  }
   &.outline {
     background-color: colors.$ui-dark;
-    box-shadow: 0 0 0 1px colors.$white-hover5 inset;
+    box-shadow: 0 0 0 1px colors.$white inset, 0 0 0 0 colors.$white;
     .text {
       color: colors.$white;
     }
@@ -60,19 +50,13 @@
     }
     &.hasHover:hover {
       background-color: colors.$ui-dark;
-      box-shadow: 0 0 0 1px colors.$white inset;
-      .text {
-        color: colors.$white;
-      }
-      .arrow path {
-        fill: colors.$white;
-      }
+      box-shadow: 0 0 0 1px colors.$white inset, 4px 4px 0 0 colors.$white;
     }
   }
 }
 
 .text {
-  color: colors.$white;
+  color: colors.$black;
   font-size: 14px;
   font-weight: 400;
   font-family: "Lato", sans-serif;
@@ -82,7 +66,7 @@
 
 .arrow {
   position: relative;
-  top: 0.5px;
+  top: 1px;
   transition: transform const.$transition;
   path {
     transition: fill const.$transition;

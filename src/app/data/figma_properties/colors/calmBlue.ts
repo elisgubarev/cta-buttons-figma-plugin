@@ -1,7 +1,7 @@
 import { Color } from "./../../types";
 
 // #0984E3
-export const calmBlue: Color = {
+export const calmBlue: Color<"default" | "hover"> = {
   default: [
     {
       type: "SOLID",

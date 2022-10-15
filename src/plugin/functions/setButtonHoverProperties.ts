@@ -1,5 +1,6 @@
 import { Theme } from "../../app/data/enums";
 import { SetButtonHoverProperties } from "../../app/data/types";
+import { overrideEffectsForOutlinedButton } from "./overrideEffectsForOutlinedButton";
 
 export const setButtonHoverProperties: SetButtonHoverProperties = (
   buttonHover,
@@ -20,8 +21,15 @@ export const setButtonHoverProperties: SetButtonHoverProperties = (
   }
 
   if (buttonProperties.effects?.[theme].hover) {
-    buttonHover.effects = buttonProperties.effects?.[theme].hover;
+    buttonHover.effects = buttonProperties.effects[theme].hover;
   }
+
+  overrideEffectsForOutlinedButton(
+    pluginConfig,
+    buttonProperties,
+    buttonHover,
+    true
+  );
 
   return buttonHover;
 };
