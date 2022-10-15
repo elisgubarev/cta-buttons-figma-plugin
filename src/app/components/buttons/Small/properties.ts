@@ -7,12 +7,12 @@ import {
 } from "../../../data/types";
 
 export const buttonPropertiesSmall: ButtonProperties = {
-  name: "Classic Button",
+  name: "Small Button",
   fills: {
     light: {
       primary: {
-        default: fills.unicornBlue.default,
-        hover: fills.unicornBlue.hover,
+        default: fills.smoke.default,
+        hover: fills.smoke.hover2,
       },
       outline: {
         default: fills.white.default,
@@ -28,28 +28,14 @@ export const buttonPropertiesSmall: ButtonProperties = {
       },
     },
   },
-  paddings: [16, 32, 16, 32],
-  itemSpacing: 10,
-  effects: {
-    light: {
-      default: shadows.small.default,
-      hover: shadows.small.hover,
-    },
-    dark: {
-      default: shadows.smallBlack.default,
-      hover: shadows.smallBlack.hover,
-    },
-  },
-  cornerRadius: 4,
-  paddingsOnHover: {
-    default: [2, 0, 2, 0],
-    hover: [0, 0, 4, 0],
-  },
+  paddings: [11, 18, 11, 18],
+  itemSpacing: 8,
+  cornerRadius: 999,
   strokes: {
     fills: {
       light: {
-        default: fills.unicornBlue.default,
-        hover: fills.unicornBlue.hover,
+        default: fills.smoke.default,
+        hover: fills.smoke.hover3,
       },
       dark: {
         default: fills.white.default,
@@ -71,8 +57,8 @@ export const buttonTextPropertiesSmall: ButtonTextProperties = {
         default: fills.white.default,
       },
       outline: {
-        default: fills.unicornBlue.default,
-        hover: fills.unicornBlue.hover,
+        default: fills.smoke.default,
+        hover: fills.smoke.hover3,
       },
     },
     dark: {
@@ -91,7 +77,7 @@ export const arrowPropertiesSmall: ArrowPropeties = {
   vectorPaths: [
     {
       windingRule: "NONZERO",
-      data: "M 0.6585445788948896 5.658544639558827 L 8.01448757539377 5.658544639558827 L 4.800789955022263 8.872241927933246 C 4.543957578673812 9.129074327940632 4.543957578673812 9.55054296634236 4.800789955022263 9.807375366349747 C 5.057622331370714 10.064207766357134 5.472505334429678 10.064207766357134 5.729337710778129 9.807375366349747 L 10.06914721421843 5.467566719208252 C 10.325979590566881 5.210734319200866 10.325979590566881 4.795851591942184 10.06914721421843 4.539019191934798 L 5.7359233072959706 0.1926243000055393 C 5.479090930947519 -0.06420810000184643 5.064207927888556 -0.06420810000184643 4.807375551540105 0.1926243000055393 C 4.550543175191653 0.44945670001292504 4.550543175191653 0.8643400749348759 4.807375551540105 1.1211724749422616 L 8.01448757539377 4.341455674459728 L 0.6585445788948896 4.341455674459728 C 0.2963450526522372 4.341455674459728 0 4.637800754410737 0 5.000000314018555 C 0 5.362199873626373 0.2963450526522372 5.658544639558827 0.6585445788948896 5.658544639558827 Z",
+      data: "M 0.23575477369975775 0.23677218873850467 C -0.07858492456658592 0.551111882227333 -0.07858492456658592 1.0588913298138918 0.23575477369975775 1.37323102330272 L 3.3630320028045 4.50050808477406 L 0.23575477369975775 7.627785242327997 C -0.07858492456658592 7.9421249358168255 -0.07858492456658592 8.449905128043513 0.23575477369975775 8.76424482153234 C 0.5500944719661014 9.078584515021168 1.057873927270184 9.078584515021168 1.3722136255365278 8.76424482153234 L 5.071750333047415 5.06470740158836 C 5.386090031313759 4.750367708099532 5.386090031313759 4.242588284533623 5.071750333047415 3.9282485910447944 L 1.3722136255365278 0.2287120118235401 C 1.0659339121424547 -0.07756769691551804 0.5500944719661014 -0.07756750475032362 0.23575477369975775 0.23677218873850467 Z",
     },
   ],
   fills: {
@@ -100,8 +86,8 @@ export const arrowPropertiesSmall: ArrowPropeties = {
         default: fills.white.default,
       },
       outline: {
-        default: fills.unicornBlue.default,
-        hover: fills.unicornBlue.hover,
+        default: fills.smoke.default,
+        hover: fills.smoke.hover3,
       },
     },
     dark: {
@@ -115,17 +101,17 @@ export const arrowPropertiesSmall: ArrowPropeties = {
     },
   },
   frameSize: {
-    width: 12,
-    height: 12,
+    width: 5,
+    height: 9,
   },
   vectorOffset: {
     initial: {
       x: 0,
-      y: 1,
+      y: 0.5,
     },
     hover: {
       x: 2,
-      y: 1,
+      y: 0.5,
     },
   },
 };
