@@ -186,19 +186,10 @@ export interface SetButtonHoverProperties {
   ): FrameNode;
 }
 
-export interface Fills {
-  [color: string]: {
-    default: readonly Paint[];
-    hover?: readonly Paint[];
-    hover2?: readonly Paint[];
-    hover3?: readonly Paint[];
-    hover4?: readonly Paint[];
-    hover5?: readonly Paint[];
-    hover6?: readonly Paint[];
-    hover7?: readonly Paint[];
-    hover8?: readonly Paint[];
-  };
-}
+export type Color = {
+  default: readonly Paint[];
+  [variation: string]: readonly Paint[];
+};
 
 export interface Shadows {
   [shadow: string]: {

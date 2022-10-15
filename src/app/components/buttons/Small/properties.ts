@@ -1,5 +1,6 @@
-import { fills } from "../../../data/figma_properties/fills";
-import { shadows } from "../../../data/figma_properties/shadows";
+import { smoke } from "../../../data/figma_properties/colors/smoke";
+import { uiDark } from "../../../data/figma_properties/colors/uiDark";
+import { white } from "../../../data/figma_properties/colors/white";
 import {
   ArrowPropeties,
   ButtonProperties,
@@ -11,20 +12,20 @@ export const buttonPropertiesSmall: ButtonProperties = {
   fills: {
     light: {
       primary: {
-        default: fills.smoke.default,
-        hover: fills.smoke.hover2,
+        default: smoke.default,
+        hover: smoke.hover2,
       },
       outline: {
-        default: fills.white.default,
+        default: white.default,
       },
     },
     dark: {
       primary: {
-        default: fills.white.default,
-        hover: fills.white.hover2,
+        default: white.default,
+        hover: white.hover2,
       },
       outline: {
-        default: fills.uiButtonItemDark.default,
+        default: uiDark.default,
       },
     },
   },
@@ -34,12 +35,12 @@ export const buttonPropertiesSmall: ButtonProperties = {
   strokes: {
     fills: {
       light: {
-        default: fills.smoke.default,
-        hover: fills.smoke.hover3,
+        default: smoke.default,
+        hover: smoke.hover3,
       },
       dark: {
-        default: fills.white.default,
-        hover: fills.white.hover3,
+        default: white.default,
+        hover: white.hover3,
       },
     },
     weight: 2,
@@ -54,20 +55,20 @@ export const buttonTextPropertiesSmall: ButtonTextProperties = {
   fills: {
     light: {
       primary: {
-        default: fills.white.default,
+        default: white.default,
       },
       outline: {
-        default: fills.smoke.default,
-        hover: fills.smoke.hover3,
+        default: smoke.default,
+        hover: smoke.hover3,
       },
     },
     dark: {
       primary: {
-        default: fills.uiButtonItemDark.default,
+        default: uiDark.default,
       },
       outline: {
-        default: fills.white.default,
-        hover: fills.white.hover3,
+        default: white.default,
+        hover: white.hover3,
       },
     },
   },
@@ -83,20 +84,20 @@ export const arrowPropertiesSmall: ArrowPropeties = {
   fills: {
     light: {
       primary: {
-        default: fills.white.default,
+        default: white.default,
       },
       outline: {
-        default: fills.smoke.default,
-        hover: fills.smoke.hover3,
+        default: smoke.default,
+        hover: smoke.hover3,
       },
     },
     dark: {
       primary: {
-        default: fills.uiButtonItemDark.default,
+        default: uiDark.default,
       },
       outline: {
-        default: fills.white.default,
-        hover: fills.white.hover3,
+        default: white.default,
+        hover: white.hover3,
       },
     },
   },

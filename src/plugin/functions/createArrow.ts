@@ -1,5 +1,5 @@
 import { Theme } from "../../app/data/enums";
-import { fills } from "../../app/data/figma_properties/fills";
+import { white } from "../../app/data/figma_properties/colors/white";
 import { CreateArrow } from "../../app/data/types";
 
 export const createArrow: CreateArrow = (arrowPropeties, pluginConfig) => {
@@ -13,7 +13,7 @@ export const createArrow: CreateArrow = (arrowPropeties, pluginConfig) => {
 
   arrowNode.name = "Arrow";
   arrowNode.fills = [];
-  arrowVector.fills = fills.white.default;
+  arrowVector.fills = white.default;
   arrowVector.vectorPaths = vectorPaths;
   arrowVector.strokes = [];
   arrowNode.resize(frameSize.width, frameSize.height);

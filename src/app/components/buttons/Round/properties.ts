@@ -1,4 +1,6 @@
-import { fills } from "../../../data/figma_properties/fills";
+import { calmBlue } from "../../../data/figma_properties/colors/calmBlue";
+import { uiDark } from "../../../data/figma_properties/colors/uiDark";
+import { white } from "../../../data/figma_properties/colors/white";
 import { shadows } from "../../../data/figma_properties/shadows";
 import {
   ArrowPropeties,
@@ -11,20 +13,20 @@ export const buttonPropertiesRound: ButtonProperties = {
   fills: {
     light: {
       primary: {
-        default: fills.calmBlue.default,
-        hover: fills.calmBlue.hover,
+        default: calmBlue.default,
+        hover: calmBlue.hover,
       },
       outline: {
-        default: fills.white.default,
+        default: white.default,
       },
     },
     dark: {
       primary: {
-        default: fills.white.default,
-        hover: fills.white.hover2,
+        default: white.default,
+        hover: white.hover2,
       },
       outline: {
-        default: fills.uiButtonItemDark.default,
+        default: uiDark.default,
       },
     },
   },
@@ -49,12 +51,12 @@ export const buttonPropertiesRound: ButtonProperties = {
     weight: 2,
     fills: {
       light: {
-        default: fills.calmBlue.default,
-        hover: fills.calmBlue.hover,
+        default: calmBlue.default,
+        hover: calmBlue.hover,
       },
       dark: {
-        default: fills.white.default,
-        hover: fills.white.hover3,
+        default: white.default,
+        hover: white.hover3,
       },
     },
   },
@@ -68,20 +70,20 @@ export const buttonTextPropertiesRound: ButtonTextProperties = {
   fills: {
     light: {
       primary: {
-        default: fills.white.default,
+        default: white.default,
       },
       outline: {
-        default: fills.calmBlue.default,
-        hover: fills.calmBlue.hover,
+        default: calmBlue.default,
+        hover: calmBlue.hover,
       },
     },
     dark: {
       primary: {
-        default: fills.uiButtonItemDark.default,
+        default: uiDark.default,
       },
       outline: {
-        default: fills.white.default,
-        hover: fills.white.hover3,
+        default: white.default,
+        hover: white.hover3,
       },
     },
   },
@@ -97,20 +99,20 @@ export const arrowPropertiesRound: ArrowPropeties = {
   fills: {
     light: {
       primary: {
-        default: fills.white.default,
+        default: white.default,
       },
       outline: {
-        default: fills.calmBlue.default,
-        hover: fills.calmBlue.hover,
+        default: calmBlue.default,
+        hover: calmBlue.hover,
       },
     },
     dark: {
       primary: {
-        default: fills.uiButtonItemDark.default,
+        default: uiDark.default,
       },
       outline: {
-        default: fills.white.default,
-        hover: fills.white.hover3,
+        default: white.default,
+        hover: white.hover3,
       },
     },
   },

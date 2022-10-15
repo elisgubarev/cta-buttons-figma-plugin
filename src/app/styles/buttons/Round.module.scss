@@ -50,11 +50,11 @@
   background-color: colors.$white;
   box-shadow: shadows.$small-dark;
   .text {
-    color: colors.$ui-button-item-dark;
+    color: colors.$ui-dark;
   }
   .arrow {
     path {
-      fill: colors.$ui-button-item-dark;
+      fill: colors.$ui-dark;
     }
   }
   &.hasHover:hover {
@@ -62,7 +62,7 @@
     box-shadow: shadows.$small-hover-dark;
   }
   &.outline {
-    background-color: colors.$ui-button-item-dark;
+    background-color: colors.$ui-dark;
     box-shadow: shadows.$small-dark, 0 0 0 2px colors.$white inset;
     .text {
       color: colors.$white;
@@ -71,7 +71,7 @@
       fill: colors.$white;
     }
     &.hasHover:hover {
-      background-color: colors.$ui-button-item-dark;
+      background-color: colors.$ui-dark;
       box-shadow: shadows.$small-hover-dark,
         0 0 0 2px colors.$white-hover3 inset;
       .text {
