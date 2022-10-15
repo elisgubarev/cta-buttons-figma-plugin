@@ -67,6 +67,19 @@ export const fills: Fills = {
         },
       },
     ],
+    hover5: [
+      {
+        type: "SOLID",
+        visible: true,
+        opacity: 0.4,
+        blendMode: "NORMAL",
+        color: {
+          r: 1,
+          g: 1,
+          b: 1,
+        },
+      },
+    ],
   },
 
   unicornBlue: {
@@ -209,6 +222,47 @@ export const fills: Fills = {
           r: 0.16862745583057404,
           g: 0.18039216101169586,
           b: 0.29019609093666077,
+        },
+      },
+    ],
+    hover7: [
+      {
+        type: "SOLID",
+        visible: true,
+        opacity: 0.2,
+        blendMode: "NORMAL",
+        color: {
+          r: 0.16862745583057404,
+          g: 0.18039216101169586,
+          b: 0.29019609093666077,
+        },
+      },
+    ],
+  },
+  hotPink: {
+    default: [
+      {
+        type: "SOLID",
+        visible: true,
+        opacity: 1,
+        blendMode: "NORMAL",
+        color: {
+          r: 0.9137254953384399,
+          g: 0.11764705926179886,
+          b: 0.38823530077934265,
+        },
+      },
+    ],
+    hover2: [
+      {
+        type: "SOLID",
+        visible: true,
+        opacity: 0.699999988079071,
+        blendMode: "NORMAL",
+        color: {
+          r: 0.9137254953384399,
+          g: 0.11764705926179886,
+          b: 0.38823530077934265,
         },
       },
     ],

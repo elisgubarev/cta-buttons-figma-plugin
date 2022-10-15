@@ -193,6 +193,10 @@ export interface Fills {
     hover2?: readonly Paint[];
     hover3?: readonly Paint[];
     hover4?: readonly Paint[];
+    hover5?: readonly Paint[];
+    hover6?: readonly Paint[];
+    hover7?: readonly Paint[];
+    hover8?: readonly Paint[];
   };
 }
 

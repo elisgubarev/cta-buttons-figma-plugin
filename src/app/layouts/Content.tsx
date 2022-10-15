@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React, { useState } from "react";
 import Classic from "../components/buttons/Classic/Classic";
+import Engaging from "../components/buttons/Engaging/Engaging";
 import Round from "../components/buttons/Round/Round";
 import Sharp from "../components/buttons/Sharp/Sharp";
 import Small from "../components/buttons/Small/Small";
@@ -41,6 +42,9 @@ const Content = (): JSX.Element => {
         </ButtonItem>
         <ButtonItem buttonId={Button.Round}>
           <Round />
+        </ButtonItem>
+        <ButtonItem buttonId={Button.Engaging}>
+          <Engaging />
         </ButtonItem>
         <CustomizationMenu />
       </>

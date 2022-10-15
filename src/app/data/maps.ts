@@ -1,3 +1,8 @@
+import {
+  buttonPropertiesEngaging,
+  buttonTextPropertiesEngaging,
+  arrowPropertiesEngaging,
+} from "./../components/buttons/Engaging/properties";
 import { arrowPropertiesRound } from "./../components/buttons/Round/properties";
 import {
   arrowPropertiesClassic,
@@ -41,5 +46,10 @@ export const mapPropertiesToButtonIds: MapPropertiesToButtonIds = {
     button: buttonPropertiesSmall,
     text: buttonTextPropertiesSmall,
     arrow: arrowPropertiesSmall,
+  },
+  [Button.Engaging]: {
+    button: buttonPropertiesEngaging,
+    text: buttonTextPropertiesEngaging,
+    arrow: arrowPropertiesEngaging,
   },
 };
