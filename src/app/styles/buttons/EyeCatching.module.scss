@@ -5,20 +5,20 @@
 
 .base {
   @include global.button;
-  background-color: colors.$unicorn-blue;
-  box-shadow: shadows.$small;
-  padding: 16px 32px;
-  border-radius: 4px;
+  background-color: colors.$blurple;
+  box-shadow: shadows.$small, inset 0px 0px 0px 1px #4834d4,
+    inset 0px 1px 1px 1px rgba(255, 255, 255, 0.25),
+    inset 0px -1px 1px 1px rgba(52, 35, 170, 0.25);
+  padding: 18px 24px;
+  border-radius: 10px;
   column-gap: 10px;
   transition: background-color const.$transition, box-shadow const.$transition,
-    transform const.$transition;
+    opacity const.$transition;
 }
 
 .hasHover {
   &:hover {
-    transform: translateY(-2px);
-    background-color: colors.$unicorn-blue-hover;
-    box-shadow: shadows.$small-hover;
+    opacity: 0.8;
     .arrow {
       transform: translateX(2px);
     }
@@ -26,29 +26,24 @@
 }
 
 .outline {
-  background-color: colors.$white;
-  box-shadow: shadows.$small, 0 0 0 2px colors.$unicorn-blue inset;
+  background-color: colors.$blurple-hover-01;
+  box-shadow: 0 0 0 1px colors.$blurple-hover-03 inset;
   .text {
-    color: colors.$unicorn-blue;
+    color: colors.$blurple;
   }
   .arrow path {
-    fill: colors.$unicorn-blue;
+    fill: colors.$blurple;
   }
   &.hasHover:hover {
-    background-color: colors.$white;
-    box-shadow: shadows.$small-hover, 0 0 0 2px colors.$unicorn-blue-hover inset;
-    .text {
-      color: colors.$unicorn-blue-hover;
-    }
-    .arrow path {
-      fill: colors.$unicorn-blue-hover;
-    }
+    opacity: 1;
+    background-color: colors.$blurple-hover-02;
+    box-shadow: 0 0 0 1px colors.$blurple inset;
   }
 }
 
 .darkTheme {
   background-color: colors.$white;
-  box-shadow: shadows.$small-dark;
+  box-shadow: shadows.$small-black;
   .text {
     color: colors.$ui-dark;
   }
@@ -58,12 +53,11 @@
     }
   }
   &.hasHover:hover {
-    background-color: colors.$white-hover-07;
-    box-shadow: shadows.$small-hover-dark;
+    background-color: colors.$white-hover-08;
   }
   &.outline {
-    background-color: colors.$ui-dark;
-    box-shadow: shadows.$small-dark, 0 0 0 2px colors.$white inset;
+    background-color: colors.$white-hover-01;
+    box-shadow: 0 0 0 1px colors.$white-hover-03 inset;
     .text {
       color: colors.$white;
     }
@@ -71,15 +65,14 @@
       fill: colors.$white;
     }
     &.hasHover:hover {
-      background-color: colors.$ui-dark;
-      box-shadow: shadows.$small-hover-dark,
-        0 0 0 2px colors.$white-hover-06 inset;
-      .text {
-        color: colors.$white-hover-06;
-      }
-      .arrow path {
-        fill: colors.$white-hover-06;
-      }
+      background-color: colors.$white-hover-02;
+      box-shadow: 0 0 0 1px colors.$white inset;
+      // .text {
+      //   color: colors.$white-hover-06;
+      // }
+      // .arrow path {
+      //   fill: colors.$white-hover-06;
+      // }
     }
   }
 }

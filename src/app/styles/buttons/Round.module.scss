@@ -6,7 +6,7 @@
 .base {
   @include global.button;
   background-color: colors.$calm-blue;
-  box-shadow: shadows.$small;
+  box-shadow: shadows.$medium;
   padding: 23px 32px;
   border-radius: 999px;
   column-gap: 12px;
@@ -18,7 +18,7 @@
   &:hover {
     transform: translateY(-3px);
     background-color: colors.$calm-blue-hover;
-    box-shadow: shadows.$small-hover;
+    box-shadow: shadows.$medium-hover;
     .arrow {
       transform: translateX(3px);
     }
@@ -27,7 +27,7 @@
 
 .outline {
   background-color: colors.$white;
-  box-shadow: shadows.$small, 0 0 0 2px colors.$calm-blue inset;
+  box-shadow: shadows.$medium, 0 0 0 2px colors.$calm-blue inset;
   .text {
     color: colors.$calm-blue;
   }
@@ -36,7 +36,7 @@
   }
   &.hasHover:hover {
     background-color: colors.$white;
-    box-shadow: shadows.$small-hover, 0 0 0 2px colors.$calm-blue-hover inset;
+    box-shadow: shadows.$medium-hover, 0 0 0 2px colors.$calm-blue-hover inset;
     .text {
       color: colors.$calm-blue-hover;
     }
@@ -48,7 +48,7 @@
 
 .darkTheme {
   background-color: colors.$white;
-  box-shadow: shadows.$small-dark;
+  box-shadow: shadows.$medium-dark;
   .text {
     color: colors.$ui-dark;
   }
@@ -59,11 +59,11 @@
   }
   &.hasHover:hover {
     background-color: colors.$white-hover-07;
-    box-shadow: shadows.$small-hover-dark;
+    box-shadow: shadows.$medium-hover-dark;
   }
   &.outline {
     background-color: colors.$ui-dark;
-    box-shadow: shadows.$small-dark, 0 0 0 2px colors.$white inset;
+    box-shadow: shadows.$medium-dark, 0 0 0 2px colors.$white inset;
     .text {
       color: colors.$white;
     }
@@ -72,7 +72,7 @@
     }
     &.hasHover:hover {
       background-color: colors.$ui-dark;
-      box-shadow: shadows.$small-hover-dark,
+      box-shadow: shadows.$medium-hover-dark,
         0 0 0 2px colors.$white-hover-06 inset;
       .text {
         color: colors.$white-hover-06;
