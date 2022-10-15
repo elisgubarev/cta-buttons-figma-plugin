@@ -58,7 +58,7 @@
     }
   }
   &.hasHover:hover {
-    background-color: colors.$white-hover2;
+    background-color: colors.$white-hover-07;
     box-shadow: shadows.$small-hover-dark;
   }
   &.outline {
@@ -73,12 +73,12 @@
     &.hasHover:hover {
       background-color: colors.$ui-dark;
       box-shadow: shadows.$small-hover-dark,
-        0 0 0 2px colors.$white-hover3 inset;
+        0 0 0 2px colors.$white-hover-06 inset;
       .text {
-        color: colors.$white-hover3;
+        color: colors.$white-hover-06;
       }
       .arrow path {
-        fill: colors.$white-hover3;
+        fill: colors.$white-hover-06;
       }
     }
   }

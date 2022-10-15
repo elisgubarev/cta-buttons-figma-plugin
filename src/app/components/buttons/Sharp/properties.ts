@@ -13,7 +13,7 @@ export const buttonPropertiesSharp: ButtonProperties = {
     light: {
       primary: {
         default: black.default,
-        hover: black.hover2,
+        hover: black.hover07,
       },
       outline: {
         default: white.default,
@@ -23,7 +23,7 @@ export const buttonPropertiesSharp: ButtonProperties = {
     dark: {
       primary: {
         default: white.default,
-        hover: white.hover2,
+        hover: white.hover07,
       },
       outline: {
         default: uiDark.default,

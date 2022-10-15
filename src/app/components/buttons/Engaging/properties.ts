@@ -14,7 +14,7 @@ export const buttonPropertiesEngaging: ButtonProperties = {
     light: {
       primary: {
         default: hotPink.default,
-        hover: hotPink.hover2,
+        hover: hotPink.hover07,
       },
       outline: {
         default: white.default,
@@ -23,7 +23,7 @@ export const buttonPropertiesEngaging: ButtonProperties = {
     dark: {
       primary: {
         default: white.default,
-        hover: white.hover2,
+        hover: white.hover07,
       },
       outline: {
         default: uiDark.default,
@@ -35,11 +35,11 @@ export const buttonPropertiesEngaging: ButtonProperties = {
   strokes: {
     fills: {
       light: {
-        default: smoke.hover7,
+        default: smoke.hover02,
         hover: hotPink.default,
       },
       dark: {
-        default: white.hover5,
+        default: white.hover04,
         hover: white.default,
       },
     },

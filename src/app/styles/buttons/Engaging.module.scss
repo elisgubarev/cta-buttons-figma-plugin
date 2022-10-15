@@ -14,7 +14,7 @@
 
 .hasHover {
   &:hover {
-    background-color: colors.$hot-pink-hover2;
+    background-color: colors.$hot-pink-hover-07;
     .arrow {
       transform: translateX(2px);
     }
@@ -23,7 +23,7 @@
 
 .outline {
   background-color: colors.$white;
-  box-shadow: 0 0 0 1px colors.$smoke-hover7 inset;
+  box-shadow: 0 0 0 1px colors.$smoke-hover-02 inset;
   .text {
     color: colors.$smoke;
   }
@@ -47,11 +47,11 @@
     }
   }
   &.hasHover:hover {
-    background-color: colors.$white-hover2;
+    background-color: colors.$white-hover-07;
   }
   &.outline {
     background-color: colors.$ui-dark;
-    box-shadow: 0 0 0 1px colors.$white-hover5 inset;
+    box-shadow: 0 0 0 1px colors.$white-hover-04 inset;
     .text {
       color: colors.$white;
     }

@@ -24,7 +24,7 @@ export const buttonPropertiesClassic: ButtonProperties = {
     dark: {
       primary: {
         default: white.default,
-        hover: white.hover2,
+        hover: white.hover07,
       },
       outline: {
         default: uiDark.default,
@@ -56,7 +56,7 @@ export const buttonPropertiesClassic: ButtonProperties = {
       },
       dark: {
         default: white.default,
-        hover: white.hover3,
+        hover: white.hover06,
       },
     },
     weight: 2,
@@ -84,7 +84,7 @@ export const buttonTextPropertiesClassic: ButtonTextProperties = {
       },
       outline: {
         default: white.default,
-        hover: white.hover3,
+        hover: white.hover06,
       },
     },
   },
@@ -113,7 +113,7 @@ export const arrowPropertiesClassic: ArrowPropeties = {
       },
       outline: {
         default: white.default,
-        hover: white.hover3,
+        hover: white.hover06,
       },
     },
   },

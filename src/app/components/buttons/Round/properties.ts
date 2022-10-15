@@ -24,7 +24,7 @@ export const buttonPropertiesRound: ButtonProperties = {
     dark: {
       primary: {
         default: white.default,
-        hover: white.hover2,
+        hover: white.hover07,
       },
       outline: {
         default: uiDark.default,
@@ -57,7 +57,7 @@ export const buttonPropertiesRound: ButtonProperties = {
       },
       dark: {
         default: white.default,
-        hover: white.hover3,
+        hover: white.hover06,
       },
     },
   },
@@ -84,7 +84,7 @@ export const buttonTextPropertiesRound: ButtonTextProperties = {
       },
       outline: {
         default: white.default,
-        hover: white.hover3,
+        hover: white.hover06,
       },
     },
   },
@@ -113,7 +113,7 @@ export const arrowPropertiesRound: ArrowPropeties = {
       },
       outline: {
         default: white.default,
-        hover: white.hover3,
+        hover: white.hover06,
       },
     },
   },

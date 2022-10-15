@@ -1,15 +1,15 @@
 $white: #fff;
-$white-hover: rgba(255, 255, 255, 0.8);
-$white-hover2: rgba(255, 255, 255, 0.7);
-$white-hover3: rgba(255, 255, 255, 0.6);
-$white-hover4: rgba(255, 255, 255, 0.5);
-$white-hover5: rgba(255, 255, 255, 0.4);
+$white-hover-08: rgba(255, 255, 255, 0.8);
+$white-hover-07: rgba(255, 255, 255, 0.7);
+$white-hover-06: rgba(255, 255, 255, 0.6);
+$white-hover-05: rgba(255, 255, 255, 0.5);
+$white-hover-04: rgba(255, 255, 255, 0.4);
 
 $black: #000;
-$black-hover: rgba(0, 0, 0, 0.8);
-$black-hover2: rgba(0, 0, 0, 0.7);
-$black-hover3: rgba(0, 0, 0, 0.6);
-$black-hover4: rgba(0, 0, 0, 0.5);
+$black-hover-08: rgba(0, 0, 0, 0.8);
+$black-hover-07: rgba(0, 0, 0, 0.7);
+$black-hover-06: rgba(0, 0, 0, 0.6);
+$black-hover-05: rgba(0, 0, 0, 0.5);
 
 $plugin-background: #f6f6f6;
 $plugin-background-dark: #1e1e1e;
@@ -26,12 +26,12 @@ $ui-stroke: #454444;
 $figma-blue: #18a0fb;
 
 $smoke: #2b2e4a;
-$smoke-hover2: rgba(43, 46, 74, 0.7);
-$smoke-hover3: rgba(43, 46, 74, 0.6);
-$smoke-hover7: rgba(43, 46, 74, 0.2);
+$smoke-hover-07: rgba(43, 46, 74, 0.7);
+$smoke-hover-06: rgba(43, 46, 74, 0.6);
+$smoke-hover-02: rgba(43, 46, 74, 0.2);
 
 $hot-pink: #e91e63;
-$hot-pink-hover2: rgba(233, 30, 99, 0.7);
+$hot-pink-hover-07: rgba(233, 30, 99, 0.7);
 
 $amber: #f6b93b;
 

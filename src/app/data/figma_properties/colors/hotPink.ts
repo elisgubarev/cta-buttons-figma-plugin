@@ -1,7 +1,7 @@
 import { Color } from "./../../types";
 
 // #E91E63
-export const hotPink: Color<"default" | "hover2"> = {
+export const hotPink: Color<"default" | "hover07"> = {
   default: [
     {
       type: "SOLID",
@@ -15,7 +15,7 @@ export const hotPink: Color<"default" | "hover2"> = {
       },
     },
   ],
-  hover2: [
+  hover07: [
     {
       type: "SOLID",
       visible: true,

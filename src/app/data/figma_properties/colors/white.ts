@@ -2,7 +2,7 @@ import { Color } from "./../../types";
 
 // #fff
 export const white: Color<
-  "default" | "hover" | "hover2" | "hover3" | "hover4" | "hover5"
+  "default" | "hover08" | "hover07" | "hover06" | "hover05" | "hover04"
 > = {
   default: [
     {
@@ -17,7 +17,7 @@ export const white: Color<
       },
     },
   ],
-  hover: [
+  hover08: [
     {
       type: "SOLID",
       visible: true,
@@ -30,7 +30,7 @@ export const white: Color<
       },
     },
   ],
-  hover2: [
+  hover07: [
     {
       type: "SOLID",
       visible: true,
@@ -43,7 +43,7 @@ export const white: Color<
       },
     },
   ],
-  hover3: [
+  hover06: [
     {
       type: "SOLID",
       visible: true,
@@ -56,7 +56,7 @@ export const white: Color<
       },
     },
   ],
-  hover4: [
+  hover05: [
     {
       type: "SOLID",
       visible: true,
@@ -69,7 +69,7 @@ export const white: Color<
       },
     },
   ],
-  hover5: [
+  hover04: [
     {
       type: "SOLID",
       visible: true,

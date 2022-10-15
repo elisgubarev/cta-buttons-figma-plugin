@@ -13,7 +13,7 @@
 
 .hasHover {
   &:hover {
-    background-color: colors.$black-hover2;
+    background-color: colors.$black-hover-07;
     .arrow {
       transform: translateX(2px);
     }
@@ -49,7 +49,7 @@
     fill: colors.$ui-dark;
   }
   &.hasHover:hover {
-    background-color: colors.$white-hover2;
+    background-color: colors.$white-hover-07;
   }
   &.outline {
     background-color: colors.$ui-dark;

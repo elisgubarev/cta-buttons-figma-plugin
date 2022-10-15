@@ -13,7 +13,7 @@ export const buttonPropertiesSmall: ButtonProperties = {
     light: {
       primary: {
         default: smoke.default,
-        hover: smoke.hover2,
+        hover: smoke.hover07,
       },
       outline: {
         default: white.default,
@@ -22,7 +22,7 @@ export const buttonPropertiesSmall: ButtonProperties = {
     dark: {
       primary: {
         default: white.default,
-        hover: white.hover2,
+        hover: white.hover07,
       },
       outline: {
         default: uiDark.default,
@@ -36,11 +36,11 @@ export const buttonPropertiesSmall: ButtonProperties = {
     fills: {
       light: {
         default: smoke.default,
-        hover: smoke.hover3,
+        hover: smoke.hover06,
       },
       dark: {
         default: white.default,
-        hover: white.hover3,
+        hover: white.hover06,
       },
     },
     weight: 2,
@@ -59,7 +59,7 @@ export const buttonTextPropertiesSmall: ButtonTextProperties = {
       },
       outline: {
         default: smoke.default,
-        hover: smoke.hover3,
+        hover: smoke.hover06,
       },
     },
     dark: {
@@ -68,7 +68,7 @@ export const buttonTextPropertiesSmall: ButtonTextProperties = {
       },
       outline: {
         default: white.default,
-        hover: white.hover3,
+        hover: white.hover06,
       },
     },
   },
@@ -88,7 +88,7 @@ export const arrowPropertiesSmall: ArrowPropeties = {
       },
       outline: {
         default: smoke.default,
-        hover: smoke.hover3,
+        hover: smoke.hover06,
       },
     },
     dark: {
@@ -97,7 +97,7 @@ export const arrowPropertiesSmall: ArrowPropeties = {
       },
       outline: {
         default: white.default,
-        hover: white.hover3,
+        hover: white.hover06,
       },
     },
   },
