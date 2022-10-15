@@ -1,7 +1,8 @@
 import { uiDark } from "../../../data/figma_properties/colors/uiDark";
 import { unicornBlue } from "../../../data/figma_properties/colors/unicornBlue";
 import { white } from "../../../data/figma_properties/colors/white";
-import { shadows } from "../../../data/figma_properties/shadows";
+import { smallShadow } from "../../../data/figma_properties/shadows/smallShadow";
+import { smallShadowBlack } from "../../../data/figma_properties/shadows/smallShadowBlack";
 import {
   ArrowPropeties,
   ButtonProperties,
@@ -34,12 +35,12 @@ export const buttonPropertiesClassic: ButtonProperties = {
   itemSpacing: 10,
   effects: {
     light: {
-      default: shadows.small.default,
-      hover: shadows.small.hover,
+      default: smallShadow.default,
+      hover: smallShadow.hover,
     },
     dark: {
-      default: shadows.smallBlack.default,
-      hover: shadows.smallBlack.hover,
+      default: smallShadowBlack.default,
+      hover: smallShadowBlack.hover,
     },
   },
   cornerRadius: 4,

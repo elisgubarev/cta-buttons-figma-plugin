@@ -191,12 +191,10 @@ export type Color = {
   [variation: string]: readonly Paint[];
 };
 
-export interface Shadows {
-  [shadow: string]: {
-    default: readonly Effect[];
-    hover?: readonly Effect[];
-  };
-}
+export type Shadow = {
+  default: readonly Effect[];
+  [variation: string]: readonly Effect[];
+};
 
 export interface PluginConfig {
   hover: boolean;
