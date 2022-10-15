@@ -1,5 +1,5 @@
 import { Theme } from "../../app/data/enums";
-import { fills } from "../../app/data/global_properties/fills";
+import { fills } from "../../app/data/figma_properties/fills";
 import { CreateArrow } from "../../app/data/types";
 
 export const createArrow: CreateArrow = (arrowPropeties, pluginConfig) => {

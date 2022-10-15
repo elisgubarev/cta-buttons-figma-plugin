@@ -1,4 +1,4 @@
-import { fills } from "../../../data/global_properties/fills";
+import { fills } from "../../../data/figma_properties/fills";
 import {
   ArrowPropeties,
   ButtonProperties,

@@ -1,5 +1,5 @@
-import { fills } from "../../../data/global_properties/fills";
-import { shadows } from "../../../data/global_properties/shadows";
+import { fills } from "../../../data/figma_properties/fills";
+import { shadows } from "../../../data/figma_properties/shadows";
 import {
   ArrowPropeties,
   ButtonProperties,
