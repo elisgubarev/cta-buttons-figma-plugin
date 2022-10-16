@@ -20,11 +20,15 @@
   height: 32px;
   border-radius: 100%;
   box-shadow: shadows.$ui-small-black;
-  
+
   &Dark {
     border: 1px solid colors.$ui-stroke;
   }
-  
+
+  &:hover {
+    background-color: colors.$ui-stroke;
+  }
+
   transition: border const.$ui-transition;
 }
 
@@ -56,6 +60,7 @@
   font-size: 12px;
   line-height: 16px;
   font-family: "Inter", sans-serif;
+  user-select: none;
   &:hover {
     background-color: colors.$figma-blue;
   }

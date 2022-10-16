@@ -5,18 +5,17 @@ import Engaging from "../components/buttons/Engaging/Engaging";
 import Round from "../components/buttons/Round/Round";
 import Sharp from "../components/buttons/Sharp/Sharp";
 import Small from "../components/buttons/Small/Small";
-import ButtonItem from "../components/pluginUI/ButtonItem";
 import CustomizationMenu from "../components/pluginUI/customization/CustomizationMenu";
-import {
-  usePluginConfig,
-  useSetPluginConfig,
-} from "../components/PluginConfigContext";
-import { Button } from "../data/enums";
-import { PluginUIEvent } from "../data/types";
 import EyeCatching from "../components/buttons/EyeCatching/EyeCatching";
 import classNames from "classnames";
 import style from "../styles/pluginUI/Content.module.scss";
 import Futuristic from "../components/buttons/Futuristic/Futuristic";
+import ButtonFrame from "../components/pluginUI/ButtonFrame";
+import {
+  usePluginConfig,
+  useSetPluginConfig,
+} from "../components/PluginConfigContext";
+import { PluginUIEvent } from "../data/types";
 
 const Content = (): JSX.Element => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -34,30 +33,38 @@ const Content = (): JSX.Element => {
     if (!isLoaded) return null;
     return (
       <>
-        <ButtonItem buttonId={Button.Classic}>
+        <ButtonFrame>
           <Classic />
-        </ButtonItem>
-        <ButtonItem buttonId={Button.Sharp}>
+        </ButtonFrame>
+
+        <ButtonFrame>
           <Sharp />
-        </ButtonItem>
-        <ButtonItem buttonId={Button.Small}>
+        </ButtonFrame>
+
+        <ButtonFrame>
           <Small />
-        </ButtonItem>
-        <ButtonItem buttonId={Button.Round}>
+        </ButtonFrame>
+
+        <ButtonFrame>
           <Round />
-        </ButtonItem>
-        <ButtonItem buttonId={Button.EyeCatching}>
+        </ButtonFrame>
+
+        <ButtonFrame>
           <EyeCatching />
-        </ButtonItem>
-        <ButtonItem buttonId={Button.Cheerful}>
+        </ButtonFrame>
+
+        <ButtonFrame>
           <Cheerful />
-        </ButtonItem>
-        <ButtonItem buttonId={Button.Engaging}>
+        </ButtonFrame>
+
+        <ButtonFrame>
           <Engaging />
-        </ButtonItem>
-        <ButtonItem buttonId={Button.Futuristic}>
+        </ButtonFrame>
+
+        <ButtonFrame>
           <Futuristic />
-        </ButtonItem>
+        </ButtonFrame>
+
         <CustomizationMenu />
       </>
     );

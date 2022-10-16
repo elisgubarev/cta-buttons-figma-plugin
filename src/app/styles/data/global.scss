@@ -37,6 +37,7 @@
   line-height: $line-height;
   letter-spacing: $letter-spacing;
   text-transform: $text-transform;
+  user-select: none;
   transition: $transition;
 }
 
