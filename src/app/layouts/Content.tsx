@@ -45,14 +45,14 @@ const Content = (): JSX.Element => {
         <ButtonItem buttonId={Button.Round}>
           <Round />
         </ButtonItem>
-        <ButtonItem buttonId={Button.Engaging}>
-          <Engaging />
+        <ButtonItem buttonId={Button.EyeCatching}>
+          <EyeCatching />
         </ButtonItem>
         <ButtonItem buttonId={Button.Cheerful}>
           <Cheerful />
         </ButtonItem>
-        <ButtonItem buttonId={Button.EyeCatching}>
-          <EyeCatching />
+        <ButtonItem buttonId={Button.Engaging}>
+          <Engaging />
         </ButtonItem>
         <CustomizationMenu />
       </>

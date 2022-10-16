@@ -9,7 +9,7 @@ import {
 import { eyeCathingEffectsMix } from "../../../data/figma_properties/shadows/eyeCatchingEffectsMix";
 
 export const buttonPropertiesEyeCatching: ButtonProperties = {
-  name: "Classic Button",
+  name: "Eye-Catching Button",
   fills: {
     light: {
       primary: {
