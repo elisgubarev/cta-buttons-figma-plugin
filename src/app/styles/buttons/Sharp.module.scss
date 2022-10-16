@@ -73,19 +73,16 @@
 }
 
 .text {
-  color: colors.$white;
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  line-height: 110%;
-  font-family: "Montserrat", sans-serif;
-  transition: color const.$transition-long;
+  @include global.text(
+    $font-size: 10px,
+    $text-transform: uppercase,
+    $letter-spacing: 0.16em,
+    $line-height: 110%,
+    $font-family: "Montserrat",
+    $transition: color const.$transition-long
+  );
 }
 
 .arrow {
-  transition: transform const.$transition-long;
-  path {
-    transition: fill const.$transition-long;
-  }
+  @include global.arrow();
 }

@@ -1,3 +1,6 @@
+@use "./constants.scss" as const;
+@use "./colors.scss";
+
 @mixin button {
   border: none;
   display: inline-flex;
@@ -5,4 +8,34 @@
   justify-content: center;
   cursor: pointer;
   background-color: transparent;
+}
+
+@mixin arrow($offsetX: 0, $offsetY: 0) {
+  position: relative;
+  left: $offsetX;
+  top: $offsetY;
+  transition: transform const.$transition;
+  & path {
+    transition: fill const.$transition;
+  }
+}
+
+@mixin text(
+  $color: colors.$white,
+  $font-size: 14px,
+  $font-weight: 700,
+  $font-family: "Lato",
+  $line-height: 100%,
+  $letter-spacing: 0,
+  $text-transform: none,
+  $transition: color const.$transition
+) {
+  color: $color;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-family: $font-family, sans-serif;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  text-transform: $text-transform;
+  transition: $transition;
 }

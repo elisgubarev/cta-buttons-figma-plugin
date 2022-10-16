@@ -56,19 +56,9 @@
 }
 
 .text {
-  color: colors.$black;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Lato", sans-serif;
-  line-height: 100%;
-  transition: color const.$transition;
+  @include global.text(colors.$black, $font-weight: 400);
 }
 
 .arrow {
-  position: relative;
-  top: 1px;
-  transition: transform const.$transition;
-  path {
-    transition: fill const.$transition;
-  }
+  @include global.arrow(0, 1px);
 }

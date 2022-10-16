@@ -85,17 +85,9 @@
 }
 
 .text {
-  color: colors.$white;
-  font-size: 14px;
-  line-height: 100%;
-  font-weight: 600;
-  font-family: "Montserrat", sans-serif;
-  transition: color const.$transition;
+  @include global.text($font-weight: 600, $font-family: "Montserrat");
 }
 
 .arrow {
-  transition: transform const.$transition;
-  path {
-    transition: fill const.$transition;
-  }
+  @include global.arrow();
 }

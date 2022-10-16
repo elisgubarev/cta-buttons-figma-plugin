@@ -6,9 +6,9 @@
 .base {
   @include global.button;
   background-color: colors.$blurple;
-  box-shadow: shadows.$small, inset 0px 0px 0px 1px #4834d4,
-    inset 0px 1px 1px 1px rgba(255, 255, 255, 0.25),
-    inset 0px -1px 1px 1px rgba(52, 35, 170, 0.25);
+  box-shadow: shadows.$small, inset 0px 0px 0px 1px colors.$blurple-stroke,
+    inset 0px 1px 1px 1px colors.$white-hover-025,
+    inset 0px -1px 1px 1px colors.$dark-purple-hover-025;
   padding: 18px 24px;
   border-radius: 10px;
   column-gap: 10px;
@@ -67,30 +67,14 @@
     &.hasHover:hover {
       background-color: colors.$white-hover-02;
       box-shadow: 0 0 0 1px colors.$white inset;
-      // .text {
-      //   color: colors.$white-hover-06;
-      // }
-      // .arrow path {
-      //   fill: colors.$white-hover-06;
-      // }
     }
   }
 }
 
 .text {
-  color: colors.$white;
-  font-size: 14px;
-  font-weight: 700;
-  font-family: "Lato", sans-serif;
-  line-height: 100%;
-  transition: color const.$transition;
+  @include global.text();
 }
 
 .arrow {
-  position: relative;
-  top: 0.5px;
-  transition: transform const.$transition;
-  path {
-    transition: fill const.$transition;
-  }
+  @include global.arrow(0, 0.5px);
 }

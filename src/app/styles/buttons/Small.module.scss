@@ -78,19 +78,9 @@
 }
 
 .text {
-  color: colors.$white;
-  font-size: 14px;
-  font-weight: 700;
-  font-family: "Lato", sans-serif;
-  line-height: 100%;
-  transition: color const.$transition;
+  @include global.text();
 }
 
 .arrow {
-  position: relative;
-  top: 0.5px;
-  transition: transform const.$transition;
-  path {
-    transition: fill const.$transition;
-  }
+  @include global.arrow(0, 0.5px);
 }
