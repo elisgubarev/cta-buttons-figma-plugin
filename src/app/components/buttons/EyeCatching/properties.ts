@@ -1,65 +1,80 @@
+import { blurple } from "./../../../data/figma_properties/colors/blurple";
 import { uiDark } from "../../../data/figma_properties/colors/uiDark";
-import { unicornBlue } from "../../../data/figma_properties/colors/unicornBlue";
 import { white } from "../../../data/figma_properties/colors/white";
-import { smallShadow } from "../../../data/figma_properties/shadows/smallShadow";
-import { smallShadowBlack } from "../../../data/figma_properties/shadows/smallShadowBlack";
 import {
   ArrowPropeties,
   ButtonProperties,
   ButtonTextProperties,
 } from "../../../data/types";
+import { eyeCathingEffectsMix } from "../../../data/figma_properties/shadows/eyeCatchingEffectsMix";
 
 export const buttonPropertiesEyeCatching: ButtonProperties = {
   name: "Classic Button",
   fills: {
     light: {
       primary: {
-        default: unicornBlue.default,
-        hover: unicornBlue.hover,
+        default: blurple.default,
       },
       outline: {
-        default: white.default,
+        default: blurple.hover01,
+        hover: blurple.hover02,
       },
     },
     dark: {
       primary: {
         default: white.default,
-        hover: white.hover07,
       },
       outline: {
-        default: uiDark.default,
+        default: white.hover01,
+        hover: white.hover02,
       },
     },
   },
-  paddings: [16, 32, 16, 32],
+  paddings: [18, 24, 18, 24],
   itemSpacing: 10,
   effects: {
     light: {
-      default: smallShadow.default,
-      hover: smallShadow.hover,
+      default: eyeCathingEffectsMix.light,
     },
     dark: {
-      default: smallShadowBlack.default,
-      hover: smallShadowBlack.hover,
+      default: eyeCathingEffectsMix.dark,
+    },
+    ifOutline: {
+      light: {
+        default: [],
+      },
+      dark: {
+        default: [],
+      },
     },
   },
-  cornerRadius: 4,
-  paddingsOnHover: {
-    default: [2, 0, 2, 0],
-    hover: [0, 0, 4, 0],
-  },
+  cornerRadius: 10,
   strokes: {
     fills: {
       light: {
-        default: unicornBlue.default,
-        hover: unicornBlue.hover,
+        default: blurple.hover03,
+        hover: blurple.default,
       },
       dark: {
-        default: white.default,
-        hover: white.hover06,
+        default: white.hover03,
+        hover: white.default,
       },
     },
-    weight: 2,
+    weight: 1,
+  },
+  opacity: {
+    light: {
+      primary: {
+        default: 1,
+        hover: 0.8,
+      },
+    },
+    dark: {
+      primary: {
+        default: 1,
+        hover: 0.8,
+      },
+    },
   },
 };
 
@@ -74,8 +89,7 @@ export const buttonTextPropertiesEyeCatching: ButtonTextProperties = {
         default: white.default,
       },
       outline: {
-        default: unicornBlue.default,
-        hover: unicornBlue.hover,
+        default: blurple.default,
       },
     },
     dark: {
@@ -84,7 +98,6 @@ export const buttonTextPropertiesEyeCatching: ButtonTextProperties = {
       },
       outline: {
         default: white.default,
-        hover: white.hover06,
       },
     },
   },
@@ -94,7 +107,7 @@ export const arrowPropertiesEyeCatching: ArrowPropeties = {
   vectorPaths: [
     {
       windingRule: "NONZERO",
-      data: "M 0.6585445788948896 5.658544639558827 L 8.01448757539377 5.658544639558827 L 4.800789955022263 8.872241927933246 C 4.543957578673812 9.129074327940632 4.543957578673812 9.55054296634236 4.800789955022263 9.807375366349747 C 5.057622331370714 10.064207766357134 5.472505334429678 10.064207766357134 5.729337710778129 9.807375366349747 L 10.06914721421843 5.467566719208252 C 10.325979590566881 5.210734319200866 10.325979590566881 4.795851591942184 10.06914721421843 4.539019191934798 L 5.7359233072959706 0.1926243000055393 C 5.479090930947519 -0.06420810000184643 5.064207927888556 -0.06420810000184643 4.807375551540105 0.1926243000055393 C 4.550543175191653 0.44945670001292504 4.550543175191653 0.8643400749348759 4.807375551540105 1.1211724749422616 L 8.01448757539377 4.341455674459728 L 0.6585445788948896 4.341455674459728 C 0.2963450526522372 4.341455674459728 0 4.637800754410737 0 5.000000314018555 C 0 5.362199873626373 0.2963450526522372 5.658544639558827 0.6585445788948896 5.658544639558827 Z",
+      data: "M 0.5926901026449138 5.092690175602944 L 7.2130385944072675 5.092690175602944 L 4.320710825672089 7.98501773513992 C 4.089561694119072 8.216166895146566 4.089561694119072 8.595488669708125 4.320710825672089 8.826637829714771 C 4.551859957225106 9.057786989721418 4.925254648411068 9.057786989721418 5.1564037799640845 8.826637829714771 L 9.062232212064728 4.920810047287426 C 9.293381343617744 4.689660887280779 9.293381343617744 4.316266432747965 9.062232212064728 4.085117272741318 L 5.1623308166465325 0.17336187000498537 C 4.931181685093516 -0.05778729000166177 4.557786993907554 -0.05778729000166177 4.326637862354537 0.17336187000498537 C 4.09548873080152 0.4045110300116325 4.09548873080152 0.7779060674413882 4.326637862354537 1.0090552274480353 L 7.2130385944072675 3.9073101070137555 L 0.5926901026449138 3.9073101070137555 C 0.26671053912479464 3.9073101070137555 0 4.174020678969662 0 4.500000282616699 C 0 4.8259798862637355 0.26671053912479464 5.092690175602944 0.5926901026449138 5.092690175602944 Z",
     },
   ],
   fills: {
@@ -103,8 +116,7 @@ export const arrowPropertiesEyeCatching: ArrowPropeties = {
         default: white.default,
       },
       outline: {
-        default: unicornBlue.default,
-        hover: unicornBlue.hover,
+        default: blurple.default,
       },
     },
     dark: {
@@ -113,22 +125,21 @@ export const arrowPropertiesEyeCatching: ArrowPropeties = {
       },
       outline: {
         default: white.default,
-        hover: white.hover06,
       },
     },
   },
   frameSize: {
-    width: 12,
-    height: 12,
+    width: 10,
+    height: 9,
   },
   vectorOffset: {
     initial: {
       x: 0,
-      y: 1,
+      y: 0.5,
     },
     hover: {
       x: 2,
-      y: 1,
+      y: 0.5,
     },
   },
 };

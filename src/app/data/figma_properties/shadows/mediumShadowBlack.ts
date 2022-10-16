@@ -1,6 +1,6 @@
-import { Shadow } from "./../../types";
+import { Shadow } from "../../types";
 
-export const smallShadowBlack: Shadow<"default" | "hover"> = {
+export const mediumShadowBlack: Shadow<"default" | "hover"> = {
   default: [
     {
       type: "DROP_SHADOW",

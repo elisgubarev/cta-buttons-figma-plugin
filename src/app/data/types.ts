@@ -81,6 +81,28 @@ export interface ButtonProperties {
     weight: number;
     isForced?: boolean;
   };
+  opacity?: {
+    [Theme.Light]: {
+      primary: {
+        default: number;
+        hover?: number;
+      };
+      outline?: {
+        default: number;
+        hover?: number;
+      };
+    };
+    [Theme.Dark]: {
+      primary: {
+        default: number;
+        hover?: number;
+      };
+      outline?: {
+        default: number;
+        hover?: number;
+      };
+    };
+  };
 }
 
 export interface ButtonTextProperties {
@@ -257,6 +279,15 @@ export interface CreateArrow {
 }
 
 export interface OverrideEffectsForOutlinedButton {
+  (
+    pluginConfig: PluginConfig,
+    buttonProperties: ButtonProperties,
+    buttonNode: FrameNode,
+    isHover?: boolean
+  ): FrameNode;
+}
+
+export interface SetButtonOpacity {
   (
     pluginConfig: PluginConfig,
     buttonProperties: ButtonProperties,

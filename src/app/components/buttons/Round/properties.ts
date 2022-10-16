@@ -1,8 +1,8 @@
 import { calmBlue } from "../../../data/figma_properties/colors/calmBlue";
 import { uiDark } from "../../../data/figma_properties/colors/uiDark";
 import { white } from "../../../data/figma_properties/colors/white";
-import { smallShadow } from "../../../data/figma_properties/shadows/smallShadow";
-import { smallShadowBlack } from "../../../data/figma_properties/shadows/smallShadowBlack";
+import { mediumShadow } from "../../../data/figma_properties/shadows/mediumShadow";
+import { mediumShadowBlack } from "../../../data/figma_properties/shadows/mediumShadowBlack";
 import {
   ArrowPropeties,
   ButtonProperties,
@@ -35,12 +35,12 @@ export const buttonPropertiesRound: ButtonProperties = {
   itemSpacing: 12,
   effects: {
     light: {
-      default: smallShadow.default,
-      hover: smallShadow.hover,
+      default: mediumShadow.default,
+      hover: mediumShadow.hover,
     },
     dark: {
-      default: smallShadowBlack.default,
-      hover: smallShadowBlack.hover,
+      default: mediumShadowBlack.default,
+      hover: mediumShadowBlack.hover,
     },
   },
   cornerRadius: 999,

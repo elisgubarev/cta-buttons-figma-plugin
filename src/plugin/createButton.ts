@@ -30,6 +30,7 @@ export const createButton = (buttonId: Button, pluginConfig: PluginConfig) => {
 
   setAutoLayout(buttonComponent);
   buttonComponent.name = buttonProperties.name;
+  buttonComponent.fills = [];
 
   let returnedButtonObject: ButtonNode = buttonComponent;
 

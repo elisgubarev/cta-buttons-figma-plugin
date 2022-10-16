@@ -1,3 +1,4 @@
+import { setButtonOpacity } from "./setButtonOpacity";
 import { Theme } from "../../app/data/enums";
 import { SetButtonHoverProperties } from "../../app/data/types";
 import { overrideEffectsForOutlinedButton } from "./overrideEffectsForOutlinedButton";
@@ -30,6 +31,8 @@ export const setButtonHoverProperties: SetButtonHoverProperties = (
     buttonHover,
     true
   );
+
+  setButtonOpacity(pluginConfig, buttonProperties, buttonHover, true);
 
   return buttonHover;
 };

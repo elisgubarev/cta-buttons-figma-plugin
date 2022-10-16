@@ -1,3 +1,4 @@
+import { setButtonOpacity } from "./setButtonOpacity";
 import { overrideEffectsForOutlinedButton } from "./overrideEffectsForOutlinedButton";
 import { Theme } from "../../app/data/enums";
 import { SetButtonProperties } from "../../app/data/types";
@@ -35,6 +36,8 @@ export const setButtonProperties: SetButtonProperties = (
     button.strokes = buttonProperties.strokes.fills[theme].default;
     button.strokeWeight = buttonProperties.strokes.weight;
   }
+
+  setButtonOpacity(pluginConfig, buttonProperties, button);
 
   return button;
 };
