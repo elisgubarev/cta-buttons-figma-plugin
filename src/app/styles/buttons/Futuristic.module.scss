@@ -1,0 +1,106 @@
+@use "../data/global.scss";
+@use "../data/colors.scss";
+@use "../data/constants.scss" as const;
+
+.base {
+  @include global.button;
+  @include global.cut-corner(12px);
+  background-color: colors.$purple;
+  padding: 18px 36px;
+  column-gap: 12px;
+  transition: background-color const.$transition ease,
+    box-shadow const.$transition;
+}
+
+.hasHover {
+  &:hover {
+    background-color: colors.$purple-hover-08;
+    .arrow {
+      transform: translate(2px, -2px);
+    }
+  }
+}
+
+.outline {
+  background-color: colors.$white;
+  box-shadow: 0 0 0 2px colors.$purple inset;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: colors.$purple;
+    right: -9.5px;
+    bottom: -10px;
+    z-index: 11111;
+    transform: rotate(45deg);
+    transition: background-color const.$transition ease;
+  }
+  .text {
+    color: colors.$purple;
+  }
+  .arrow path {
+    stroke: colors.$purple;
+  }
+  &.hasHover:hover {
+    background-color: colors.$purple;
+    .text {
+      color: colors.$white;
+    }
+    .arrow path {
+      stroke: colors.$white;
+    }
+  }
+}
+
+.darkTheme {
+  background-color: colors.$white;
+  .text {
+    color: colors.$ui-dark;
+  }
+  .arrow path {
+    stroke: colors.$ui-dark;
+  }
+  &.hasHover:hover {
+    background-color: colors.$white-hover-08;
+  }
+  &.outline {
+    background-color: colors.$ui-dark;
+    box-shadow: 0 0 0 2px colors.$white inset;
+    &:after {
+      background-color: colors.$white;
+    }
+    .text {
+      color: colors.$white;
+    }
+    .arrow path {
+      stroke: colors.$white;
+    }
+    &.hasHover:hover {
+      background-color: colors.$white;
+      .text {
+        color: colors.$ui-dark;
+      }
+      .arrow path {
+        stroke: colors.$ui-dark;
+      }
+    }
+  }
+}
+
+.text {
+  @include global.text(
+    $font-size: 11px,
+    $letter-spacing: 0.1em,
+    $line-height: 100%,
+    $font-family: "Orbitron"
+  );
+}
+
+.arrow {
+  @include global.arrow(0, 0.5px);
+  path {
+    transition: stroke const.$transition;
+  }
+}

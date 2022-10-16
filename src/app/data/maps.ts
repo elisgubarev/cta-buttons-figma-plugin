@@ -35,6 +35,11 @@ import {
   buttonTextPropertiesEyeCatching,
   arrowPropertiesEyeCatching,
 } from "../components/buttons/EyeCatching/properties";
+import {
+  buttonPropertiesCutCorner,
+  buttonTextPropertiesCutCorner,
+  arrowPropertiesCutCorner,
+} from "../components/buttons/Futuristic/properties";
 
 export const mapPropertiesToButtonIds: MapPropertiesToButtonIds = {
   [Button.Classic]: {
@@ -71,5 +76,10 @@ export const mapPropertiesToButtonIds: MapPropertiesToButtonIds = {
     button: buttonPropertiesEyeCatching,
     text: buttonTextPropertiesEyeCatching,
     arrow: arrowPropertiesEyeCatching,
+  },
+  [Button.Futuristic]: {
+    button: buttonPropertiesCutCorner,
+    text: buttonTextPropertiesCutCorner,
+    arrow: arrowPropertiesCutCorner,
   },
 };

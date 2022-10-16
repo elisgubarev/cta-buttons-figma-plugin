@@ -39,3 +39,14 @@
   text-transform: $text-transform;
   transition: $transition;
 }
+
+@mixin cut-corner($sizePx) {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - $sizePx),
+    calc(100% - $sizePx) 100%,
+    0 100%,
+    0% 50%
+  );
+}

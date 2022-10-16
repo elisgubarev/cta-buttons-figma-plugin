@@ -6,7 +6,7 @@
 .base {
   @include global.button;
   background-color: colors.$blurple;
-  box-shadow: shadows.$small, inset 0px 0px 0px 1px colors.$blurple-stroke,
+  box-shadow: shadows.$small, inset 0px 0px 0px 1px colors.$purple,
     inset 0px 1px 1px 1px colors.$white-hover-025,
     inset 0px -1px 1px 1px colors.$dark-purple-hover-025;
   padding: 18px 24px;

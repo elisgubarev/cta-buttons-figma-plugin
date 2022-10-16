@@ -16,6 +16,7 @@ import { PluginUIEvent } from "../data/types";
 import EyeCatching from "../components/buttons/EyeCatching/EyeCatching";
 import classNames from "classnames";
 import style from "../styles/pluginUI/Content.module.scss";
+import Futuristic from "../components/buttons/Futuristic/Futuristic";
 
 const Content = (): JSX.Element => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -53,6 +54,9 @@ const Content = (): JSX.Element => {
         </ButtonItem>
         <ButtonItem buttonId={Button.Engaging}>
           <Engaging />
+        </ButtonItem>
+        <ButtonItem buttonId={Button.Futuristic}>
+          <Futuristic />
         </ButtonItem>
         <CustomizationMenu />
       </>
