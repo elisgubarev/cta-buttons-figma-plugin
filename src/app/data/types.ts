@@ -165,7 +165,7 @@ export interface ArrowPropeties {
     initial: Coordinates;
     hover: Coordinates;
   };
-  stroke?: {
+  strokes?: {
     [Theme.Light]: {
       primary: {
         default: readonly Paint[];
@@ -317,4 +317,13 @@ export interface SetButtonOpacity {
     buttonNode: FrameNode,
     isHover?: boolean
   ): FrameNode;
+}
+
+export interface SetArrowFillsAndStrokes {
+  (
+    arrowVector: VectorNode,
+    pluginConfig: PluginConfig,
+    arrowProperties: ArrowPropeties,
+    isHover?: boolean
+  ): VectorNode;
 }

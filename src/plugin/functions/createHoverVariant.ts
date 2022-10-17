@@ -1,5 +1,6 @@
 import { Theme } from "../../app/data/enums";
 import { CreateHoverVariant } from "./../../app/data/types";
+import { setArrowFillsAndStrokes } from "./setArrowFillsAndStrokes";
 import { setAutoLayout } from "./setAutoLayout";
 import { setButtonHoverProperties } from "./setButtonHoverProperties";
 
@@ -51,10 +52,12 @@ export const createHoverVariant: CreateHoverVariant = (
   } as SceneNodeMixin["componentPropertyReferences"];
 
   const arrowNodeHover = buttonHover.children[1] as FrameNode;
+  const arrowVectorHover = arrowNodeHover
+    ? (arrowNodeHover.children[0] as VectorNode)
+    : null;
 
-  if (arrowNodeHover && arrowProperties?.vectorOffset) {
+  if (arrowVectorHover && arrowProperties?.vectorOffset) {
     const { vectorOffset } = arrowProperties;
-    const arrowVectorHover = arrowNodeHover.children[0] as VectorNode;
     arrowVectorHover.x = vectorOffset.hover.x;
     arrowVectorHover.y = vectorOffset.hover.y;
   }
@@ -65,19 +68,12 @@ export const createHoverVariant: CreateHoverVariant = (
       buttonTextProperties.fills[theme].outline.default;
   }
 
-  if (outline && arrowNodeHover && arrowProperties.fills[theme].outline) {
-    const arrowVectorHover = arrowNodeHover.children[0] as VectorNode;
-    arrowVectorHover.fills =
-      arrowProperties.fills[theme].outline.hover ||
-      arrowProperties.fills[theme].outline.default;
-  }
-
-  if (outline && arrowNodeHover && arrowProperties.stroke?.[theme].outline) {
-    const arrowVectorHover = arrowNodeHover.children[0] as VectorNode;
-    arrowVectorHover.strokes =
-      arrowProperties.stroke[theme].outline.hover ||
-      arrowProperties.stroke[theme].outline.default;
-  }
+  setArrowFillsAndStrokes(
+    arrowVectorHover,
+    pluginConfig,
+    arrowProperties,
+    true
+  );
 
   if (outline && buttonProperties.strokes) {
     buttonHover.strokes =

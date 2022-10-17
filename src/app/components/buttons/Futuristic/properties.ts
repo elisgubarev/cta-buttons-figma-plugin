@@ -102,7 +102,7 @@ export const arrowPropertiesCutCorner: ArrowPropeties = {
       },
     },
   },
-  stroke: {
+  strokes: {
     light: {
       primary: {
         default: white.default,

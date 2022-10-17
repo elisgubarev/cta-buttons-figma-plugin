@@ -1,9 +1,10 @@
 import { Theme } from "../../app/data/enums";
 import { white } from "../../app/data/figma_properties/colors/white";
 import { CreateArrow } from "../../app/data/types";
+import { setArrowFillsAndStrokes } from "./setArrowFillsAndStrokes";
 
-export const createArrow: CreateArrow = (arrowPropeties, pluginConfig) => {
-  const { vectorPaths, frameSize, vectorOffset } = arrowPropeties;
+export const createArrow: CreateArrow = (arrowProperties, pluginConfig) => {
+  const { vectorPaths, frameSize, vectorOffset } = arrowProperties;
   const { outline, dark } = pluginConfig;
   const theme = dark ? Theme.Dark : Theme.Light;
 
@@ -30,20 +31,7 @@ export const createArrow: CreateArrow = (arrowPropeties, pluginConfig) => {
   arrowVector.constrainProportions = true;
   arrowNode.clipsContent = false;
 
-  arrowVector.fills = arrowPropeties.fills[theme].primary.default;
-
-  if (outline && arrowPropeties.fills[theme].outline?.default) {
-    arrowVector.fills = arrowPropeties.fills[theme].outline.default;
-  }
-
-  if (arrowPropeties.stroke) {
-    arrowVector.strokes = arrowPropeties.stroke[theme].primary.default;
-    arrowVector.strokeWeight = arrowPropeties.stroke.weight;
-
-    if (outline && arrowPropeties.stroke[theme].outline) {
-      arrowVector.strokes = arrowPropeties.stroke[theme].outline.default;
-    }
-  }
+  setArrowFillsAndStrokes(arrowVector, pluginConfig, arrowProperties);
 
   return arrowNode;
 };
