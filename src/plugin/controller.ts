@@ -10,8 +10,9 @@ Promise.all([
   figma.clientStorage.getAsync("pluginConfig"),
   figma.loadFontAsync({ family: "Lato", style: "Regular" }),
   figma.loadFontAsync({ family: "Lato", style: "Bold" }),
-  figma.loadFontAsync({ family: "Montserrat", style: "Bold" }),
   figma.loadFontAsync({ family: "Montserrat", style: "SemiBold" }),
+  figma.loadFontAsync({ family: "Montserrat", style: "Bold" }),
+  figma.loadFontAsync({ family: "Orbitron", style: "Bold" }),
 ]).then((values) => {
   if (values[0]) {
     figma.ui.postMessage({ type: "dataLoaded", pluginConfig: values[0] });

@@ -36,5 +36,14 @@ export const createArrow: CreateArrow = (arrowPropeties, pluginConfig) => {
     arrowVector.fills = arrowPropeties.fills[theme].outline.default;
   }
 
+  if (arrowPropeties.stroke) {
+    arrowVector.strokes = arrowPropeties.stroke[theme].primary.default;
+    arrowVector.strokeWeight = arrowPropeties.stroke.weight;
+
+    if (outline && arrowPropeties.stroke[theme].outline) {
+      arrowVector.strokes = arrowPropeties.stroke[theme].outline.default;
+    }
+  }
+
   return arrowNode;
 };

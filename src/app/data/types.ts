@@ -165,6 +165,29 @@ export interface ArrowPropeties {
     initial: Coordinates;
     hover: Coordinates;
   };
+  stroke?: {
+    [Theme.Light]: {
+      primary: {
+        default: readonly Paint[];
+        hover?: readonly Paint[];
+      };
+      outline?: {
+        default: readonly Paint[];
+        hover?: readonly Paint[];
+      };
+    };
+    [Theme.Dark]: {
+      primary: {
+        default: readonly Paint[];
+        hover?: readonly Paint[];
+      };
+      outline?: {
+        default: readonly Paint[];
+        hover?: readonly Paint[];
+      };
+    };
+    weight: number;
+  };
 }
 
 export type ButtonNode = ComponentNode | ComponentSetNode;

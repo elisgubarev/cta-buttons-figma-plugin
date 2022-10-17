@@ -72,6 +72,13 @@ export const createHoverVariant: CreateHoverVariant = (
       arrowProperties.fills[theme].outline.default;
   }
 
+  if (outline && arrowNodeHover && arrowProperties.stroke?.[theme].outline) {
+    const arrowVectorHover = arrowNodeHover.children[0] as VectorNode;
+    arrowVectorHover.strokes =
+      arrowProperties.stroke[theme].outline.hover ||
+      arrowProperties.stroke[theme].outline.default;
+  }
+
   if (outline && buttonProperties.strokes) {
     buttonHover.strokes =
       buttonProperties.strokes.fills[theme].hover ||

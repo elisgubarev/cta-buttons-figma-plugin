@@ -1,4 +1,4 @@
-import { black } from "../../../data/figma_properties/colors/black";
+import { purple } from "./../../../data/figma_properties/colors/purple";
 import { uiDark } from "../../../data/figma_properties/colors/uiDark";
 import { white } from "../../../data/figma_properties/colors/white";
 import {
@@ -12,18 +12,18 @@ export const buttonPropertiesCutCorner: ButtonProperties = {
   fills: {
     light: {
       primary: {
-        default: black.default,
-        hover: black.hover07,
+        default: purple.default,
+        hover: purple.hover08,
       },
       outline: {
         default: white.default,
-        hover: black.default,
+        hover: purple.default,
       },
     },
     dark: {
       primary: {
         default: white.default,
-        hover: white.hover07,
+        hover: white.hover08,
       },
       outline: {
         default: uiDark.default,
@@ -31,12 +31,12 @@ export const buttonPropertiesCutCorner: ButtonProperties = {
       },
     },
   },
-  paddings: [20, 32, 20, 32],
-  itemSpacing: 9,
+  paddings: [18, 36, 18, 36],
+  itemSpacing: 12,
   strokes: {
     fills: {
       light: {
-        default: black.default,
+        default: purple.default,
       },
       dark: {
         default: white.default,
@@ -47,17 +47,17 @@ export const buttonPropertiesCutCorner: ButtonProperties = {
 };
 
 export const buttonTextPropertiesCutCorner: ButtonTextProperties = {
-  fontName: { family: "Montserrat", style: "Bold" },
+  fontName: { family: "Orbitron", style: "Bold" },
   defaultText: "Explore Now",
-  fontSize: 10,
-  lineHeight: { value: 110, unit: "PERCENT" },
+  fontSize: 11,
+  lineHeight: { value: 100, unit: "PERCENT" },
   fills: {
     light: {
       primary: {
         default: white.default,
       },
       outline: {
-        default: black.default,
+        default: purple.default,
         hover: white.default,
       },
     },
@@ -73,25 +73,42 @@ export const buttonTextPropertiesCutCorner: ButtonTextProperties = {
   },
   letterSpacing: {
     unit: "PERCENT",
-    value: 16,
+    value: 10,
   },
-  textCase: "UPPER",
 };
 
 export const arrowPropertiesCutCorner: ArrowPropeties = {
   vectorPaths: [
     {
       windingRule: "NONZERO",
-      data: "M 0.9928378663781761 6.999999999999999 L 5 3.499999707564398 L 0.9928378663781761 0 L 0 0.8671803451191286 L 3.014324267243648 3.499999707564398 L 0 6.132818485138464 L 0.9928378663781761 6.999999999999999 Z",
+      data: "M 6 0 L 0 6 L 6 0 Z M 1 0 L 6 0 L 6 5",
     },
   ],
   fills: {
     light: {
       primary: {
+        default: [],
+      },
+      outline: {
+        default: [],
+      },
+    },
+    dark: {
+      primary: {
+        default: [],
+      },
+      outline: {
+        default: [],
+      },
+    },
+  },
+  stroke: {
+    light: {
+      primary: {
         default: white.default,
       },
       outline: {
-        default: black.default,
+        default: purple.default,
         hover: white.default,
       },
     },
@@ -104,18 +121,19 @@ export const arrowPropertiesCutCorner: ArrowPropeties = {
         hover: uiDark.default,
       },
     },
+    weight: 1.5,
   },
   frameSize: {
-    width: 5,
-    height: 7,
+    width: 8,
+    height: 8,
   },
   vectorOffset: {
     initial: {
-      x: 0,
-      y: 0,
+      x: 1,
+      y: 2,
     },
     hover: {
-      x: 2,
+      x: 3,
       y: 0,
     },
   },
