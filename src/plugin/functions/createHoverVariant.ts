@@ -12,7 +12,10 @@ export const createHoverVariant: CreateHoverVariant = (
   arrowProperties,
   pluginConfig
 ) => {
-  const { outline, dark } = pluginConfig;
+  const { outline, dark, hover } = pluginConfig;
+
+  if (!hover) return buttonComponent;
+
   const theme = dark ? Theme.Dark : Theme.Light;
 
   buttonComponent.deleteComponentProperty(

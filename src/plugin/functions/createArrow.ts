@@ -1,12 +1,16 @@
-import { Theme } from "../../app/data/enums";
 import { white } from "../../app/data/figma_properties/colors/white";
 import { CreateArrow } from "../../app/data/types";
 import { setArrowFillsAndStrokes } from "./setArrowFillsAndStrokes";
 
-export const createArrow: CreateArrow = (arrowProperties, pluginConfig) => {
+export const createArrow: CreateArrow = (
+  arrowProperties,
+  pluginConfig,
+  buttonNode
+) => {
+  const { arrow } = pluginConfig;
+  if (!arrow || !arrowProperties) return null;
+
   const { vectorPaths, frameSize, vectorOffset } = arrowProperties;
-  const { outline, dark } = pluginConfig;
-  const theme = dark ? Theme.Dark : Theme.Light;
 
   const arrowNode = figma.createFrame();
   const arrowVector = figma.createVector();
@@ -33,5 +37,6 @@ export const createArrow: CreateArrow = (arrowProperties, pluginConfig) => {
 
   setArrowFillsAndStrokes(arrowVector, pluginConfig, arrowProperties);
 
+  buttonNode.appendChild(arrowNode);
   return arrowNode;
 };

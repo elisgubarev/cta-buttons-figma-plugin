@@ -9,8 +9,6 @@ import { setButtonProperties } from "./functions/setButtonProperties";
 import { setButtonTextPropertires } from "./functions/setButtonTextPropertires";
 
 export const createButton = (buttonId: Button, pluginConfig: PluginConfig) => {
-  const { hover, arrow } = pluginConfig;
-  let arrowNode: FrameNode;
   const buttonProperties = mapPropertiesToButtonIds[buttonId].button;
   const buttonTextProperties = mapPropertiesToButtonIds[buttonId].text;
   const arrowProperties = mapPropertiesToButtonIds[buttonId].arrow;
@@ -43,21 +41,16 @@ export const createButton = (buttonId: Button, pluginConfig: PluginConfig) => {
     characters: buttonTextComponentProperty,
   } as SceneNodeMixin["componentPropertyReferences"];
 
-  if (arrow && arrowProperties) {
-    arrowNode = createArrow(arrowProperties, pluginConfig);
-    button.appendChild(arrowNode);
-  }
+  createArrow(arrowProperties, pluginConfig, button);
 
-  if (hover) {
-    returnedButtonObject = createHoverVariant(
-      returnedButtonObject,
-      buttonProperties,
-      buttonTextProperties,
-      buttonTextComponentProperty,
-      arrowProperties,
-      pluginConfig
-    );
-  }
+  returnedButtonObject = createHoverVariant(
+    returnedButtonObject,
+    buttonProperties,
+    buttonTextProperties,
+    buttonTextComponentProperty,
+    arrowProperties,
+    pluginConfig
+  );
 
   return insertButtonToCanvas(returnedButtonObject);
 };

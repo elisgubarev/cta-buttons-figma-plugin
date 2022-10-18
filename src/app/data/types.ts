@@ -294,11 +294,15 @@ export interface CreateHoverVariant {
     currentTextComponentPropertyReference: string,
     arrowProperties: ArrowPropeties,
     pluginConfig: PluginConfig
-  ): ComponentSetNode;
+  ): ButtonNode;
 }
 
 export interface CreateArrow {
-  (arrowPropeties: ArrowPropeties, pluginConfig: PluginConfig): FrameNode;
+  (
+    arrowPropeties: ArrowPropeties,
+    pluginConfig: PluginConfig,
+    buttonNode: FrameNode
+  ): FrameNode;
 }
 
 export interface OverrideEffectsForOutlinedButton {
