@@ -1,3 +1,6 @@
+import { buttonTextPropertiesInformativeTag } from "./../../app/components/buttons/Informative/propertiesTag";
+import { getArrowNodeIndex } from "./../helpers/getArrowNodeIndex";
+import { getTextNodeIndex } from "./../helpers/getTextNodeIndex";
 import { Button, Theme } from "../../app/data/enums";
 import { CreateHoverVariant } from "./../../app/data/types";
 import { addPropertiesForFuturistic } from "./addPropertiesForFuturistic";
@@ -9,22 +12,23 @@ export const createHoverVariant: CreateHoverVariant = (
   buttonComponent,
   buttonProperties,
   buttonTextProperties,
-  currentTextComponentPropertyReference,
+  textPropertyReferences,
   arrowProperties,
   pluginConfig,
   buttonId
 ) => {
   const { outline, dark, hover } = pluginConfig;
-  const buttonTextIndex = buttonId === Button.Futuristic ? 3 : 0;
-  const arrowNodeHoverIndex = buttonId === Button.Futuristic ? 4 : 1;
+  const buttonTextIndex = getTextNodeIndex(buttonId);
+  const arrowNodeHoverIndex = getArrowNodeIndex(buttonId);
 
   if (!hover) return buttonComponent;
 
   const theme = dark ? Theme.Dark : Theme.Light;
 
-  buttonComponent.deleteComponentProperty(
-    currentTextComponentPropertyReference
-  );
+  buttonComponent.deleteComponentProperty(textPropertyReferences.button);
+  if (textPropertyReferences.tag) {
+    buttonComponent.deleteComponentProperty(textPropertyReferences.tag);
+  }
   setAutoLayout(buttonComponent, buttonProperties.paddingsOnHover?.default);
   const buttonComponentHover = buttonComponent.clone();
   setAutoLayout(buttonComponentHover, buttonProperties.paddingsOnHover?.hover);
@@ -57,6 +61,24 @@ export const createHoverVariant: CreateHoverVariant = (
   buttonTextHover.componentPropertyReferences = {
     characters: buttonSetTextProperty,
   } as SceneNodeMixin["componentPropertyReferences"];
+
+  if (textPropertyReferences.tag) {
+    const tagTextProperty = buttonComponentSet.addComponentProperty(
+      "Tag text",
+      "TEXT",
+      buttonTextPropertiesInformativeTag.defaultText
+    );
+    const buttonTag = button.children[0] as FrameNode;
+    const buttonTagText = buttonTag.children[0] as TextNode;
+    const buttonTagHover = buttonHover.children[0] as FrameNode;
+    const buttonTagHoverText = buttonTagHover.children[0] as TextNode;
+    buttonTagText.componentPropertyReferences = {
+      characters: tagTextProperty,
+    } as SceneNodeMixin["componentPropertyReferences"];
+    buttonTagHoverText.componentPropertyReferences = {
+      characters: tagTextProperty,
+    } as SceneNodeMixin["componentPropertyReferences"];
+  }
 
   const arrowNodeHover = buttonHover.children[arrowNodeHoverIndex] as FrameNode;
   const arrowVectorHover = arrowNodeHover

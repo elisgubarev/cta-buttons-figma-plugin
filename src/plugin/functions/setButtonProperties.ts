@@ -7,12 +7,13 @@ export const setButtonProperties: SetButtonProperties = (
   button,
   buttonProperties,
   pluginConfig,
-  buttonId
+  buttonId,
+  nodeName
 ) => {
   const { outline, dark } = pluginConfig;
   const theme = dark ? Theme.Dark : Theme.Light;
 
-  button.name = "Button";
+  button.name = nodeName || "Button";
 
   button.fills = buttonProperties.fills[theme].primary.default;
 

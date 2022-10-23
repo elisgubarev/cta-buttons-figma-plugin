@@ -10,6 +10,7 @@ export const white: Color<
   | "hover04"
   | "hover03"
   | "hover02"
+  | "hover012"
   | "hover01"
 > = {
   default: [
@@ -108,6 +109,19 @@ export const white: Color<
       type: "SOLID",
       visible: true,
       opacity: 0.2,
+      blendMode: "NORMAL",
+      color: {
+        r: 1,
+        g: 1,
+        b: 1,
+      },
+    },
+  ],
+  hover012: [
+    {
+      type: "SOLID",
+      visible: true,
+      opacity: 0.12,
       blendMode: "NORMAL",
       color: {
         r: 1,

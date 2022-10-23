@@ -1,9 +1,12 @@
+import { buttonTextPropertiesInformativeTag } from "./../app/components/buttons/Informative/propertiesTag";
+import { buttonPropertiesInformativeTag } from "../app/components/buttons/Informative/propertiesTag";
 import { Button } from "../app/data/enums";
 import { mapPropertiesToButtonIds } from "../app/data/maps";
 import { ButtonNode, PluginConfig } from "../app/data/types";
 import { addPropertiesForFuturistic } from "./functions/addPropertiesForFuturistic";
 import { createArrow } from "./functions/createArrow";
 import { createHoverVariant } from "./functions/createHoverVariant";
+import { createTag } from "./functions/createTag";
 import { insertButtonToCanvas } from "./functions/insertButtonToCanvas";
 import { setAutoLayout } from "./functions/setAutoLayout";
 import { setButtonProperties } from "./functions/setButtonProperties";
@@ -56,11 +59,31 @@ export const createButton = (buttonId: Button, pluginConfig: PluginConfig) => {
     );
   }
 
+  let tagTextProperty: string;
+  if (buttonId === Button.Informative) {
+    tagTextProperty = returnedButtonObject.addComponentProperty(
+      "Tag text",
+      "TEXT",
+      buttonTextPropertiesInformativeTag.defaultText
+    );
+    createTag(
+      buttonPropertiesInformativeTag,
+      buttonTextPropertiesInformativeTag,
+      pluginConfig,
+      buttonId,
+      tagTextProperty,
+      button
+    );
+  }
+
   returnedButtonObject = createHoverVariant(
     returnedButtonObject,
     buttonProperties,
     buttonTextProperties,
-    buttonTextComponentProperty,
+    {
+      button: buttonTextComponentProperty,
+      tag: tagTextProperty,
+    },
     arrowProperties,
     pluginConfig,
     buttonId

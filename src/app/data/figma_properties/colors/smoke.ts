@@ -1,7 +1,9 @@
 import { Color } from "./../../types";
 
 // #2B2E4A
-export const smoke: Color<"default" | "hover07" | "hover06" | "hover02"> = {
+export const smoke: Color<
+  "default" | "hover07" | "hover06" | "hover02" | "hover012"
+> = {
   default: [
     {
       type: "SOLID",
@@ -46,6 +48,19 @@ export const smoke: Color<"default" | "hover07" | "hover06" | "hover02"> = {
       type: "SOLID",
       visible: true,
       opacity: 0.2,
+      blendMode: "NORMAL",
+      color: {
+        r: 0.16862745583057404,
+        g: 0.18039216101169586,
+        b: 0.29019609093666077,
+      },
+    },
+  ],
+  hover012: [
+    {
+      type: "SOLID",
+      visible: true,
+      opacity: 0.12,
       blendMode: "NORMAL",
       color: {
         r: 0.16862745583057404,
