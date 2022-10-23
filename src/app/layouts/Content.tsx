@@ -7,8 +7,7 @@ import Sharp from "../components/buttons/Sharp/Sharp";
 import Small from "../components/buttons/Small/Small";
 import CustomizationMenu from "../components/pluginUI/customization/CustomizationMenu";
 import EyeCatching from "../components/buttons/EyeCatching/EyeCatching";
-import classNames from "classnames";
-import style from "../styles/pluginUI/Content.module.scss";
+import Oldschool from "../components/buttons/Oldschool/Oldschool";
 import Futuristic from "../components/buttons/Futuristic/Futuristic";
 import ButtonFrame from "../components/pluginUI/ButtonFrame";
 import {
@@ -16,6 +15,8 @@ import {
   useSetPluginConfig,
 } from "../components/PluginConfigContext";
 import { PluginUIEvent } from "../data/types";
+import classNames from "classnames";
+import style from "../styles/pluginUI/Content.module.scss";
 
 const Content = (): JSX.Element => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -63,6 +64,10 @@ const Content = (): JSX.Element => {
 
         <ButtonFrame>
           <Futuristic />
+        </ButtonFrame>
+
+        <ButtonFrame>
+          <Oldschool />
         </ButtonFrame>
 
         <CustomizationMenu />

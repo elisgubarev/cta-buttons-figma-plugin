@@ -1,0 +1,55 @@
+@use "../data/global.scss";
+@use "../data/shadows.scss";
+@use "../data/colors.scss";
+@use "../data/constants.scss" as const;
+
+.base {
+  @include global.button;
+  background-color: colors.$white;
+  padding: 16px 18px;
+  column-gap: 10px;
+  box-shadow: 0 0 0 2px colors.$black inset, shadows.$solid-black-offset;
+  transition: transform const.$transition, box-shadow const.$transition,
+    background-color const.$transition;
+}
+
+.hasHover {
+  &:hover {
+    transform: translate(2px, -2px);
+    box-shadow: 0 0 0 2px colors.$black inset, shadows.$solid-black-offset-hover;
+    .arrow {
+      transform: translate(2px, -2px);
+    }
+  }
+}
+
+.darkTheme {
+  background-color: colors.$ui-dark;
+  box-shadow: 0 0 0 2px colors.$white inset, shadows.$solid-white-offset;
+  .text {
+    color: colors.$white;
+  }
+  .arrow {
+    path {
+      stroke: colors.$white;
+    }
+  }
+  &.hasHover:hover {
+    box-shadow: 0 0 0 2px colors.$white inset, shadows.$solid-white-offset-hover;
+  }
+}
+
+.text {
+  @include global.text(
+    colors.$black,
+    $font-weight: 600,
+    $font-family: "Source Code Pro"
+  );
+}
+
+.arrow {
+  @include global.arrow(0, 1px);
+  path {
+    transition: stroke const.$transition;
+  }
+}
