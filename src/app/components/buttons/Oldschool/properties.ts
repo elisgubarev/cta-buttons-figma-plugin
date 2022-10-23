@@ -1,8 +1,7 @@
-import { solidShadowWhite } from "../../../data/figma_properties/shadows/solidShadowWhite";
-import { solidShadowBlack } from "../../../data/figma_properties/shadows/solidShadowBlack";
+import { solidShadowOffsetWhite } from "./../../../data/figma_properties/shadows/solidShadowOffsetWhite";
+import { solidShadowOffsetBlack } from "./../../../data/figma_properties/shadows/solidShadowOffsetBlack";
+import { uiDark } from "./../../../data/figma_properties/colors/uiDark";
 import { black } from "../../../data/figma_properties/colors/black";
-import { uiDark } from "../../../data/figma_properties/colors/uiDark";
-import { amber } from "../../../data/figma_properties/colors/amber";
 import { white } from "../../../data/figma_properties/colors/white";
 import {
   ArrowPropeties,
@@ -15,24 +14,17 @@ export const buttonPropertiesOldschool: ButtonProperties = {
   fills: {
     light: {
       primary: {
-        default: amber.default,
-      },
-      outline: {
         default: white.default,
       },
     },
     dark: {
       primary: {
-        default: white.default,
-      },
-      outline: {
         default: uiDark.default,
       },
     },
   },
-  paddings: [14, 40, 14, 40],
-  itemSpacing: 5,
-  cornerRadius: 4,
+  paddings: [16, 18, 16, 18],
+  itemSpacing: 10,
   strokes: {
     fills: {
       light: {
@@ -42,33 +34,27 @@ export const buttonPropertiesOldschool: ButtonProperties = {
         default: white.default,
       },
     },
-    weight: 1,
+    weight: 2,
     isForced: true,
   },
   paddingsOnHover: {
-    default: [4, 4, 4, 4],
-    hover: [0, 8, 8, 0],
+    default: [2, 2, 2, 2],
+    hover: [0, 0, 4, 4],
   },
   effects: {
     light: {
-      default: solidShadowBlack.default,
-      hover: solidShadowBlack.hover,
+      default: solidShadowOffsetBlack.default,
+      hover: solidShadowOffsetBlack.hover,
     },
     dark: {
-      default: solidShadowBlack.default,
-      hover: solidShadowBlack.hover,
-    },
-    ifOutline: {
-      dark: {
-        default: solidShadowWhite.default,
-        hover: solidShadowWhite.hover,
-      },
+      default: solidShadowOffsetWhite.default,
+      hover: solidShadowOffsetWhite.hover,
     },
   },
 };
 
 export const buttonTextPropertiesOldschool: ButtonTextProperties = {
-  fontName: { family: "Lato", style: "Regular" },
+  fontName: { family: "Source Code Pro", style: "SemiBold" },
   defaultText: "Sign up",
   fontSize: 14,
   lineHeight: { value: 100, unit: "PERCENT" },
@@ -77,15 +63,9 @@ export const buttonTextPropertiesOldschool: ButtonTextProperties = {
       primary: {
         default: black.default,
       },
-      outline: {
-        default: black.default,
-      },
     },
     dark: {
       primary: {
-        default: uiDark.default,
-      },
-      outline: {
         default: white.default,
       },
     },
@@ -96,39 +76,52 @@ export const arrowPropertiesOldschool: ArrowPropeties = {
   vectorPaths: [
     {
       windingRule: "NONZERO",
-      data: "M 3.2400004863739014 7.199999809265137 L 5.940000534057617 3.5999999046325684 L 3.2400004863739014 0 L 4.1914286613464355 0 L 6.891429424285889 3.5999999046325684 L 4.1914286613464355 7.199999809265137 L 3.2400004863739014 7.199999809265137 Z M 0 7.199999809265137 L 2.700000286102295 3.5999999046325684 L 0 0 L 0.9514285922050476 0 L 3.651428699493408 3.5999999046325684 L 0.9514285922050476 7.199999809265137 L 0 7.199999809265137 Z",
+      data: "M 7 0 L 0 7 L 7 0 Z M 1.1666666666666667 0 L 7 0 L 7 5.833333333333334",
     },
   ],
   fills: {
     light: {
       primary: {
-        default: black.default,
+        default: [],
       },
       outline: {
+        default: [],
+      },
+    },
+    dark: {
+      primary: {
+        default: [],
+      },
+      outline: {
+        default: [],
+      },
+    },
+  },
+  strokes: {
+    light: {
+      primary: {
         default: black.default,
       },
     },
     dark: {
       primary: {
-        default: uiDark.default,
-      },
-      outline: {
         default: white.default,
       },
     },
+    weight: 1.5,
   },
   frameSize: {
-    width: 9,
-    height: 8,
+    width: 7,
+    height: 7,
   },
   vectorOffset: {
     initial: {
       x: 0,
-      y: 1.5,
+      y: 1,
     },
     hover: {
-      x: 0,
-      y: 1.5,
+      x: 2,
+      y: -1,
     },
   },
 };

@@ -40,6 +40,11 @@ import {
   buttonTextPropertiesCutCorner,
   arrowPropertiesCutCorner,
 } from "../components/buttons/Futuristic/properties";
+import {
+  buttonPropertiesOldschool,
+  buttonTextPropertiesOldschool,
+  arrowPropertiesOldschool,
+} from "../components/buttons/Oldschool/properties";
 
 export const mapPropertiesToButtonIds: MapPropertiesToButtonIds = {
   [Button.Classic]: {
@@ -81,5 +86,10 @@ export const mapPropertiesToButtonIds: MapPropertiesToButtonIds = {
     button: buttonPropertiesCutCorner,
     text: buttonTextPropertiesCutCorner,
     arrow: arrowPropertiesCutCorner,
+  },
+  [Button.Oldschool]: {
+    button: buttonPropertiesOldschool,
+    text: buttonTextPropertiesOldschool,
+    arrow: arrowPropertiesOldschool,
   },
 };

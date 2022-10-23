@@ -13,6 +13,7 @@ Promise.all([
   figma.loadFontAsync({ family: "Montserrat", style: "SemiBold" }),
   figma.loadFontAsync({ family: "Montserrat", style: "Bold" }),
   figma.loadFontAsync({ family: "Orbitron", style: "Bold" }),
+  figma.loadFontAsync({ family: "Source Code Pro", style: "SemiBold" }),
 ]).then((values) => {
   if (values[0]) {
     figma.ui.postMessage({ type: "dataLoaded", pluginConfig: values[0] });

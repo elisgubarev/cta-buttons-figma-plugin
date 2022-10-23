@@ -19,7 +19,7 @@ const Oldschool = (): JSX.Element => {
   const handleOnClick: OnClick = () => {
     const pluginMessage: PluginMessage = {
       event: "click",
-      buttonId: Button.Cheerful,
+      buttonId: Button.Oldschool,
       pluginConfig,
     };
     parent.postMessage({ pluginMessage }, "*");
