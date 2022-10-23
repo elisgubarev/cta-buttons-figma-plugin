@@ -31,53 +31,28 @@ const Content = (): JSX.Element => {
     }
   };
 
+  const buttonsArray = [
+    <Classic />,
+    <Sharp />,
+    <Small />,
+    <Round />,
+    <EyeCatching />,
+    <Cheerful />,
+    <Engaging />,
+    <Futuristic />,
+    <Oldschool />,
+    <Informative />,
+  ];
+
   const renderContent = () => {
     if (!isLoaded) return null;
-    return (
-      <>
-        <ButtonFrame>
-          <Classic />
+    return buttonsArray.map((button, index) => {
+      return (
+        <ButtonFrame id={index} key={index}>
+          {button}
         </ButtonFrame>
-
-        <ButtonFrame>
-          <Sharp />
-        </ButtonFrame>
-
-        <ButtonFrame>
-          <Small />
-        </ButtonFrame>
-
-        <ButtonFrame>
-          <Round />
-        </ButtonFrame>
-
-        <ButtonFrame>
-          <EyeCatching />
-        </ButtonFrame>
-
-        <ButtonFrame>
-          <Cheerful />
-        </ButtonFrame>
-
-        <ButtonFrame>
-          <Engaging />
-        </ButtonFrame>
-
-        <ButtonFrame>
-          <Futuristic />
-        </ButtonFrame>
-
-        <ButtonFrame>
-          <Oldschool />
-        </ButtonFrame>
-
-        <ButtonFrame>
-          <Informative />
-        </ButtonFrame>
-
-        <CustomizationMenu />
-      </>
-    );
+      );
+    });
   };
 
   return (
@@ -86,7 +61,10 @@ const Content = (): JSX.Element => {
         [style.containerDark]: dark,
       })}
     >
-      <div className={style.content}>{renderContent()}</div>
+      <div className={style.content}>
+        {renderContent()}
+        <CustomizationMenu />
+      </div>
     </div>
   );
 };
