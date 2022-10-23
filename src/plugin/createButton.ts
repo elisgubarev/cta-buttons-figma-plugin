@@ -1,6 +1,7 @@
 import { Button } from "../app/data/enums";
 import { mapPropertiesToButtonIds } from "../app/data/maps";
 import { ButtonNode, PluginConfig } from "../app/data/types";
+import { addPropertiesForFuturistic } from "./functions/addPropertiesForFuturistic";
 import { createArrow } from "./functions/createArrow";
 import { createHoverVariant } from "./functions/createHoverVariant";
 import { insertButtonToCanvas } from "./functions/insertButtonToCanvas";
@@ -18,7 +19,7 @@ export const createButton = (buttonId: Button, pluginConfig: PluginConfig) => {
   const buttonComponent = figma.createComponent();
   button.appendChild(buttonText);
   buttonComponent.appendChild(button);
-  setButtonProperties(button, buttonProperties, pluginConfig);
+  setButtonProperties(button, buttonProperties, pluginConfig, buttonId);
   setButtonTextPropertires(buttonText, buttonTextProperties, pluginConfig);
   setAutoLayout(
     button,
@@ -43,13 +44,26 @@ export const createButton = (buttonId: Button, pluginConfig: PluginConfig) => {
 
   createArrow(arrowProperties, pluginConfig, button);
 
+  if (buttonId === Button.Futuristic) {
+    button.insertChild(0, figma.createRectangle());
+    button.insertChild(1, figma.createRectangle());
+    button.insertChild(2, figma.createRectangle());
+    addPropertiesForFuturistic(
+      button,
+      pluginConfig,
+      buttonId,
+      buttonProperties
+    );
+  }
+
   returnedButtonObject = createHoverVariant(
     returnedButtonObject,
     buttonProperties,
     buttonTextProperties,
     buttonTextComponentProperty,
     arrowProperties,
-    pluginConfig
+    pluginConfig,
+    buttonId
   );
 
   return insertButtonToCanvas(returnedButtonObject);

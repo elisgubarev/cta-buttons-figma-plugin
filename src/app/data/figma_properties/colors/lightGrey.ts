@@ -1,6 +1,6 @@
 import { Color } from "./../../types";
 
-export const purple: Color<"default"> = {
+export const lightGrey: Color<"default"> = {
   default: [
     {
       type: "SOLID",
@@ -8,9 +8,9 @@ export const purple: Color<"default"> = {
       opacity: 1,
       blendMode: "NORMAL",
       color: {
-        r: 0.2823529541492462,
-        g: 0.20392157137393951,
-        b: 0.8313725590705872,
+        r: 0.8352941274642944,
+        g: 0.8352941274642944,
+        b: 0.8352941274642944,
       },
     },
   ],

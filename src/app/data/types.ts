@@ -214,7 +214,8 @@ export interface SetButtonProperties {
   (
     button: FrameNode,
     buttonProperties: ButtonProperties,
-    pluginConfig: PluginConfig
+    pluginConfig: PluginConfig,
+    buttonId: Button
   ): FrameNode;
 }
 
@@ -293,7 +294,8 @@ export interface CreateHoverVariant {
     buttonTextProperties: ButtonTextProperties,
     currentTextComponentPropertyReference: string,
     arrowProperties: ArrowPropeties,
-    pluginConfig: PluginConfig
+    pluginConfig: PluginConfig,
+    buttonId: Button
   ): ButtonNode;
 }
 

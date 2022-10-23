@@ -1,3 +1,5 @@
+import { lightGrey } from "./../../../data/figma_properties/colors/lightGrey";
+import { lightPurple } from "./../../../data/figma_properties/colors/lightPurple";
 import { purple } from "./../../../data/figma_properties/colors/purple";
 import { uiDark } from "../../../data/figma_properties/colors/uiDark";
 import { white } from "../../../data/figma_properties/colors/white";
@@ -13,20 +15,20 @@ export const buttonPropertiesCutCorner: ButtonProperties = {
     light: {
       primary: {
         default: purple.default,
-        hover: purple.hover08,
+        hover: lightPurple.default,
       },
       outline: {
-        default: white.default,
+        default: [],
         hover: purple.default,
       },
     },
     dark: {
       primary: {
         default: white.default,
-        hover: white.hover08,
+        hover: lightGrey.default,
       },
       outline: {
-        default: uiDark.default,
+        default: [],
         hover: white.default,
       },
     },

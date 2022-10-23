@@ -1,5 +1,6 @@
-import { Theme } from "../../app/data/enums";
+import { Button, Theme } from "../../app/data/enums";
 import { CreateHoverVariant } from "./../../app/data/types";
+import { addPropertiesForFuturistic } from "./addPropertiesForFuturistic";
 import { setArrowFillsAndStrokes } from "./setArrowFillsAndStrokes";
 import { setAutoLayout } from "./setAutoLayout";
 import { setButtonHoverProperties } from "./setButtonHoverProperties";
@@ -10,9 +11,12 @@ export const createHoverVariant: CreateHoverVariant = (
   buttonTextProperties,
   currentTextComponentPropertyReference,
   arrowProperties,
-  pluginConfig
+  pluginConfig,
+  buttonId
 ) => {
   const { outline, dark, hover } = pluginConfig;
+  const buttonTextIndex = buttonId === Button.Futuristic ? 3 : 0;
+  const arrowNodeHoverIndex = buttonId === Button.Futuristic ? 4 : 1;
 
   if (!hover) return buttonComponent;
 
@@ -26,9 +30,9 @@ export const createHoverVariant: CreateHoverVariant = (
   setAutoLayout(buttonComponentHover, buttonProperties.paddingsOnHover?.hover);
 
   const button = buttonComponent.children[0] as FrameNode;
-  const buttonText = button.children[0] as FrameNode;
+  const buttonText = button.children[buttonTextIndex] as FrameNode;
   const buttonHover = buttonComponentHover.children[0] as FrameNode;
-  const buttonTextHover = buttonHover.children[0] as TextNode;
+  const buttonTextHover = buttonHover.children[buttonTextIndex] as TextNode;
 
   setButtonHoverProperties(buttonHover, buttonProperties, pluginConfig);
 
@@ -54,7 +58,7 @@ export const createHoverVariant: CreateHoverVariant = (
     characters: buttonSetTextProperty,
   } as SceneNodeMixin["componentPropertyReferences"];
 
-  const arrowNodeHover = buttonHover.children[1] as FrameNode;
+  const arrowNodeHover = buttonHover.children[arrowNodeHoverIndex] as FrameNode;
   const arrowVectorHover = arrowNodeHover
     ? (arrowNodeHover.children[0] as VectorNode)
     : null;
@@ -78,11 +82,19 @@ export const createHoverVariant: CreateHoverVariant = (
     true
   );
 
-  if (outline && buttonProperties.strokes) {
+  if (outline && buttonProperties.strokes && buttonId !== Button.Futuristic) {
     buttonHover.strokes =
       buttonProperties.strokes.fills[theme].hover ||
       buttonProperties.strokes.fills[theme].default;
   }
+
+  addPropertiesForFuturistic(
+    buttonHover,
+    pluginConfig,
+    buttonId,
+    buttonProperties,
+    true
+  );
 
   return buttonComponentSet;
 };

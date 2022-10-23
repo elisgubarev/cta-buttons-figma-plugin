@@ -1,12 +1,13 @@
 import { setButtonOpacity } from "./setButtonOpacity";
 import { overrideEffectsForOutlinedButton } from "./overrideEffectsForOutlinedButton";
-import { Theme } from "../../app/data/enums";
+import { Button, Theme } from "../../app/data/enums";
 import { SetButtonProperties } from "../../app/data/types";
 
 export const setButtonProperties: SetButtonProperties = (
   button,
   buttonProperties,
-  pluginConfig
+  pluginConfig,
+  buttonId
 ) => {
   const { outline, dark } = pluginConfig;
   const theme = dark ? Theme.Dark : Theme.Light;
@@ -31,7 +32,8 @@ export const setButtonProperties: SetButtonProperties = (
 
   if (
     buttonProperties.strokes &&
-    (outline || buttonProperties.strokes.isForced)
+    (outline || buttonProperties.strokes.isForced) &&
+    buttonId !== Button.Futuristic
   ) {
     button.strokes = buttonProperties.strokes.fills[theme].default;
     button.strokeWeight = buttonProperties.strokes.weight;

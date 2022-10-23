@@ -13,3 +13,13 @@ export enum Theme {
   Light = "light",
   Dark = "dark",
 }
+
+export enum Type {
+  Primary = "primary",
+  Outline = "outline",
+}
+
+export enum State {
+  Default = "default",
+  Hover = "hover",
+}
