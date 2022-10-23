@@ -333,3 +333,5 @@ export interface SetArrowFillsAndStrokes {
     isHover?: boolean
   ): VectorNode;
 }
+
+export type CheckIfNodeIsInsideInstance = (node: BaseNode) => boolean;

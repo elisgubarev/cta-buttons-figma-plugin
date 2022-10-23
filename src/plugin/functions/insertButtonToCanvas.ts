@@ -1,3 +1,4 @@
+import { checkIfNodeIsInsideInstance } from "./../helpers/checkIfNodeIsInsideInstance";
 import { InsertButtonToCanvas } from "../../app/data/types";
 
 export const insertButtonToCanvas: InsertButtonToCanvas = (button) => {
@@ -8,6 +9,7 @@ export const insertButtonToCanvas: InsertButtonToCanvas = (button) => {
 
   figma.currentPage.selection.forEach((node) => {
     if (node.type === "FRAME") {
+      if (checkIfNodeIsInsideInstance(node)) return;
       button.x = 24;
       button.y = 24;
       node.appendChild(button);
