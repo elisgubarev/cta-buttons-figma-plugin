@@ -45,6 +45,11 @@ import {
   buttonTextPropertiesOldschool,
   arrowPropertiesOldschool,
 } from "../components/buttons/Oldschool/properties";
+import {
+  buttonPropertiesInformative,
+  buttonTextPropertiesInformative,
+  arrowPropertiesInformative,
+} from "../components/buttons/Informative/properties";
 
 export const mapPropertiesToButtonIds: MapPropertiesToButtonIds = {
   [Button.Classic]: {
@@ -91,5 +96,10 @@ export const mapPropertiesToButtonIds: MapPropertiesToButtonIds = {
     button: buttonPropertiesOldschool,
     text: buttonTextPropertiesOldschool,
     arrow: arrowPropertiesOldschool,
+  },
+  [Button.Informative]: {
+    button: buttonPropertiesInformative,
+    text: buttonTextPropertiesInformative,
+    arrow: arrowPropertiesInformative,
   },
 };

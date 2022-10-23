@@ -1,0 +1,44 @@
+@use "../data/global.scss";
+@use "../data/colors.scss";
+@use "../data/constants.scss" as const;
+
+.base {
+  @include global.button;
+  background-color: colors.$smoke-hover-012;
+  padding: 5px 15px 5px 6px;
+  border-radius: 999px;
+  column-gap: 10px;
+  transition: background-color const.$transition;
+}
+
+.hasHover {
+  &:hover {
+    background-color: colors.$smoke-hover-02;
+    .arrow {
+      transform: translateX(2px);
+    }
+  }
+}
+
+.darkTheme {
+  background-color: colors.$white-hover-012;
+  .text {
+    color: colors.$white;
+  }
+  .arrow {
+    path {
+      fill: colors.$white;
+    }
+  }
+  &.hasHover:hover {
+    background-color: colors.$white-hover-02;
+  }
+}
+
+.text {
+  @include global.text($color: colors.$smoke, $font-size: 16px, $font-weight: 400);
+}
+
+.arrow {
+  @include global.arrow(0, 0.5px);
+}

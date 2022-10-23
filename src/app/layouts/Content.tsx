@@ -17,6 +17,7 @@ import {
 import { PluginUIEvent } from "../data/types";
 import classNames from "classnames";
 import style from "../styles/pluginUI/Content.module.scss";
+import Informative from "../components/buttons/Informative/Informative";
 
 const Content = (): JSX.Element => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -68,6 +69,10 @@ const Content = (): JSX.Element => {
 
         <ButtonFrame>
           <Oldschool />
+        </ButtonFrame>
+
+        <ButtonFrame>
+          <Informative />
         </ButtonFrame>
 
         <CustomizationMenu />
