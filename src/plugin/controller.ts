@@ -3,7 +3,7 @@ import { createButton } from "./createButton";
 
 figma.showUI(__html__, {
   width: 576,
-  height: 504,
+  height: 440,
 });
 
 Promise.all([
