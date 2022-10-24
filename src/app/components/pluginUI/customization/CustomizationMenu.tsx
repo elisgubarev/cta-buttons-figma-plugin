@@ -3,7 +3,7 @@ import style from "../../../styles/pluginUI/CustomizationMenu.module.scss";
 import DropdownButton from "./DropdownButton";
 import Dropdown from "./Dropdown";
 import DrowdownOption from "./DrowdownOption";
-import { useIsFirstRender } from "../../../data/hooks";
+import { useIsFirstRender } from "../../../data/hooks/useIsFirstRender";
 import { PluginMessage } from "../../../data/types";
 import { usePluginConfig } from "../../PluginConfigContext";
 

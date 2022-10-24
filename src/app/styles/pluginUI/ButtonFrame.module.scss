@@ -23,7 +23,7 @@
 
   animation-duration: 0.2s;
   animation-name: slidein;
-  animation-fill-mode: both;
+  animation-fill-mode: backwards;
 }
 
 @keyframes slidein {
