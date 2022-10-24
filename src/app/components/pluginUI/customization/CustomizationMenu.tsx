@@ -6,6 +6,7 @@ import DrowdownOption from "./DrowdownOption";
 import { useIsFirstRender } from "../../../data/hooks/useIsFirstRender";
 import { PluginMessage } from "../../../data/types";
 import { usePluginConfig } from "../../PluginConfigContext";
+import { useOutsideClickRef } from "../../../data/hooks/useOutsideClickRef";
 
 const CustomizationMenu = (): JSX.Element => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -22,8 +23,11 @@ const CustomizationMenu = (): JSX.Element => {
     }
   }, [pluginConfig]);
 
+  const handleOutsideClick = () => setIsMenuOpened(false);
+  const ref = useOutsideClickRef(handleOutsideClick);
+
   return (
-    <div className={style.menu}>
+    <div className={style.menu} ref={ref}>
       <Dropdown isMenuOpened={isMenuOpened}>
         <DrowdownOption
           configProperty="hover"
